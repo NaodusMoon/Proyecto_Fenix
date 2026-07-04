@@ -8,7 +8,7 @@
                 price: "$4.800",
                 profit: "$1.500 - $2.300",
                 rappi: "$6.200",
-                image: "assets/images/content/combo-lunes.jpg"
+                image: "assets/images/generated/combo-lunes.webp"
             },
             'Martes': {
                 title: "Combo Energía Explosiva",
@@ -18,7 +18,7 @@
                 price: "$7.200",
                 profit: "$2.300 - $3.200",
                 rappi: "$9.300",
-                image: "assets/images/content/bomba-arequipe.jpg"
+                image: "assets/images/generated/combo-martes.webp"
             },
             'Miércoles': {
                 title: "Combo Mitad de Semana",
@@ -28,7 +28,7 @@
                 price: "$7.400",
                 profit: "$2.400 - $3.300",
                 rappi: "$9.600",
-                image: "assets/images/content/bomba-arequipe.jpg"
+                image: "assets/images/generated/combo-miercoles.webp"
             },
             'Jueves': {
                 title: "Combo Tradición Premium",
@@ -38,7 +38,7 @@
                 price: "$9.800",
                 profit: "$3.600 - $5.000",
                 rappi: "$12.700",
-                image: "assets/images/content/quesillo.jpg"
+                image: "assets/images/generated/combo-jueves.webp"
             },
             'Viernes': {
                 title: "Combo Dueto Cremoso",
@@ -48,7 +48,7 @@
                 price: "$5.300",
                 profit: "$1.900 - $2.700",
                 rappi: "$6.900",
-                image: "assets/images/content/combo-viernes.jpg"
+                image: "assets/images/generated/combo-viernes.webp"
             },
             'Sábado': {
                 title: "Trío Fénix del Sábado",
@@ -58,7 +58,7 @@
                 price: "$10.100",
                 profit: "$3.400 - $4.800",
                 rappi: "$13.100",
-                image: "assets/images/content/combo-sabado.jpg"
+                image: "assets/images/generated/combo-sabado.webp"
             },
             'Domingo': {
                 title: "Bandeja Familiar Fénix",
@@ -68,7 +68,7 @@
                 price: "$21.900",
                 profit: "$7.900 - $10.700",
                 rappi: "$28.500",
-                image: "assets/images/content/combo-domingo.jpg"
+                image: "assets/images/generated/combo-domingo.webp"
             }
         };
 
@@ -83,13 +83,13 @@
                 cart.push({ name, price, qty: 1 });
             }
             updateCartUI();
-            showToast(`¡"${name}" agregado al pedido!`, "🍦");
+            showToast(`¡"${name}" agregado al pedido!`, "fa-ice-cream");
         }
 
         function clearCart() {
             cart = [];
             updateCartUI();
-            showToast("Bandeja vaciada con éxito", "🗑️");
+            showToast("Bandeja vaciada con éxito", "fa-trash-can");
         }
 
         function updateCartUI() {
@@ -124,10 +124,10 @@
                         <div class="flex items-center gap-2">
                             <span class="font-bold text-chocolate-800">$${totalItemPrice.toLocaleString()}</span>
                             <button onclick="changeQty(${index}, -1)" class="bg-white text-chocolate-600 hover:bg-red-50 hover:text-red-600 p-1 rounded border border-chocolate-200">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
+                                <i class="fa-solid fa-minus text-[10px]" aria-hidden="true"></i>
                             </button>
                             <button onclick="changeQty(${index}, 1)" class="bg-white text-chocolate-600 hover:bg-emerald-50 hover:text-emerald-600 p-1 rounded border border-chocolate-200">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                <i class="fa-solid fa-plus text-[10px]" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
@@ -150,18 +150,18 @@
 
         function sendWhatsAppOrder() {
             if (cart.length === 0) {
-                showToast("Por favor agrega primero algún postre a tu pedido", "⚠️");
+                showToast("Por favor agrega primero algún postre a tu pedido", "fa-triangle-exclamation");
                 return;
             }
 
-            let text = "¡Hola Dulces Fénix! 🍊\nMe gustaría realizar la simulación de pedido de los siguientes postres en Bogotá:\n\n";
+            let text = "¡Hola Dulces Fénix!\nMe gustaría realizar la simulación de pedido de los siguientes postres en Bogotá:\n\n";
             let total = 0;
             cart.forEach(item => {
                 const totalItem = item.price * item.qty;
                 total += totalItem;
                 text += `• ${item.name} (x${item.qty}) - $${totalItem.toLocaleString()} COP\n`;
             });
-            text += `\n*TOTAL ESTIMADO: $${total.toLocaleString()} COP*\n\n¿Me confirman la disponibilidad de entrega? ¡Gracias! ✨`;
+            text += `\n*TOTAL ESTIMADO: $${total.toLocaleString()} COP*\n\n¿Me confirman la disponibilidad de entrega? ¡Gracias!`;
 
             const encoded = encodeURIComponent(text);
             window.open(`https://wa.me/573000000000?text=${encoded}`, '_blank');
@@ -310,13 +310,13 @@
 
         // --- TOAST NOTIFICATIONS ---
         let toastTimeout;
-        function showToast(text, icon = "✨") {
+        function showToast(text, icon = "fa-wand-magic-sparkles") {
             const toast = document.getElementById('toast-modal');
             const toastText = document.getElementById('toast-text');
             const toastIcon = document.getElementById('toast-icon');
 
             toastText.innerText = text;
-            toastIcon.innerText = icon;
+            toastIcon.className = `${icon.includes(' ') ? icon : `fa-solid ${icon}`} text-oro-400`;
 
             clearTimeout(toastTimeout);
             toast.classList.remove('translate-y-32', 'opacity-0');
