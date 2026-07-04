@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulces Fénix - Dulces que renacen en tu paladar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        chocolate: {
+                            50: '#fdf8f5',
+                            100: '#fbeee6',
+                            200: '#f6ddd0',
+                            600: '#aa5328',
+                            800: '#5a2510',
+                            900: '#3e1608',
+                        },
+                        oro: {
+                            400: '#f1c40f',
+                            500: '#d4af37',
+                            600: '#b8860b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1eeea;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 3px;
+        }
+        .smooth-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] text-chocolate-900 font-sans selection:bg-oro-500 selection:text-white overflow-x-hidden">
+
+    <!-- HEADER / HERO -->
+    <header class="relative bg-gradient-to-b from-chocolate-900 to-chocolate-800 text-white min-h-[95vh] flex flex-col justify-between overflow-hidden">
+        <!-- Decoración de Fondo Sutil -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <!-- Navbar -->
+        <nav class="relative z-10 max-w-7xl mx-auto w-full px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-1 rounded-full shadow-lg shadow-oro-500/20 border-2 border-oro-400">
+                    <!-- Integración del Logo Oficial en Navbar -->
+                    <img src="image_599163.jpg" alt="Logo Oficial Dulces Fénix" class="w-10 h-10 rounded-full object-cover">
+                </div>
+                <span class="font-serif text-2xl font-bold tracking-wide text-oro-400">Dulces Fénix</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-oro-400 smooth-hover">Inicio</a>
+                <a href="#nosotros" class="hover:text-oro-400 smooth-hover">Nosotros</a>
+                <a href="#menu" class="hover:text-oro-400 smooth-hover">Menú</a>
+                <a href="#combos" class="hover:text-oro-400 smooth-hover">Combos Diarios</a>
+                <a href="#simulador" class="hover:text-oro-400 smooth-hover bg-oro-500/10 text-oro-400 px-3 py-1.5 rounded-lg border border-oro-500/30">Simulador de Costos</a>
+                <a href="#requisitos" class="hover:text-oro-400 smooth-hover text-chocolate-100 border-l border-white/20 pl-8">Info Académica</a>
+            </div>
+            <div>
+                <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-5 py-2.5 rounded-full text-sm shadow-md shadow-oro-500/20 smooth-hover">
+                    Ordenar Ahora
+                </a>
+            </div>
+        </nav>
+
+        <!-- Contenido Hero con Logo Centralizado -->
+        <div id="inicio" class="relative z-10 max-w-5xl mx-auto px-6 text-center py-12 flex-grow flex flex-col justify-center items-center">
+            <!-- Contenedor del Logo Principal con Halo Luminoso -->
+            <div class="mb-6 relative group">
+                <div class="absolute inset-0 bg-oro-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <img src="image_599163.jpg" alt="Dulces Fénix Logo Central" class="relative z-10 w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-oro-400 shadow-2xl object-cover hover:scale-105 transition-transform duration-300 bg-white">
+            </div>
+
+            <span class="inline-block bg-oro-500/15 border border-oro-500/30 text-oro-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                Bogotá, Colombia • Postres 100% Propios
+            </span>
+            <h1 class="font-serif text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Dulces que <span class="text-transparent bg-clip-text bg-gradient-to-r from-oro-400 via-orange-400 to-oro-500">renacen</span> en tu paladar
+            </h1>
+            <p class="text-chocolate-100 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light">
+                Fabricamos de forma artesanal postres tradicionales y bebidas refrescantes. Sin reventa, con insumos locales de primera y un sabor inigualable.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-8 py-4 rounded-full shadow-lg shadow-oro-500/30 smooth-hover transform hover:-translate-y-0.5">
+                    Ver Menú Artesanal
+                </a>
+                <a href="#requisitos" class="bg-white/10 hover:bg-white/15 text-white font-medium px-8 py-4 rounded-full border border-white/10 smooth-hover">
+                    Ver Documentación Escolar
+                </a>
+            </div>
+        </div>
+
+        <!-- Ola / Divisor Estético -->
+        <div class="relative w-full h-16 bg-[#FAF8F5]">
+            <svg class="absolute bottom-0 w-full h-16 text-[#FAF8F5] fill-current" viewBox="0 0 1440 64" preserveAspectRatio="none">
+                <path d="M0,32 C240,70 480,70 720,32 C960,-6 1200,-6 1440,32 L1440,64 L0,64 Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- SOBRE NOSOTROS & PROPUESTA DE VALOR -->
+    <section id="nosotros" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Columna Texto -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-chocolate-100 text-chocolate-800 px-3 py-1 rounded-full text-xs font-bold uppercase">
+                    <span class="w-1.5 h-1.5 bg-oro-500 rounded-full animate-ping"></span> Nuestro Concepto
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl font-extrabold text-chocolate-900">
+                    Repostería con identidad bogotana y proceso propio
+                </h2>
+                <p class="text-chocolate-600 leading-relaxed">
+                    En <span class="font-semibold text-chocolate-800">Dulces Fénix</span> creemos en el valor de lo hecho en casa. No compramos para revender; cada bomba de arequipe, cada porción de quesillo y nuestras icónicas tetas cremosas nacen de recetas controladas y producidas por tandas para garantizar la frescura absoluta y evitar el desperdicio de alimentos.
+                </p>
+                
+                <!-- Beneficios en Rejilla -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 rounded-2xl bg-white border border-chocolate-100 shadow-sm flex gap-3">
+                        <div class="bg-oro-100 text-oro-600 p-2 rounded-xl h-fit">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-chocolate-900 text-sm">Cero Reventa</h4>
+                            <p class="text-xs text-chocolate-600 mt-1">Garantía artesanal y sabores genuinos fabricados desde cero.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white border border-chocolate-100 shadow-sm flex gap-3">
+                        <div class="bg-orange-100 text-orange-600 p-2 rounded-xl h-fit">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-chocolate-900 text-sm">Combos Diarios</h4>
+                            <p class="text-xs text-chocolate-600 mt-1">Promociones optimizadas con bebidas para cada día de la semana.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white border border-chocolate-100 shadow-sm flex gap-3">
+                        <div class="bg-emerald-100 text-emerald-600 p-2 rounded-xl h-fit">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-chocolate-900 text-sm">Precios Justos</h4>
+                            <p class="text-xs text-chocolate-600 mt-1">Excelente balance para el consumidor y rentabilidad transparente.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white border border-chocolate-100 shadow-sm flex gap-3">
+                        <div class="bg-red-100 text-red-600 p-2 rounded-xl h-fit">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-chocolate-900 text-sm">Emprendimiento Social</h4>
+                            <p class="text-xs text-chocolate-600 mt-1">Ahorro en mermas, enfoque ecológico y apoyo a la comunidad bogotana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Ficha Visual -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-chocolate-800 to-chocolate-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden border border-oro-500/20">
+                <div class="absolute inset-0 opacity-20">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="[Cocina Artesanal]" class="w-full h-full object-cover mix-blend-overlay" onerror="this.onerror=null; this.src='';">
+                </div>
+                <div class="relative z-10">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-oro-500/10 rounded-full blur-2xl"></div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 text-oro-400">Identidad Dulce</h3>
+                    <blockquote class="text-chocolate-100 italic border-l-2 border-oro-500 pl-4 mb-6 text-sm">
+                        "Dulces que renacen en tu paladar"
+                    </blockquote>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between border-b border-white/10 pb-2">
+                            <span class="text-chocolate-300">Ubicación principal:</span>
+                            <span class="font-medium text-white">Bogotá, Colombia</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/10 pb-2">
+                            <span class="text-chocolate-300">Público Objetivo:</span>
+                            <span class="font-medium text-white">Familias, jóvenes (12-45 años)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/10 pb-2">
+                            <span class="text-chocolate-300">Canales de venta:</span>
+                            <span class="font-medium text-white">WhatsApp, Rappi & Punto físico</span>
+                        </div>
+                        <div class="flex justify-between pb-2">
+                            <span class="text-chocolate-300">Sostenibilidad:</span>
+                            <span class="font-medium text-white text-right">Producción por tandas, mermas cero</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-white/5 rounded-2xl p-4 border border-white/10 text-center">
+                        <span class="text-xs text-oro-400 font-semibold block uppercase mb-1">Inspiración de Marca</span>
+                        <p class="text-xs text-chocolate-200">
+                            Nuestra paleta evoca un ave fénix dorada y naranja resurgiendo al lado de un postre cremoso de chocolate y vainilla.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENÚ DE PRODUCTOS Y CARRITO INTERACTIVO -->
+    <section id="menu" class="py-20 bg-chocolate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-oro-600 font-bold text-sm uppercase tracking-wider">Carta Artesanal</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">
+                    Explora nuestra oferta y haz tu pedido
+                </h2>
+                <p class="text-chocolate-600 mt-3 text-sm">
+                    Haz clic en "Agregar" para simular un pedido. Podrás calcular el total y enviarlo directo a tu WhatsApp para coordinar la entrega.
+                </p>
+            </div>
+
+            <!-- Contenedor Principal Menú + Simulador Pedido -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Lista de Productos (8 cols) -->
+                <div class="lg:col-span-8 space-y-12">
+                    
+                    <!-- Categoría: Bombas & Postres -->
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-chocolate-800 mb-6 pb-2 border-b border-chocolate-200 flex items-center gap-2">
+                            🍩 Postres & Bombas Tradicionales
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Bomba de Arequipe -->
+                            <div class="bg-white rounded-3xl overflow-hidden border border-chocolate-100 shadow-sm hover:shadow-md smooth-hover flex flex-col justify-between group">
+                                <div class="relative h-48 overflow-hidden bg-chocolate-100">
+                                    <img src="https://images.unsplash.com/photo-1530631673369-bc20fdb32288?auto=format&fit=crop&w=600&q=80" alt="[Bomba de Arequipe]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.placeholder.com/?text=Bomba+de+Arequipe';">
+                                    <span class="absolute top-4 right-4 bg-oro-500 text-chocolate-900 font-bold text-sm px-3.5 py-1 rounded-full shadow-lg">$5.200</span>
+                                </div>
+                                <div class="p-5 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-lg text-chocolate-900 mb-2">Bomba de Arequipe</h4>
+                                        <p class="text-xs text-chocolate-600 mb-3 leading-relaxed">
+                                            Masa suave y dorada frita a la perfección, rellena con generosa porción de arequipe premium y espolvoreada con azúcar pulverizada.
+                                        </p>
+                                        
+                                        <!-- Desplegable de Ingredientes (Cuadros del documento) -->
+                                        <details class="text-xs text-chocolate-800 mb-4 bg-chocolate-50 p-3 rounded-xl border border-chocolate-100/50 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver Ficha Técnica e Ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> Harina de trigo, levadura, leche, huevo, azúcar, mantequilla o margarina, sal, aceite para freír, arequipe y azúcar pulverizada.</p>
+                                                <p><strong>Presentación:</strong> Unidad rellena de arequipe.</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                    <button onclick="addToCart('Bomba de Arequipe', 5200)" class="w-full bg-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 text-white font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider smooth-hover">
+                                        + Agregar al pedido
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Bomba de Crema Pastelera -->
+                            <div class="bg-white rounded-3xl overflow-hidden border border-chocolate-100 shadow-sm hover:shadow-md smooth-hover flex flex-col justify-between group">
+                                <div class="relative h-48 overflow-hidden bg-chocolate-100">
+                                    <img src="https://images.unsplash.com/photo-1557925923-cd4648e21187?auto=format&fit=crop&w=600&q=80" alt="[Bomba de Crema Pastelera]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.placeholder.com/?text=Bomba+Crema+Pastelera';">
+                                    <span class="absolute top-4 right-4 bg-oro-500 text-chocolate-900 font-bold text-sm px-3.5 py-1 rounded-full shadow-lg">$5.300</span>
+                                </div>
+                                <div class="p-5 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-lg text-chocolate-900 mb-2">Bomba de Crema Pastelera</h4>
+                                        <p class="text-xs text-chocolate-600 mb-3 leading-relaxed">
+                                            Nuestra receta especial de crema pastelera casera con un toque sutil de vainilla y mantequilla, en una masa esponjosa recién hecha.
+                                        </p>
+                                        
+                                        <!-- Desplegable de Ingredientes -->
+                                        <details class="text-xs text-chocolate-800 mb-4 bg-chocolate-50 p-3 rounded-xl border border-chocolate-100/50 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver Ficha Técnica e Ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> Harina, levadura, leche, huevo, azúcar, mantequilla o margarina, sal, aceite; relleno de leche, azúcar, yemas o huevo, fécula de maíz, vainilla y mantequilla.</p>
+                                                <p><strong>Presentación:</strong> Unidad rellena de crema pastelera.</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                    <button onclick="addToCart('Bomba de Crema Pastelera', 5300)" class="w-full bg-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 text-white font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider smooth-hover">
+                                        + Agregar al pedido
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Quesillo -->
+                            <div class="bg-white rounded-3xl overflow-hidden border border-chocolate-100 shadow-sm hover:shadow-md smooth-hover flex flex-col justify-between group">
+                                <div class="relative h-48 overflow-hidden bg-chocolate-100">
+                                    <img src="https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=600&q=80" alt="[Quesillo]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.placeholder.com/?text=Quesillo';">
+                                    <span class="absolute top-4 right-4 bg-oro-500 text-chocolate-900 font-bold text-sm px-3.5 py-1 rounded-full shadow-lg">$6.500</span>
+                                </div>
+                                <div class="p-5 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-lg text-chocolate-900 mb-2">Quesillo Tradicional</h4>
+                                        <p class="text-xs text-chocolate-600 mb-3 leading-relaxed">
+                                            Porción individual de quesillo suave elaborado a base de huevos, leche condensada y un caramelo artesanal brillante y aromático.
+                                        </p>
+                                        
+                                        <!-- Desplegable de Ingredientes -->
+                                        <details class="text-xs text-chocolate-800 mb-4 bg-chocolate-50 p-3 rounded-xl border border-chocolate-100/50 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver Ficha Técnica e Ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> Leche, huevos, azúcar, vainilla y caramelo.</p>
+                                                <p><strong>Presentación:</strong> Porción individual.</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                    <button onclick="addToCart('Quesillo', 6500)" class="w-full bg-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 text-white font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider smooth-hover">
+                                        + Agregar al pedido
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Categoría: Tetas Cremosas -->
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-chocolate-800 mb-6 pb-2 border-b border-chocolate-200 flex items-center gap-2">
+                            🍦 Tetas Cremosas (Helados de Hogar)
+                        </h3>
+                        <p class="text-xs text-chocolate-500 mb-6 bg-amber-50 p-3 rounded-xl border border-amber-200/50">
+                            <strong>Ficha de Producto Lácteo:</strong> Fabricadas con base de leche, leche condensada, crema de leche, leche en polvo, azúcar, esencia y bolsa plástica para congelar. Unidad congelada.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Sabor Oreo -->
+                            <div class="bg-white rounded-2xl overflow-hidden border border-chocolate-100 flex flex-col justify-between group">
+                                <div class="h-32 bg-chocolate-100 overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80" alt="[Teta Oreo]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <span class="absolute bottom-2 right-2 bg-oro-500 text-chocolate-900 font-bold text-xs px-2.5 py-0.5 rounded-full">$2.800</span>
+                                </div>
+                                <div class="p-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Oreo Delicia</h4>
+                                        <p class="text-xs text-chocolate-500 mt-1 mb-2">Con galleta Oreo triturada y fondo cremoso de vainilla.</p>
+                                    </div>
+                                    <button onclick="addToCart('Teta Oreo', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Sabor Fresa Nutella -->
+                            <div class="bg-white rounded-2xl overflow-hidden border border-oro-300 ring-1 ring-oro-400/20 flex flex-col justify-between relative group">
+                                <span class="absolute top-2 right-2 z-10 bg-oro-500 text-chocolate-900 text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-md shadow">Premium</span>
+                                <div class="h-32 bg-chocolate-100 overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1502741224143-90386d7f8c82?auto=format&fit=crop&w=400&q=80" alt="[Teta Fresa Nutella]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <span class="absolute bottom-2 right-2 bg-oro-500 text-chocolate-900 font-bold text-xs px-2.5 py-0.5 rounded-full z-10">$3.200</span>
+                                </div>
+                                <div class="p-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Fresa Nutella</h4>
+                                        <p class="text-xs text-chocolate-500 mt-1 mb-2">Pulpa real de fresas dulces rellena con veta de Nutella.</p>
+                                    </div>
+                                    <button onclick="addToCart('Teta Fresa Nutella', 3200)" class="w-full bg-oro-500 text-chocolate-900 hover:bg-oro-600 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Sabor Coco -->
+                            <div class="bg-white rounded-2xl overflow-hidden border border-chocolate-100 flex flex-col justify-between group">
+                                <div class="h-32 bg-chocolate-100 overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=400&q=80" alt="[Teta Coco]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <span class="absolute bottom-2 right-2 bg-oro-500 text-chocolate-900 font-bold text-xs px-2.5 py-0.5 rounded-full">$2.800</span>
+                                </div>
+                                <div class="p-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Coco Artesanal</h4>
+                                        <p class="text-xs text-chocolate-500 mt-1 mb-2">Con coco natural rallado y un toque de leche de coco.</p>
+                                    </div>
+                                    <button onclick="addToCart('Teta Coco', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Sabor Galleta María -->
+                            <div class="bg-white rounded-2xl overflow-hidden border border-chocolate-100 flex flex-col justify-between group">
+                                <div class="h-32 bg-chocolate-100 overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1558961312-50346c09f4d5?auto=format&fit=crop&w=400&q=80" alt="[Teta Galleta Maria]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <span class="absolute bottom-2 right-2 bg-oro-500 text-chocolate-900 font-bold text-xs px-2.5 py-0.5 rounded-full">$2.800</span>
+                                </div>
+                                <div class="p-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Galleta María</h4>
+                                        <p class="text-xs text-chocolate-500 mt-1 mb-2">Sabor de infancia tradicional con galleta María molida.</p>
+                                    </div>
+                                    <button onclick="addToCart('Teta Galleta María', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Sabor Arequipe -->
+                            <div class="bg-white rounded-2xl overflow-hidden border border-chocolate-100 flex flex-col justify-between group">
+                                <div class="h-32 bg-chocolate-100 overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=400&q=80" alt="[Teta Arequipe]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <span class="absolute bottom-2 right-2 bg-oro-500 text-chocolate-900 font-bold text-xs px-2.5 py-0.5 rounded-full">$2.800</span>
+                                </div>
+                                <div class="p-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Arequipe Veteado</h4>
+                                        <p class="text-xs text-chocolate-500 mt-1 mb-2">Base de dulce de leche con vetas internas de arequipe espeso.</p>
+                                    </div>
+                                    <button onclick="addToCart('Teta Arequipe', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Sabor Mantecado -->
+                            <div class="bg-white rounded-2xl overflow-hidden border border-chocolate-100 flex flex-col justify-between group">
+                                <div class="h-32 bg-chocolate-100 overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=400&q=80" alt="[Teta Mantecado]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <span class="absolute bottom-2 right-2 bg-oro-500 text-chocolate-900 font-bold text-xs px-2.5 py-0.5 rounded-full">$2.800</span>
+                                </div>
+                                <div class="p-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Mantecado Cremoso</h4>
+                                        <p class="text-xs text-chocolate-500 mt-1 mb-2">Esencia de mantecado, vainilla reforzada y leche en polvo.</p>
+                                    </div>
+                                    <button onclick="addToCart('Teta Mantecado', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría: Bebidas -->
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-chocolate-800 mb-6 pb-2 border-b border-chocolate-200 flex items-center gap-2">
+                            ☕ Bebidas para Acompañar
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- Tinto/Café -->
+                            <div class="bg-white rounded-2xl border border-chocolate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex items-center justify-between group">
+                                <div class="w-20 h-20 bg-chocolate-100 overflow-hidden shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=150&q=80" alt="[Tinto Café]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <div class="p-3 flex-grow flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Tinto / Café</h4>
+                                        <span class="text-xs font-bold text-oro-600 mt-0.5 block">$2.000</span>
+                                        <span class="text-[9px] text-chocolate-500 block">Café, agua, azúcar, vaso</span>
+                                    </div>
+                                    <button onclick="addToCart('Tinto / Café', 2000)" class="bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 p-2 rounded-xl smooth-hover">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Agua -->
+                            <div class="bg-white rounded-2xl border border-chocolate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex items-center justify-between group">
+                                <div class="w-20 h-20 bg-chocolate-100 overflow-hidden shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1608885898957-a599fb15ec3c?auto=format&fit=crop&w=150&q=80" alt="[Agua]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <div class="p-3 flex-grow flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Agua Botella</h4>
+                                        <span class="text-xs font-bold text-oro-600 mt-0.5 block">$1.800</span>
+                                        <span class="text-[9px] text-chocolate-500 block">Agua en botella</span>
+                                    </div>
+                                    <button onclick="addToCart('Agua en Botella', 1800)" class="bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 p-2 rounded-xl smooth-hover">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gaseosa -->
+                            <div class="bg-white rounded-2xl border border-chocolate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex items-center justify-between group">
+                                <div class="w-20 h-20 bg-chocolate-100 overflow-hidden shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1534080391025-0979e8304b2e?auto=format&fit=crop&w=150&q=80" alt="[Gaseosa]" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <div class="p-3 flex-grow flex items-center justify-between">
+                                    <div>
+                                        <h4 class="font-bold text-chocolate-900 text-sm">Gaseosa</h4>
+                                        <span class="text-xs font-bold text-oro-600 mt-0.5 block">$2.500</span>
+                                        <span class="text-[9px] text-chocolate-500 block">Gaseosa en botella</span>
+                                    </div>
+                                    <button onclick="addToCart('Gaseosa Sencilla', 2500)" class="bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 p-2 rounded-xl smooth-hover">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carrito de Compras (4 cols) -->
+                <div class="lg:col-span-4 lg:sticky lg:top-8 bg-white rounded-3xl p-6 border border-chocolate-200 shadow-md">
+                    <div class="flex justify-between items-center pb-4 border-b border-chocolate-100 mb-4">
+                        <h3 class="font-serif text-lg font-bold text-chocolate-900 flex items-center gap-2">
+                            🛒 Mi Pedido Fénix
+                        </h3>
+                        <span id="cart-count" class="bg-oro-500 text-chocolate-900 text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+                    </div>
+
+                    <!-- Items del Carrito -->
+                    <div id="cart-items" class="space-y-3 max-h-[250px] overflow-y-auto custom-scrollbar pr-1">
+                        <p class="text-xs text-chocolate-500 text-center py-8 italic">No has agregado dulces a tu bandeja de pedido todavía.</p>
+                    </div>
+
+                    <div class="border-t border-chocolate-100 pt-4 mt-4 space-y-2 text-sm">
+                        <div class="flex justify-between text-chocolate-600">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">$0 COP</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-emerald-600 font-medium bg-emerald-50 p-2 rounded-lg">
+                            <span>Envío en Bogotá:</span>
+                            <span>Por convenir</span>
+                        </div>
+                        <div class="flex justify-between text-chocolate-900 font-extrabold text-base pt-2 border-t border-dashed border-chocolate-200">
+                            <span>Total estimado:</span>
+                            <span id="cart-total" class="text-oro-600">$0 COP</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 space-y-2">
+                        <button id="btn-order" onclick="sendWhatsAppOrder()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider shadow-md shadow-emerald-600/10 flex items-center justify-center gap-2 smooth-hover">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.263 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.752.002-2.607-1.01-5.059-2.85-6.905C16.643 2.097 14.195.84 11.59.84c-5.442 0-9.866 4.372-9.87 9.754 0 1.702.451 3.361 1.307 4.8l-.988 3.606 3.708-.971c1.517.828 3.06 1.266 4.8 1.266zm10.155-7.14c-.276-.138-1.636-.807-1.89-.9-.253-.093-.438-.138-.623.138-.184.276-.714.9-.876 1.084-.163.184-.325.208-.601.07-.276-.138-1.168-.43-2.224-1.372-.821-.733-1.376-1.639-1.537-1.915-.163-.277-.018-.426.12-.563.125-.123.276-.322.415-.483.138-.161.184-.276.276-.46.093-.184.046-.346-.023-.483-.069-.138-.623-1.501-.853-2.053-.224-.539-.47-.465-.647-.474-.166-.008-.356-.01-.546-.01s-.5.07-.76.356c-.26.287-.991.968-.991 2.36s1.02 2.738 1.163 2.929c.143.191 2.007 3.059 4.862 4.291.68.293 1.21.469 1.623.6a3.89 3.89 0 001.78.112c.537-.08 1.636-.667 1.865-1.314.23-.647.23-1.201.161-1.314-.069-.113-.253-.184-.529-.322z"/></svg>
+                        </button>
+                        <button onclick="clearCart()" class="w-full bg-white text-chocolate-600 hover:text-red-600 hover:bg-red-50 border border-chocolate-200 font-semibold py-2 px-4 rounded-xl text-xs transition-colors">
+                            Vaciar bandeja
+                        </button>
+                    </div>
+
+                    <p class="text-[10px] text-chocolate-400 text-center mt-4">
+                        * Dulces Fénix no cobra flete directo de transporte interno (propio) para optimizar el precio de nuestros clientes. Rappi maneja tarifas externas.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMBOS DIARIOS (SISTEMA INTELIGENTE CON IMÁGENES DINÁMICAS) -->
+    <section id="combos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-oro-600 font-bold text-sm uppercase tracking-wider">Planificador Semanal</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">
+                    Nuestros Combos del Día
+                </h2>
+                <p class="text-chocolate-600 mt-3 text-sm">
+                    Cada día de la semana tiene una promoción especial con precios directos vs. Rappi. ¡Hemos seleccionado el combo de hoy automáticamente para ti!
+                </p>
+            </div>
+
+            <!-- Navegación de Días -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10">
+                <button onclick="selectDay('Lunes')" id="btn-Lunes" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Lun</button>
+                <button onclick="selectDay('Martes')" id="btn-Martes" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Mar</button>
+                <button onclick="selectDay('Miércoles')" id="btn-Miércoles" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Mié</button>
+                <button onclick="selectDay('Jueves')" id="btn-Jueves" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Jue</button>
+                <button onclick="selectDay('Viernes')" id="btn-Viernes" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Vie</button>
+                <button onclick="selectDay('Sábado')" id="btn-Sábado" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Sáb</button>
+                <button onclick="selectDay('Domingo')" id="btn-Domingo" class="day-btn px-4 py-2.5 rounded-full text-xs font-bold transition-all border border-chocolate-100 bg-[#FAF8F5] text-chocolate-700 hover:border-oro-400">Dom</button>
+            </div>
+
+            <!-- Ficha Detallada del Combo Seleccionado -->
+            <div id="combo-card" class="bg-gradient-to-br from-[#FAF8F5] to-amber-50/50 rounded-3xl p-6 md:p-10 border border-oro-300 max-w-5xl mx-auto shadow-md transition-all duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Lado Izquierdo: Foto Dinámica del Combo -->
+                    <div class="lg:col-span-4 h-64 lg:h-80 bg-chocolate-100 rounded-2xl overflow-hidden relative shadow">
+                        <img id="combo-image" src="" alt="[Imagen del Combo del Día]" class="w-full h-full object-cover transition-opacity duration-300" onerror="this.onerror=null; this.src='image_599163.jpg';">
+                    </div>
+
+                    <!-- Lado Medio: Info del Combo -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="flex items-center gap-2">
+                            <span id="combo-day-badge" class="bg-oro-500 text-chocolate-900 text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest"></span>
+                            <span class="text-xs font-semibold text-chocolate-500">Combo Sugerido</span>
+                        </div>
+                        <h3 id="combo-title" class="font-serif text-3xl font-bold text-chocolate-900"></h3>
+                        <p id="combo-desc" class="text-xs text-chocolate-600 leading-relaxed"></p>
+                        
+                        <div class="grid grid-cols-3 gap-3 pt-2">
+                            <div class="bg-white p-3 rounded-xl border border-chocolate-100 text-center shadow-sm">
+                                <span class="block text-[10px] text-chocolate-500 uppercase font-semibold">Costo Est.</span>
+                                <span id="combo-cost" class="font-bold text-xs text-chocolate-700"></span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-chocolate-100 text-center shadow-sm">
+                                <span class="block text-[10px] text-chocolate-500 uppercase font-semibold">Precio Fénix</span>
+                                <span id="combo-price" class="font-bold text-sm text-emerald-600"></span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-chocolate-100 text-center shadow-sm">
+                                <span class="block text-[10px] text-chocolate-500 uppercase font-semibold">Ganancia</span>
+                                <span id="combo-profit" class="font-bold text-xs text-oro-600"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lado Derecho: Comparativa Rappi -->
+                    <div class="lg:col-span-3 bg-chocolate-900 text-white p-6 rounded-2xl border border-white/10 text-center flex flex-col justify-between h-full space-y-4">
+                        <div>
+                            <span class="inline-block bg-white/10 text-oro-400 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full mb-3">En Apps de Domicilio</span>
+                            <p class="text-[11px] text-chocolate-200 mb-2">Precio en Rappi (Por comisión del 20-30% de plataforma):</p>
+                            <div id="combo-rappi-price" class="font-serif text-3xl font-extrabold text-oro-400 my-1"></div>
+                        </div>
+                        <div class="text-[10px] text-chocolate-300">
+                            Recomendamos comprar directo para ahorrar costos extras de plataformas y asegurar tu porción.
+                        </div>
+                        <button id="add-combo-btn" class="w-full bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider smooth-hover mt-2 shadow-lg shadow-oro-500/10">
+                            + Agregar al Pedido
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULADOR FINANCIERO INTERACTIVO (IDEAL PROYECTO ESCOLAR) -->
+    <section id="simulador" class="py-20 bg-chocolate-100/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-oro-600 font-bold text-sm uppercase tracking-wider">Herramienta Didáctica</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">
+                    Simulador Financiero Dulces Fénix
+                </h2>
+                <p class="text-chocolate-600 mt-3 text-sm">
+                    Modifica los precios de venta propuestos para ver en tiempo real cómo cambia el porcentaje de margen y la ganancia bruta por producto. Diseñado para sustentar la viabilidad del negocio.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 md:p-10 border border-chocolate-200 shadow-sm overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[700px]">
+                    <thead>
+                        <tr class="border-b border-chocolate-100 text-xs text-chocolate-500 uppercase tracking-wider">
+                            <th class="py-4 px-2">Producto</th>
+                            <th class="py-4 px-2">Costo Variable Unitario</th>
+                            <th class="py-4 px-2 text-center">Tu Precio de Venta (COP)</th>
+                            <th class="py-4 px-2 text-right">Ganancia Bruta</th>
+                            <th class="py-4 px-2 text-right">Margen Bruto (%)</th>
+                            <th class="py-4 px-2 text-right">Sostenibilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-chocolate-50 text-sm">
+                        <!-- Tetas Estándar -->
+                        <tr class="hover:bg-chocolate-50/40 transition-colors" id="sim-row-1">
+                            <td class="py-4 px-2">
+                                <span class="font-bold text-chocolate-900 block">Tetas Cremosas Estándar</span>
+                                <span class="text-[10px] text-chocolate-500">Oreo, Coco, Galleta María, Arequipe, Mantecado</span>
+                            </td>
+                            <td class="py-4 px-2 text-chocolate-600">$1.500</td>
+                            <td class="py-4 px-2">
+                                <div class="flex justify-center">
+                                    <input type="number" id="input-teta-std" value="2800" min="1500" max="10000" oninput="recalcSimulator()" class="w-24 bg-[#FAF8F5] text-chocolate-900 font-bold text-center py-1.5 px-2.5 rounded-lg border border-chocolate-200 focus:outline-none focus:ring-1 focus:ring-oro-500">
+                                </div>
+                            </td>
+                            <td class="py-4 px-2 text-right font-semibold text-chocolate-800" id="val-teta-std-profit">$1.300</td>
+                            <td class="py-4 px-2 text-right font-bold text-emerald-600" id="val-teta-std-margin">46%</td>
+                            <td class="py-4 px-2 text-right"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[10px] font-bold">Excelente</span></td>
+                        </tr>
+
+                        <!-- Tetas Premium (Nutella) -->
+                        <tr class="hover:bg-chocolate-50/40 transition-colors" id="sim-row-2">
+                            <td class="py-4 px-2">
+                                <span class="font-bold text-chocolate-900 block">Teta Fresa Nutella (Premium)</span>
+                                <span class="text-[10px] text-chocolate-500">Insumos premium importados</span>
+                            </td>
+                            <td class="py-4 px-2 text-chocolate-600">$1.900</td>
+                            <td class="py-4 px-2">
+                                <div class="flex justify-center">
+                                    <input type="number" id="input-teta-prem" value="3200" min="1900" max="10000" oninput="recalcSimulator()" class="w-24 bg-[#FAF8F5] text-chocolate-900 font-bold text-center py-1.5 px-2.5 rounded-lg border border-chocolate-200 focus:outline-none focus:ring-1 focus:ring-oro-500">
+                                </div>
+                            </td>
+                            <td class="py-4 px-2 text-right font-semibold text-chocolate-800" id="val-teta-prem-profit">$1.300</td>
+                            <td class="py-4 px-2 text-right font-bold text-emerald-600" id="val-teta-prem-margin">41%</td>
+                            <td class="py-4 px-2 text-right"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[10px] font-bold">Excelente</span></td>
+                        </tr>
+
+                        <!-- Bomba Arequipe -->
+                        <tr class="hover:bg-chocolate-50/40 transition-colors" id="sim-row-3">
+                            <td class="py-4 px-2">
+                                <span class="font-bold text-chocolate-900 block">Bomba de Arequipe</span>
+                                <span class="text-[10px] text-chocolate-500">Frita artesanal con relleno de arequipe</span>
+                            </td>
+                            <td class="py-4 px-2 text-chocolate-600">$3.050</td>
+                            <td class="py-4 px-2">
+                                <div class="flex justify-center">
+                                    <input type="number" id="input-bomba-aq" value="5200" min="3050" max="15000" oninput="recalcSimulator()" class="w-24 bg-[#FAF8F5] text-chocolate-900 font-bold text-center py-1.5 px-2.5 rounded-lg border border-chocolate-200 focus:outline-none focus:ring-1 focus:ring-oro-500">
+                                </div>
+                            </td>
+                            <td class="py-4 px-2 text-right font-semibold text-chocolate-800" id="val-bomba-aq-profit">$2.150</td>
+                            <td class="py-4 px-2 text-right font-bold text-emerald-600" id="val-bomba-aq-margin">41%</td>
+                            <td class="py-4 px-2 text-right"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[10px] font-bold">Excelente</span></td>
+                        </tr>
+
+                        <!-- Bomba Pastelera -->
+                        <tr class="hover:bg-chocolate-50/40 transition-colors" id="sim-row-4">
+                            <td class="py-4 px-2">
+                                <span class="font-bold text-chocolate-900 block">Bomba de Crema Pastelera</span>
+                                <span class="text-[10px] text-chocolate-500">Crema casera, vainilla y mantequilla</span>
+                            </td>
+                            <td class="py-4 px-2 text-chocolate-600">$3.150</td>
+                            <td class="py-4 px-2">
+                                <div class="flex justify-center">
+                                    <input type="number" id="input-bomba-cp" value="5300" min="3150" max="15000" oninput="recalcSimulator()" class="w-24 bg-[#FAF8F5] text-chocolate-900 font-bold text-center py-1.5 px-2.5 rounded-lg border border-chocolate-200 focus:outline-none focus:ring-1 focus:ring-oro-500">
+                                </div>
+                            </td>
+                            <td class="py-4 px-2 text-right font-semibold text-chocolate-800" id="val-bomba-cp-profit">$2.150</td>
+                            <td class="py-4 px-2 text-right font-bold text-emerald-600" id="val-bomba-cp-margin">41%</td>
+                            <td class="py-4 px-2 text-right"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[10px] font-bold">Excelente</span></td>
+                        </tr>
+
+                        <!-- Quesillo -->
+                        <tr class="hover:bg-chocolate-50/40 transition-colors" id="sim-row-5">
+                            <td class="py-4 px-2">
+                                <span class="font-bold text-chocolate-900 block">Quesillo Porción</span>
+                                <span class="text-[10px] text-chocolate-500">Base láctea condensada con caramelo</span>
+                            </td>
+                            <td class="py-4 px-2 text-chocolate-600">$3.400</td>
+                            <td class="py-4 px-2">
+                                <div class="flex justify-center">
+                                    <input type="number" id="input-quesillo" value="6500" min="3400" max="20000" oninput="recalcSimulator()" class="w-24 bg-[#FAF8F5] text-chocolate-900 font-bold text-center py-1.5 px-2.5 rounded-lg border border-chocolate-200 focus:outline-none focus:ring-1 focus:ring-oro-500">
+                                </div>
+                            </td>
+                            <td class="py-4 px-2 text-right font-semibold text-chocolate-800" id="val-quesillo-profit">$3.100</td>
+                            <td class="py-4 px-2 text-right font-bold text-emerald-600" id="val-quesillo-margin">48%</td>
+                            <td class="py-4 px-2 text-right"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[10px] font-bold">Excelente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCUMENTACIÓN ACADÉMICA Y DEFINICIÓN DE REQUISITOS -->
+    <section id="requisitos" class="py-20 bg-chocolate-900 text-white relative">
+        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-oro-400 font-bold text-xs uppercase tracking-widest bg-white/5 border border-white/10 px-3 py-1 rounded-full">Proyecto Académico Escolar</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-extrabold mt-4 text-white">
+                    Definición de Requisitos y Plan de Negocio
+                </h2>
+                <p class="text-chocolate-200 mt-3 text-sm">
+                    Hemos extraído y estructurado de forma llamativa la información del documento fundacional. Haz clic en las pestañas para auditar los diferentes módulos organizados.
+                </p>
+                <p class="text-xs text-oro-300 mt-2">
+                    Fuentes consultadas: DANE (IPC mayo 2026); SIPSA precios mayoristas; Corabastos; FincaRaíz; Rappi; Infobae.
+                </p>
+            </div>
+
+            <!-- Interfaz de Navegación por pestañas -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Menú Lateral (Pestañas) -->
+                <div class="lg:col-span-4 space-y-2">
+                    <button onclick="switchTab('paso1')" id="tab-paso1" class="tab-btn w-full text-left p-4 rounded-2xl border transition-all flex justify-between items-center bg-white/5 border-white/10 text-white hover:bg-white/10">
+                        <div>
+                            <h4 class="font-bold text-sm">Paso 1: Definición Básica</h4>
+                            <p class="text-[10px] text-chocolate-300 mt-0.5">Visión comercial del negocio de alimentos</p>
+                        </div>
+                        <svg class="w-4 h-4 text-oro-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="switchTab('preguntas')" id="tab-preguntas" class="tab-btn w-full text-left p-4 rounded-2xl border transition-all flex justify-between items-center bg-transparent border-transparent text-chocolate-200 hover:bg-white/5">
+                        <div>
+                            <h4 class="font-bold text-sm">Preguntas Críticas</h4>
+                            <p class="text-[10px] text-chocolate-300 mt-0.5">Necesidad, viabilidad e impacto en Colombia</p>
+                        </div>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="switchTab('inversion')" id="tab-inversion" class="tab-btn w-full text-left p-4 rounded-2xl border transition-all flex justify-between items-center bg-transparent border-transparent text-chocolate-200 hover:bg-white/5">
+                        <div>
+                            <h4 class="font-bold text-sm">Inversión Inicial Total</h4>
+                            <p class="text-[10px] text-chocolate-300 mt-0.5">Presupuesto inicial para Bogotá</p>
+                        </div>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="switchTab('estatutos')" id="tab-estatutos" class="tab-btn w-full text-left p-4 rounded-2xl border transition-all flex justify-between items-center bg-transparent border-transparent text-chocolate-200 hover:bg-white/5">
+                        <div>
+                            <h4 class="font-bold text-sm">Estatutos Básicos</h4>
+                            <p class="text-[10px] text-chocolate-300 mt-0.5">Nombre legal S.A.S., capital y socios</p>
+                        </div>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="switchTab('cargos')" id="tab-cargos" class="tab-btn w-full text-left p-4 rounded-2xl border transition-all flex justify-between items-center bg-transparent border-transparent text-chocolate-200 hover:bg-white/5">
+                        <div>
+                            <h4 class="font-bold text-sm">Estructura Organizacional</h4>
+                            <p class="text-[10px] text-chocolate-300 mt-0.5">Cargos, funciones y contratos</p>
+                        </div>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Visor de Contenido de Pestaña -->
+                <div class="lg:col-span-8 bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 min-h-[400px]">
+                    
+                    <!-- PESTAÑA: Paso 1 (Definición Básica Completa del Documento) -->
+                    <div id="content-paso1" class="tab-content space-y-6">
+                        <h3 class="font-serif text-2xl font-bold text-oro-400 pb-3 border-b border-white/10 flex items-center gap-2">
+                            <span>📋</span> Paso 1: Definición Básica de la Empresa
+                        </h3>
+                        <p class="text-xs text-chocolate-200">
+                            A continuación se detallan cada uno de los elementos estructurados para el lanzamiento de la empresa:
+                        </p>
+
+                        <!-- Acordeón / Contenedor Expandido de Paso 1 -->
+                        <div class="space-y-3 max-h-[450px] overflow-y-auto custom-scrollbar pr-1">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Nombre de la Empresa</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Dulces Fénix</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Crear un nombre original y fácil de recordar.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Si representa la idea del negocio, genera identidad y es atractivo.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Nombre fácil de recordar, relacionado con dulzura, renacimiento y una marca artesanal que busca crecer en Bogotá.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Producto o Servicio</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Fabricación y Venta Directa</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Definir qué ofrecerá la empresa.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Qué necesidad satisface, si es útil o atractivo y si puede competir.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Fabricación y venta directa de postres y bebidas: bombas de arequipe, bombas de crema pastelera, quesillo, tetas cremosas y bebidas. La empresa fabrica sus productos, no revende.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Precio de Venta</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Rango Comercial Justo ($1.800 - $6.500 COP)</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Establecer cuánto cobrará la empresa.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Si el precio permite ganancia, es justo y competitivo.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Teta cremosa estándar $2.800, teta fresa Nutella $3.200, bomba de arequipe $5.200, bomba de crema pastelera $5.300, quesillo $6.500, agua $1.800, gaseosa $2.500 y tinto/café $2.000. Total de referencia si un cliente compra una unidad de cada producto: $29.300 COP.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Costo de Producción</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Variables por Unidad de Escala</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Calcular cuánto cuesta producir.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Cuánto dinero se invierte, qué materiales se necesitan y si la empresa gana o pierde.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Costo variable por unidad: teta cremosa $1.300 a $1.900, bomba de arequipe $2.800 a $3.300, bomba de crema pastelera $2.900 a $3.400, quesillo $3.000 a $3.800, bebida sencilla $1.200 a $1.600 y bebida especial $1.800 a $2.400.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Precio vs. Costo</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Sustentabilidad de Margen Bruto</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Comparar costo y precio de venta.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Si existe ganancia, se recupera inversión y es sostenible.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Todos los precios quedan por encima del costo variable. Ejemplo: una bomba de arequipe cuesta hasta $3.300 y se vende a $5.200, dejando hasta $1.900 de ganancia bruta por unidad.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Logo</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Ave Fénix y Postres</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Diseñar imagen sencilla que identifique.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Si representa el negocio, se reconoce fácil y genera identidad visual.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Un ave fénix dorada o naranja junto a un postre cremoso, con colores dorado, naranja, café chocolate, crema y rojo suave.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Eslogan</span>
+                                <h4 class="font-bold text-sm text-white mt-1">“Dulces que renacen en tu paladar.”</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Crear frase corta y recordable.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Si representa la empresa, llama la atención y es fácil de recordar.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Representa los dulces, conecta con el fénix y transmite una experiencia deliciosa.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Valor Agregado</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Proceso Genuino y Canales Ágiles</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Explicar qué hace diferente el producto.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Por qué el cliente lo elegiría, qué lo hace especial y qué experiencia ofrece.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Productos fabricados por la empresa, sabores variados de tetas cremosas, postres frescos, combos por días, bebidas para acompañar y atención directa por WhatsApp, Instagram o punto físico.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Tipo de Mercado</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Alimentos y Repostería de Bogotá</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Identificar el sector económico.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> En qué área compite, qué necesidades existen y cómo funciona.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Mercado de alimentos preparados, repostería artesanal, postres fríos y bebidas en Bogotá. Compite por sabor, precio, presentación, frescura y facilidad de compra.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Público Objetivo</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Familias y Estudiantes (12 a 45 años)</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Definir clientes principales.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Edad, gustos y necesidades.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Estudiantes, jóvenes, familias y personas entre 12 y 45 años que buscan postres accesibles, antojos dulces, combos y productos para compartir.</p>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-[10px] uppercase tracking-wider text-oro-400 font-semibold">Decisión Empresarial</span>
+                                <h4 class="font-bold text-sm text-white mt-1">Enfoque Responsable y mermas cero</h4>
+                                <p class="text-xs text-chocolate-200 mt-2"><strong>Qué hacer:</strong> Justificar decisiones tomadas.</p>
+                                <p class="text-xs text-chocolate-300 mt-1"><strong>Análisis:</strong> Si beneficia solo la ganancia, si es ética y qué consecuencias genera.</p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Respuesta:</strong> Fabricar directamente, no revender, manejar precios justos, producir por tandas para evitar desperdicios y cobrar Rappi de forma diferenciada para no perder margen.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PESTAÑA: Preguntas Críticas -->
+                    <div id="content-preguntas" class="tab-content space-y-6 hidden">
+                        <h3 class="font-serif text-2xl font-bold text-oro-400 pb-3 border-b border-white/10 flex items-center gap-2">
+                            <span>❓</span> Preguntas Críticas y Debates del Emprendimiento
+                        </h3>
+                        
+                        <div class="space-y-4 max-h-[450px] overflow-y-auto custom-scrollbar pr-1">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <h4 class="font-bold text-sm text-white">1. ¿Qué necesidad humana o social busca resolver?</h4>
+                                <p class="text-xs text-chocolate-200 mt-2">
+                                    Ofrece postres y bebidas accesibles para antojos, compartir, regalar o acompañar momentos familiares y escolares.
+                                </p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Caso colombiano:</strong> Emprendimientos digitales en Colombia que venden por WhatsApp, Instagram y plataformas.</p>
+                                <span class="inline-block mt-2 text-[10px] bg-red-950 text-red-300 font-semibold px-2 py-0.5 rounded border border-red-900/50">Debate Crítico: Consumo inmediato, informalidad, higiene, costos de plataformas y estabilidad del emprendimiento.</span>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <h4 class="font-bold text-sm text-white">2. ¿Por qué elegirían Dulces Fénix y no otro?</h4>
+                                <p class="text-xs text-chocolate-200 mt-2">
+                                    Porque fabrica sus propios productos (no somos revendedores), ofrece sabores innovadores de tetas cremosas, una dinámica inteligente de combos diarios y atención cercana al cliente.
+                                </p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Caso colombiano:</strong> Juan Valdez como ejemplo de identidad de marca colombiana.</p>
+                                <span class="inline-block mt-2 text-[10px] bg-red-950 text-red-300 font-semibold px-2 py-0.5 rounded border border-red-900/50">Debate Crítico: Competencia con marcas grandes, publicidad, diferenciación y pago justo del trabajo.</span>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <h4 class="font-bold text-sm text-white">3. ¿El precio es justo?</h4>
+                                <p class="text-xs text-chocolate-200 mt-2">
+                                    Sí, porque cada precio supera el costo variable y deja margen real para sostener el negocio frente al aumento de la inflación (IPC DANE) y los precios mayoristas (SIPSA / Corabastos).
+                                </p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Caso colombiano:</strong> Inflación y precios de alimentos en Colombia obligan a calcular bien costos.</p>
+                                <span class="inline-block mt-2 text-[10px] bg-red-950 text-red-300 font-semibold px-2 py-0.5 rounded border border-red-900/50">Debate Crítico: Poder adquisitivo, costo de vida y equilibrio entre ganancia y acceso del cliente.</span>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <h4 class="font-bold text-sm text-white">4. ¿Busca solo ganar dinero?</h4>
+                                <p class="text-xs text-chocolate-200 mt-2">
+                                    Busca rentabilidad financiera e impacto positivo: fabricamos responsablemente, reducimos desperdicios mediante producción programada por tandas y fomentamos el crecimiento del sector informal repostero de Bogotá.
+                                </p>
+                                <p class="text-xs text-oro-300 mt-1"><strong>Caso colombiano:</strong> Empresas colombianas con programas de sostenibilidad, aplicadas a pequeña escala.</p>
+                                <span class="inline-block mt-2 text-[10px] bg-red-950 text-red-300 font-semibold px-2 py-0.5 rounded border border-red-900/50">Debate Crítico: Responsabilidad social real, empaques, bienestar del equipo y rentabilidad.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PESTAÑA: Inversión Inicial -->
+                    <div id="content-inversion" class="tab-content space-y-6 hidden">
+                        <div class="flex justify-between items-center pb-3 border-b border-white/10 flex-wrap gap-2">
+                            <h3 class="font-serif text-2xl font-bold text-oro-400 flex items-center gap-2">
+                                <span>💰</span> Estructura de Inversión Inicial
+                            </h3>
+                            <span class="bg-oro-500 text-chocolate-900 font-extrabold px-3 py-1 rounded-lg text-xs">$5.870.000 COP</span>
+                        </div>
+
+                        <p class="text-xs text-chocolate-200">
+                            La proyección se apoya en datos económicos reales (Arriendos de Bogotá, costo de mermas e insumos de Corabastos):
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-1">
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Alquiler Local (Bogotá)</span>
+                                    <span class="text-oro-400">$2.500.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Costo fijo para producir y atender en Bogotá; puede bajar si se empieza bajo pedido.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Mano de Obra</span>
+                                    <span class="text-oro-400">$900.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Valor asignado al trabajo de fabricar, limpiar, empacar y atender.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Ingredientes (Bombas)</span>
+                                    <span class="text-oro-400">$520.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Materia prima de bombas de arequipe y crema pastelera.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Ingredientes (Quesillo)</span>
+                                    <span class="text-oro-400">$320.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Materia prima para porciones de quesillo.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Ingredientes (Tetas Cremosas)</span>
+                                    <span class="text-oro-400">$350.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Base láctea, sabores y bolsas.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Ingredientes (Bebidas)</span>
+                                    <span class="text-oro-400">$220.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Agua embotellada, gaseosa, café molido o instantáneo, azúcar, vasos, mezcladores.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Servicios: Energía</span>
+                                    <span class="text-oro-400">$220.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Nevera, congelador, batidora, iluminación y conservación.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Servicios: Gas</span>
+                                    <span class="text-oro-400">$170.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Necesario para cocinar, freír y preparar rellenos.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Servicios: Agua</span>
+                                    <span class="text-oro-400">$120.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Necesaria para limpieza, higiene y manipulación de alimentos.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Empaques y Etiquetas</span>
+                                    <span class="text-oro-400">$250.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Cajas, bolsas, vasos, cucharas, servilletas y stickers.</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/5 border border-white/5 col-span-1 sm:col-span-2">
+                                <div class="flex justify-between font-bold text-xs">
+                                    <span>Reserva para Rappi (Costo Comercial de Plataforma)</span>
+                                    <span class="text-oro-400">$300.000</span>
+                                </div>
+                                <p class="text-[10px] text-chocolate-300 mt-1">Fondo comercial para amortiguar comisiones, tarifas o promociones de la plataforma.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-oro-500/10 p-3 rounded-xl border border-oro-500/30 text-xs text-oro-400">
+                            <strong>Nota escolar de mitigación:</strong> Esta suma no incluye transporte propio ($0), porque no se paga a terceros; si se decide no alquilar local al inicio, el total bajaría bastante, por eso se recomienda empezar bajo pedido o en un punto pequeño.
+                        </div>
+                    </div>
+
+                    <!-- PESTAÑA: Estatutos -->
+                    <div id="content-estatutos" class="tab-content space-y-6 hidden">
+                        <h3 class="font-serif text-2xl font-bold text-oro-400 pb-3 border-b border-white/10 flex items-center gap-2">
+                            <span>📜</span> Estatutos Básicos de la Empresa
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <span class="text-[10px] text-oro-400 font-extrabold uppercase">Nombre Legal Propuesto</span>
+                                <h4 class="font-bold text-base mt-1 text-white">Dulces Fénix S.A.S.</h4>
+                                <p class="text-xs text-chocolate-300 mt-1">Estructura legal estándar ideal para fomento de pequeñas empresas (Sociedades por Acciones Simplificadas) en Colombia.</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <span class="text-[10px] text-oro-400 font-extrabold uppercase">Objeto Social</span>
+                                <h4 class="font-bold text-base mt-1 text-white">Fabricación & Venta Directa</h4>
+                                <p class="text-xs text-chocolate-300 mt-1">Fabricación, promoción y venta directa de postres artesanales y bebidas en Bogotá, incluyendo bombas de arequipe, bombas de crema pastelera, quesillo, tetas cremosas y bebidas.</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <span class="text-[10px] text-oro-400 font-extrabold uppercase">Capital Inicial Total</span>
+                                <h4 class="font-bold text-base mt-1 text-white">$5.830.000 COP</h4>
+                                <p class="text-xs text-chocolate-300 mt-1">Como inversión estimada total. Si son cuatro socios, cada uno aportaría un capital equitativo de $1.457.500 COP (o se puede ajustar según el número real de socios del grupo escolar).</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <span class="text-[10px] text-oro-400 font-extrabold uppercase">Distribución de Ganancias</span>
+                                <h4 class="font-bold text-base mt-1 text-white">30% Reinversión - 70% Socios</h4>
+                                <p class="text-xs text-chocolate-300 mt-1">Después de descontar costos, se recomienda reservar 30% para reinversión (maquinarias, neveras) y repartir 70% entre socios según el acuerdo del grupo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PESTAÑA: Cargos -->
+                    <div id="content-cargos" class="tab-content space-y-6 hidden">
+                        <h3 class="font-serif text-2xl font-bold text-oro-400 pb-3 border-b border-white/10 flex items-center gap-2">
+                            <span>👔</span> Estructura Organizacional Sugerida
+                        </h3>
+
+                        <div class="space-y-4 max-h-[450px] overflow-y-auto custom-scrollbar pr-1">
+                            <div class="flex items-start gap-3 bg-white/5 p-3 rounded-2xl border border-white/10">
+                                <div class="bg-oro-500 text-chocolate-900 p-2 rounded-xl text-xs font-extrabold mt-1">GL</div>
+                                <div class="flex-grow">
+                                    <h4 class="font-bold text-white text-sm">Representante Legal / Gerente General</h4>
+                                    <p class="text-xs text-chocolate-200 mt-0.5">Representar la empresa, coordinar decisiones, validar objetivos y organizar el equipo de socios.</p>
+                                    <p class="text-xs text-oro-300 mt-1"><strong>Contrato:</strong> Indefinido.</p>
+                                    <p class="text-[10px] text-chocolate-300 mt-1"><strong>Obligaciones:</strong> Salud, pensión, ARL, caja de compensación y prestaciones si aplica como contrato laboral.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-white/5 p-3 rounded-2xl border border-white/10">
+                                <div class="bg-oro-500 text-chocolate-900 p-2 rounded-xl text-xs font-extrabold mt-1">JP</div>
+                                <div class="flex-grow">
+                                    <h4 class="font-bold text-white text-sm">Jefe de Producción</h4>
+                                    <p class="text-xs text-chocolate-200 mt-0.5">Organizar recetas, controlar higiene, calidad, inventario de insumos y programar tandas de producción.</p>
+                                    <p class="text-xs text-oro-300 mt-1"><strong>Contrato:</strong> Definido.</p>
+                                    <p class="text-[10px] text-chocolate-300 mt-1"><strong>Obligaciones:</strong> Obligaciones de ley y prestaciones de carácter laboral durante el tiempo pactado.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-white/5 p-3 rounded-2xl border border-white/10">
+                                <div class="bg-oro-500 text-chocolate-900 p-2 rounded-xl text-xs font-extrabold mt-1">JC</div>
+                                <div class="flex-grow">
+                                    <h4 class="font-bold text-white text-sm">Jefe Comercial & Social Media</h4>
+                                    <p class="text-xs text-chocolate-200 mt-0.5">Manejar redes sociales, combos del día, atención al cliente por WhatsApp e Instagram, pedidos y promociones.</p>
+                                    <p class="text-xs text-oro-300 mt-1"><strong>Contrato:</strong> Indefinido.</p>
+                                    <p class="text-[10px] text-chocolate-300 mt-1"><strong>Obligaciones:</strong> Obligaciones de ley si se formaliza como empleado bajo nómina de la empresa.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-white/5 p-3 rounded-2xl border border-white/10">
+                                <div class="bg-oro-500 text-chocolate-900 p-2 rounded-xl text-xs font-extrabold mt-1">CO</div>
+                                <div class="flex-grow">
+                                    <h4 class="font-bold text-white text-sm">Contador (Apoyo Externo)</h4>
+                                    <p class="text-xs text-chocolate-200 mt-0.5">Registrar ingresos, gastos, costos variables/fijos, utilidades y apoyar decisiones de precio y mermas.</p>
+                                    <p class="text-xs text-oro-300 mt-1"><strong>Contrato:</strong> Prestación de servicios.</p>
+                                    <p class="text-[10px] text-chocolate-300 mt-1"><strong>Obligaciones:</strong> Pago de honorarios; el contratista asume aportes de seguridad social de forma independiente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACTO -->
+    <footer class="bg-chocolate-950 text-white pt-16 pb-8 border-t border-chocolate-900">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+            
+            <!-- Col 1 -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white p-1 rounded-full border border-oro-400">
+                        <img src="image_599163.jpg" alt="Logo Footer" class="w-8 h-8 rounded-full object-cover">
+                    </div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-oro-400">Dulces Fénix</span>
+                </div>
+                <p class="text-xs text-chocolate-300 leading-relaxed">
+                    “Dulces que renacen en tu paladar.” Marca artesanal de repostería fresca en la ciudad de Bogotá, Colombia.
+                </p>
+                <p class="text-xs text-chocolate-400">
+                    Soporte basado en regulaciones DANE, SIPSA e IPC.
+                </p>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="font-serif text-base font-bold text-oro-400 mb-4">Nuestra Carta</h4>
+                <ul class="text-xs text-chocolate-300 space-y-2">
+                    <li>• Bomba de Arequipe ($5.200)</li>
+                    <li>• Bomba Crema Pastelera ($5.300)</li>
+                    <li>• Quesillo Tradicional ($6.500)</li>
+                    <li>• Tetas Cremosas Estándar ($2.800)</li>
+                    <li>• Teta Fresa Nutella ($3.200)</li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="font-serif text-base font-bold text-oro-400 mb-4">Ubicación & Canales</h4>
+                <p class="text-xs text-chocolate-300 leading-relaxed mb-3">
+                    Operamos principalmente bajo pedido y envíos en toda <strong>Bogotá, Colombia</strong>.
+                </p>
+                <div class="space-y-1.5 text-xs text-chocolate-400">
+                    <p>📱 WhatsApp: <span class="text-oro-300 font-semibold">+57 300 000 0000</span></p>
+                    <p>📸 Instagram: <span class="text-oro-300">@DulcesFenixBog</span></p>
+                    <p>🛵 Opción Rappi: <span class="text-oro-300">Dulces Fénix</span></p>
+                </div>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="font-serif text-base font-bold text-oro-400 mb-4">Debates del Proyecto</h4>
+                <p class="text-xs text-chocolate-300 leading-relaxed">
+                    Diseñado y documentado formalmente como simulador de emprendimiento escolar. Aprobado bajo principios de viabilidad de costos fijos y variables.
+                </p>
+                <div class="mt-4 inline-block bg-white/5 border border-white/10 rounded-lg p-2.5 text-[10px] text-oro-400">
+                    ✓ Costos sustentados por SIPSA
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 text-center text-xs text-chocolate-400">
+            <p>© 2026 Dulces Fénix S.A.S. - Proyecto Escolar Bogotá. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/573000000000?text=Hola%20Dulces%20Fénix!%20Me%20gustaría%20saber%20más%20sobre%20sus%20postres%20y%20combos." target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 text-white p-4 rounded-full shadow-xl hover:bg-emerald-700 hover:scale-105 active:scale-95 transition-all z-50 flex items-center justify-center">
+        <svg class="w-7.5 h-7.5" fill="currentColor" width="30" height="30" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.263 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.752.002-2.607-1.01-5.059-2.85-6.905C16.643 2.097 14.195.84 11.59.84c-5.442 0-9.866 4.372-9.87 9.754 0 1.702.451 3.361 1.307 4.8l-.988 3.606 3.708-.971c1.517.828 3.06 1.266 4.8 1.266zm10.155-7.14c-.276-.138-1.636-.807-1.89-.9-.253-.093-.438-.138-.623.138-.184.276-.714.9-.876 1.084-.163.184-.325.208-.601.07-.276-.138-1.168-.43-2.224-1.372-.821-.733-1.376-1.639-1.537-1.915-.163-.277-.018-.426.12-.563.125-.123.276-.322.415-.483.138-.161.184-.276.276-.46.093-.184.046-.346-.023-.483-.069-.138-.623-1.501-.853-2.053-.224-.539-.47-.465-.647-.474-.166-.008-.356-.01-.546-.01s-.5.07-.76.356c-.26.287-.991.968-.991 2.36s1.02 2.738 1.163 2.929c.143.191 2.007 3.059 4.862 4.291.68.293 1.21.469 1.623.6a3.89 3.89 0 001.78.112c.537-.08 1.636-.667 1.865-1.314.23-.647.23-1.201.161-1.314-.069-.113-.253-.184-.529-.322z"/></svg>
+    </a>
+
+    <!-- TOAST MODAL DE ACCIONES -->
+    <div id="toast-modal" class="fixed bottom-6 left-6 bg-chocolate-900 border border-oro-500 text-white px-5 py-3.5 rounded-2xl shadow-2xl z-50 transform translate-y-32 opacity-0 transition-all duration-300 flex items-center gap-3">
+        <span id="toast-icon">✨</span>
+        <span id="toast-text" class="text-xs font-semibold">Producto agregado</span>
+    </div>
+
+    <!-- SCRIPTS INTERACTIVOS -->
+    <script>
+        // --- BASE DE DATOS DE COMBOS SEMANALES CON IMÁGENES ASOCIADAS ---
+        const COMBOS = {
+            'Lunes': {
+                title: "Combo Inicio de Semana",
+                items: "Teta cremosa estándar + Bebida sencilla",
+                desc: "Ideal para iniciar la semana con un toque dulce y refrescante. Combina cualquiera de nuestros sabores estándar de tetas cremosas con tu bebida favorita.",
+                cost: "$2.500 - $3.300",
+                price: "$4.800",
+                profit: "$1.500 - $2.300",
+                rappi: "$6.200",
+                image: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=600&q=80"
+            },
+            'Martes': {
+                title: "Combo Energía Explosiva",
+                items: "Bomba de arequipe + Bebida sencilla",
+                desc: "Nuestra bomba esponjosa rellena de un arequipe de altísima calidad combinada con agua o gaseosa para contrarrestar el dulce de la mejor manera.",
+                cost: "$4.000 - $4.900",
+                price: "$7.200",
+                profit: "$2.300 - $3.200",
+                rappi: "$9.300",
+                image: "https://images.unsplash.com/photo-1530631673369-bc20fdb32288?auto=format&fit=crop&w=600&q=80"
+            },
+            'Miércoles': {
+                title: "Combo Mitad de Semana",
+                items: "Bomba de crema pastelera + Bebida sencilla",
+                desc: "Para sobrellevar el miércoles. Bomba extra tierna rellena de crema pastelera casera, acompañada de una bebida refrescante de tu elección.",
+                cost: "$4.100 - $5.000",
+                price: "$7.400",
+                profit: "$2.400 - $3.300",
+                rappi: "$9.600",
+                image: "https://images.unsplash.com/photo-1557925923-cd4648e21187?auto=format&fit=crop&w=600&q=80"
+            },
+            'Jueves': {
+                title: "Combo Tradición Premium",
+                items: "Quesillo + Bebida especial",
+                desc: "Sabor del hogar directo a tu mesa. Porción de quesillo condensado con caramelo brillante y tinto caliente para un contraste exquisito.",
+                cost: "$4.800 - $6.200",
+                price: "$9.800",
+                profit: "$3.600 - $5.000",
+                rappi: "$12.700",
+                image: "https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=600&q=80"
+            },
+            'Viernes': {
+                title: "Combo Dueto Cremoso",
+                items: "2 Tetas cremosas estándar",
+                desc: "¡Viernes de compartir o de doble antojo! Elige dos sabores estándar entre Oreo, Coco, Galleta María, Arequipe o Mantecado.",
+                cost: "$2.600 - $3.400",
+                price: "$5.300",
+                profit: "$1.900 - $2.700",
+                rappi: "$6.900",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
+            },
+            'Sábado': {
+                title: "Trío Fénix del Sábado",
+                items: "Bomba a elección + Teta estándar + Bebida sencilla",
+                desc: "El combo más completo para arrancar el fin de semana. Prueba una de nuestras bombas artesanales, una teta cremosa y un hidratante.",
+                cost: "$5.300 - $6.700",
+                price: "$10.100",
+                profit: "$3.400 - $4.800",
+                rappi: "$13.100",
+                image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
+            },
+            'Domingo': {
+                title: "Bandeja Familiar Fénix",
+                items: "2 Bombas + 2 Tetas estándar + 1 Quesillo",
+                desc: "Diseñado para las tardes de domingo en familia. Una recopilación estelar de nuestros mejores postres para compartir y disfrutar en Bogotá.",
+                cost: "$11.200 - $14.000",
+                price: "$21.900",
+                profit: "$7.900 - $10.700",
+                rappi: "$28.500",
+                image: "https://images.unsplash.com/photo-1508737027454-e6454ef45afd?auto=format&fit=crop&w=600&q=80"
+            }
+        };
+
+        // --- CARRITO DE COMPRAS ---
+        let cart = [];
+
+        function addToCart(name, price) {
+            const itemIndex = cart.findIndex(item => item.name === name);
+            if (itemIndex > -1) {
+                cart[itemIndex].qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            showToast(`¡"${name}" agregado al pedido!`, "🍦");
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartUI();
+            showToast("Bandeja vaciada con éxito", "🗑️");
+        }
+
+        function updateCartUI() {
+            const itemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p class="text-xs text-chocolate-500 text-center py-8 italic">No has agregado dulces a tu bandeja de pedido todavía.</p>';
+                cartCount.innerText = "0";
+                subtotalEl.innerText = "$0 COP";
+                totalEl.innerText = "$0 COP";
+                return;
+            }
+
+            let html = "";
+            let subtotal = 0;
+            let count = 0;
+
+            cart.forEach((item, index) => {
+                const totalItemPrice = item.price * item.qty;
+                subtotal += totalItemPrice;
+                count += item.qty;
+
+                html += `
+                    <div class="flex items-center justify-between bg-chocolate-50/70 p-2.5 rounded-xl border border-chocolate-100 text-xs">
+                        <div class="flex-grow pr-2">
+                            <span class="font-bold text-chocolate-900 block">${item.name}</span>
+                            <span class="text-chocolate-500">$${item.price.toLocaleString()} x ${item.qty}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-chocolate-800">$${totalItemPrice.toLocaleString()}</span>
+                            <button onclick="changeQty(${index}, -1)" class="bg-white text-chocolate-600 hover:bg-red-50 hover:text-red-600 p-1 rounded border border-chocolate-200">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
+                            </button>
+                            <button onclick="changeQty(${index}, 1)" class="bg-white text-chocolate-600 hover:bg-emerald-50 hover:text-emerald-600 p-1 rounded border border-chocolate-200">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            itemsContainer.innerHTML = html;
+            cartCount.innerText = count;
+            subtotalEl.innerText = `$${subtotal.toLocaleString()} COP`;
+            totalEl.innerText = `$${subtotal.toLocaleString()} COP`;
+        }
+
+        function changeQty(index, change) {
+            cart[index].qty += change;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                showToast("Por favor agrega primero algún postre a tu pedido", "⚠️");
+                return;
+            }
+
+            let text = "¡Hola Dulces Fénix! 🍊\nMe gustaría realizar la simulación de pedido de los siguientes postres en Bogotá:\n\n";
+            let total = 0;
+            cart.forEach(item => {
+                const totalItem = item.price * item.qty;
+                total += totalItem;
+                text += `• ${item.name} (x${item.qty}) - $${totalItem.toLocaleString()} COP\n`;
+            });
+            text += `\n*TOTAL ESTIMADO: $${total.toLocaleString()} COP*\n\n¿Me confirman la disponibilidad de entrega? ¡Gracias! ✨`;
+
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/573000000000?text=${encoded}`, '_blank');
+        }
+
+
+        // --- MANEJO DE SECCIÓN COMBOS SEMANALES CON IMAGENES DINÁMICAS ---
+        function selectDay(dayName) {
+            // Activar botones visualmente
+            document.querySelectorAll('.day-btn').forEach(btn => {
+                btn.classList.remove('bg-oro-500', 'text-chocolate-900', 'border-oro-400');
+                btn.classList.add('bg-[#FAF8F5]', 'text-chocolate-700', 'border-chocolate-100');
+            });
+
+            const activeBtn = document.getElementById(`btn-${dayName}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-[#FAF8F5]', 'text-chocolate-700', 'border-chocolate-100');
+                activeBtn.classList.add('bg-oro-500', 'text-chocolate-900', 'border-oro-400');
+            }
+
+            // Actualizar datos de la tarjeta
+            const data = COMBOS[dayName];
+            
+            // Animación suave de transición de imagen
+            const comboImg = document.getElementById('combo-image');
+            comboImg.style.opacity = '0';
+            
+            setTimeout(() => {
+                comboImg.src = data.image;
+                comboImg.style.opacity = '1';
+            }, 150);
+
+            document.getElementById('combo-day-badge').innerText = dayName;
+            document.getElementById('combo-title').innerText = data.title;
+            document.getElementById('combo-desc').innerText = data.desc;
+            document.getElementById('combo-cost').innerText = data.cost;
+            document.getElementById('combo-price').innerText = data.price;
+            document.getElementById('combo-profit').innerText = data.profit;
+            document.getElementById('combo-rappi-price').innerText = data.rappi;
+
+            // Configurar botón para agregar combo al pedido
+            const addComboBtn = document.getElementById('add-combo-btn');
+            // Limpiar listener anterior para evitar duplicación
+            addComboBtn.onclick = null;
+            addComboBtn.onclick = function() {
+                const rawPrice = parseInt(data.price.replace(/[^0-9]/g, ''));
+                addToCart(`Combo del ${dayName} (${data.title})`, rawPrice);
+            };
+        }
+
+        // --- SIMULADOR FINANCIERO DINÁMICO ---
+        function recalcSimulator() {
+            // Costos base estables para Dulces Fénix
+            const costs = {
+                tetaStd: 1500, // Punto medio aproximado de la materia prima teta estándar
+                tetaPrem: 1900, // Materia prima teta Fresa Nutella
+                bombaAq: 3050, // Costo bomba arequipe
+                bombaCp: 3150, // Costo bomba pastelera
+                quesillo: 3400 // Costo quesillo individual
+            };
+
+            // Lectura de los Precios Ingresados por el Usuario
+            const prices = {
+                tetaStd: Math.max(costs.tetaStd, parseInt(document.getElementById('input-teta-std').value) || 0),
+                tetaPrem: Math.max(costs.tetaPrem, parseInt(document.getElementById('input-teta-prem').value) || 0),
+                bombaAq: Math.max(costs.bombaAq, parseInt(document.getElementById('input-bomba-aq').value) || 0),
+                bombaCp: Math.max(costs.bombaCp, parseInt(document.getElementById('input-bomba-cp').value) || 0),
+                quesillo: Math.max(costs.quesillo, parseInt(document.getElementById('input-quesillo').value) || 0)
+            };
+
+            // Cálculo Teta Estándar
+            const tetaStdProfit = prices.tetaStd - costs.tetaStd;
+            const tetaStdMargin = Math.round((tetaStdProfit / prices.tetaStd) * 100) || 0;
+            document.getElementById('val-teta-std-profit').innerText = `$${tetaStdProfit.toLocaleString()}`;
+            document.getElementById('val-teta-std-margin').innerText = `${tetaStdMargin}%`;
+            setSustainBadge('sim-row-1', tetaStdMargin);
+
+            // Cálculo Teta Premium
+            const tetaPremProfit = prices.tetaPrem - costs.tetaPrem;
+            const tetaPremMargin = Math.round((tetaPremProfit / prices.tetaPrem) * 100) || 0;
+            document.getElementById('val-teta-prem-profit').innerText = `$${tetaPremProfit.toLocaleString()}`;
+            document.getElementById('val-teta-prem-margin').innerText = `${tetaPremMargin}%`;
+            setSustainBadge('sim-row-2', tetaPremMargin);
+
+            // Cálculo Bomba Arequipe
+            const bombaAqProfit = prices.bombaAq - costs.bombaAq;
+            const bombaAqMargin = Math.round((bombaAqProfit / prices.bombaAq) * 100) || 0;
+            document.getElementById('val-bomba-aq-profit').innerText = `$${bombaAqProfit.toLocaleString()}`;
+            document.getElementById('val-bomba-aq-margin').innerText = `${bombaAqMargin}%`;
+            setSustainBadge('sim-row-3', bombaAqMargin);
+
+            // Cálculo Bomba Pastelera
+            const bombaCpProfit = prices.bombaCp - costs.bombaCp;
+            const bombaCpMargin = Math.round((bombaCpProfit / prices.bombaCp) * 100) || 0;
+            document.getElementById('val-bomba-cp-profit').innerText = `$${bombaCpProfit.toLocaleString()}`;
+            document.getElementById('val-bomba-cp-margin').innerText = `${bombaCpMargin}%`;
+            setSustainBadge('sim-row-4', bombaCpMargin);
+
+            // Cálculo Quesillo
+            const quesilloProfit = prices.quesillo - costs.quesillo;
+            const quesilloMargin = Math.round((quesilloProfit / prices.quesillo) * 100) || 0;
+            document.getElementById('val-quesillo-profit').innerText = `$${quesilloProfit.toLocaleString()}`;
+            document.getElementById('val-quesillo-margin').innerText = `${quesilloMargin}%`;
+            setSustainBadge('sim-row-5', quesilloMargin);
+        }
+
+        function setSustainBadge(rowId, margin) {
+            const row = document.getElementById(rowId);
+            const badgeCell = row.cells[5];
+            
+            let color = "bg-red-100 text-red-800";
+            let label = "Crítico";
+
+            if (margin >= 40) {
+                color = "bg-emerald-100 text-emerald-800";
+                label = "Excelente";
+            } else if (margin >= 20) {
+                color = "bg-yellow-100 text-yellow-800";
+                label = "Aceptable";
+            }
+
+            badgeCell.innerHTML = `<span class="${color} px-2 py-0.5 rounded text-[10px] font-bold">${label}</span>`;
+        }
+
+
+        // --- MANEJO DE PESTAÑAS (SECCIÓN REQUISITOS ACADÉMICOS) ---
+        function switchTab(tabId) {
+            // Ocultar todos los contenidos de pestaña
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            // Quitar estilos activos de los botones de pestaña
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white/5', 'border-white/10', 'text-white');
+                btn.classList.add('bg-transparent', 'border-transparent', 'text-chocolate-200');
+            });
+
+            // Mostrar el contenido seleccionado
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            // Aplicar estilo activo al botón presionado
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('bg-transparent', 'border-transparent', 'text-chocolate-200');
+            activeBtn.classList.add('bg-white/5', 'border-white/10', 'text-white');
+        }
+
+
+        // --- TOAST NOTIFICATIONS ---
+        let toastTimeout;
+        function showToast(text, icon = "✨") {
+            const toast = document.getElementById('toast-modal');
+            const toastText = document.getElementById('toast-text');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastText.innerText = text;
+            toastIcon.innerText = icon;
+
+            clearTimeout(toastTimeout);
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        // --- INICIALIZACIÓN ---
+        window.onload = function() {
+            // Auto-seleccionar combo del día actual de la semana en Colombia
+            const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+            const todayIndex = new Date().getDay();
+            const todayName = days[todayIndex];
+            selectDay(todayName);
+
+            // Ajustar un indicador especial al combo seleccionado
+            const todayBtn = document.getElementById(`btn-${todayName}`);
+            if (todayBtn) {
+                todayBtn.innerHTML += ` <span class="bg-oro-900 text-oro-400 text-[8px] px-1 rounded ml-1 font-black">Hoy</span>`;
+            }
+
+            // Inicializar cálculos del simulador escolar
+            recalcSimulator();
+        }
+    </script>
+</body>
+</html>
