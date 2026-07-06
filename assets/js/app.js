@@ -8,7 +8,7 @@
                 price: "$4.800",
                 profit: "$1.500 - $2.300",
                 rappi: "$6.500",
-                image: "assets/images/generated/combo-lunes.webp"
+                image: "assets/images/generated/combo-lunes.png"
             },
             'Martes': {
                 title: "Combo Energía Explosiva",
@@ -18,7 +18,7 @@
                 price: "$7.200",
                 profit: "$2.300 - $3.200",
                 rappi: "$9.700",
-                image: "assets/images/generated/combo-martes.webp"
+                image: "assets/images/generated/combo-martes.png"
             },
             'Miércoles': {
                 title: "Combo Mitad de Semana",
@@ -28,7 +28,7 @@
                 price: "$7.400",
                 profit: "$2.400 - $3.300",
                 rappi: "$10.000",
-                image: "assets/images/generated/combo-miercoles.webp"
+                image: "assets/images/generated/combo-miercoles.png"
             },
             'Jueves': {
                 title: "Combo Tradición Premium",
@@ -38,7 +38,7 @@
                 price: "$9.800",
                 profit: "$3.600 - $5.000",
                 rappi: "$13.200",
-                image: "assets/images/generated/combo-jueves.webp"
+                image: "assets/images/generated/combo-jueves.png"
             },
             'Viernes': {
                 title: "Combo Dueto Cremoso",
@@ -48,7 +48,7 @@
                 price: "$5.300",
                 profit: "$1.900 - $2.700",
                 rappi: "$7.200",
-                image: "assets/images/generated/combo-viernes.webp"
+                image: "assets/images/generated/combo-viernes.png"
             },
             'Sábado': {
                 title: "Trío Fénix del Sábado",
@@ -58,7 +58,7 @@
                 price: "$10.100",
                 profit: "$3.400 - $4.800",
                 rappi: "$13.600",
-                image: "assets/images/generated/combo-sabado.webp"
+                image: "assets/images/generated/combo-sabado.png"
             },
             'Domingo': {
                 title: "Bandeja Familiar Fénix",
@@ -68,7 +68,7 @@
                 price: "$21.900",
                 profit: "$7.900 - $10.700",
                 rappi: "$29.600",
-                image: "assets/images/generated/combo-domingo.webp"
+                image: "assets/images/generated/combo-domingo.png"
             }
         };
 
