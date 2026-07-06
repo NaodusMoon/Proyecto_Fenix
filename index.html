@@ -21,19 +21,19 @@
         <video class="absolute inset-0 z-0 w-full h-full object-cover opacity-80" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
             <source src="assets/videos/hero-bakery.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 z-[1] bg-gradient-to-b from-chocolate-900/32 via-chocolate-900/18 to-chocolate-800/54"></div>
-        <div class="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08),rgba(62,22,8,0.22)_68%)]"></div>
+        <div class="absolute inset-0 z-[1] hero-readability-mesh"></div>
+        <div class="absolute inset-0 z-[1] bg-gradient-to-r from-chocolate-950/65 via-chocolate-900/25 to-chocolate-950/55"></div>
         <!-- Decoración de Fondo Sutil -->
         <div class="absolute inset-0 z-[1] opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
         
         <!-- Navbar -->
-        <nav class="relative z-10 max-w-7xl mx-auto w-full px-6 py-5 flex justify-between items-center">
+        <nav class="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 py-4 sm:py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-14 h-14 flex items-center justify-center">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
                     <!-- Integración del Logo Oficial en Navbar -->
-                    <img src="assets/images/logo.png" alt="Logo Oficial Dulces Fénix" class="w-14 h-auto object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                    <img src="assets/images/logo.png" alt="Logo Oficial Dulces Fénix" class="w-12 sm:w-14 h-auto object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
                 </div>
-                <span class="font-serif text-2xl font-bold tracking-wide text-oro-400">Dulces Fénix</span>
+                <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-oro-400">Dulces Fénix</span>
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#inicio" class="hover:text-oro-400 smooth-hover">Inicio</a>
@@ -43,10 +43,24 @@
                 <a href="#simulador" class="hover:text-oro-400 smooth-hover bg-oro-500/10 text-oro-400 px-3 py-1.5 rounded-lg border border-oro-500/30">Simulador de Costos</a>
                 <a href="#requisitos" class="hover:text-oro-400 smooth-hover text-chocolate-100 border-l border-white/20 pl-8">Info Académica</a>
             </div>
-            <div>
+            <div class="hidden md:block">
                 <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-5 py-2.5 rounded-full text-sm shadow-md shadow-oro-500/20 smooth-hover">
                     Ordenar Ahora
                 </a>
+            </div>
+            <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl bg-chocolate-950/65 border border-white/20 text-white shadow-lg" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú">
+                <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+            </button>
+            <div id="mobile-menu" class="hidden absolute left-4 right-4 top-[76px] rounded-2xl border border-oro-500/25 bg-chocolate-950/94 p-4 shadow-2xl backdrop-blur-md md:hidden">
+                <div class="grid gap-2 text-sm font-semibold">
+                    <a href="#inicio" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Inicio</a>
+                    <a href="#nosotros" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Nosotros</a>
+                    <a href="#menu" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Menú</a>
+                    <a href="#combos" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Combos diarios</a>
+                    <a href="#simulador" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Simulador de Costos</a>
+                    <a href="#requisitos" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Info Académica</a>
+                    <a href="#menu" onclick="closeMobileMenu()" class="mt-2 rounded-xl bg-oro-500 px-4 py-3 text-center font-bold text-chocolate-900">Ordenar ahora</a>
+                </div>
             </div>
         </nav>
 
@@ -65,7 +79,7 @@
                 Dulces que <span class="text-transparent bg-clip-text bg-gradient-to-r from-oro-400 via-orange-400 to-oro-500">renacen</span> en tu paladar
             </h1>
             <p class="text-chocolate-100 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light drop-shadow-[0_3px_12px_rgba(0,0,0,0.85)]">
-                Fabricamos de forma artesanal postres tradicionales y bebidas refrescantes. Sin reventa, con insumos locales de primera y un sabor inigualable.
+                Fabricamos de forma artesanal postres tradicionales y bebidas refrescantes, sin reventa, con insumos locales de primera y un sabor inigualable.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-8 py-4 rounded-full shadow-lg shadow-oro-500/30 smooth-hover transform hover:-translate-y-0.5">
@@ -97,7 +111,7 @@
                     Repostería con identidad bogotana y proceso propio
                 </h2>
                 <p class="text-chocolate-600 leading-relaxed">
-                    En <span class="font-semibold text-chocolate-800">Dulces Fénix</span> creemos en el valor de lo hecho en casa. No compramos para revender; cada bomba de arequipe, cada porción de quesillo y nuestras icónicas tetas cremosas nacen de recetas controladas y producidas por tandas para garantizar la frescura absoluta y evitar el desperdicio de alimentos.
+                    En <span class="font-semibold text-chocolate-800">Dulces Fénix</span> creemos en el valor de lo hecho en casa: no compramos para revender; cada bomba de arequipe, cada porción de quesillo y nuestras icónicas tetas cremosas nacen de recetas controladas, producidas por tandas para garantizar frescura y evitar desperdicios.
                 </p>
                 
                 <!-- Beneficios en Rejilla -->
@@ -142,12 +156,12 @@
             </div>
 
             <!-- Columna Ficha Visual -->
-            <div class="lg:col-span-5 bg-gradient-to-br from-chocolate-800 to-chocolate-900 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden border border-oro-500/20">
-                <div class="absolute inset-0 opacity-20">
-                    <img src="assets/images/content/cocina-artesanal.jpg" alt="[Cocina Artesanal]" class="w-full h-full object-cover mix-blend-overlay" onerror="this.onerror=null; this.src='assets/images/logo.png';">
-                </div>
+            <div class="lg:col-span-5 brand-art-panel text-white p-8 rounded-3xl shadow-xl relative overflow-hidden border border-oro-500/20">
+                <div class="absolute inset-0 opacity-20 bg-[linear-gradient(135deg,transparent_0_30%,rgba(212,175,55,0.35)_30%_31%,transparent_31%_62%,rgba(255,255,255,0.18)_62%_63%,transparent_63%)]"></div>
+                <div class="absolute inset-x-8 top-8 h-px bg-gradient-to-r from-transparent via-oro-400/70 to-transparent"></div>
+                <div class="absolute inset-x-8 bottom-8 h-px bg-gradient-to-r from-transparent via-orange-300/60 to-transparent"></div>
+                <img src="assets/images/logo.png" alt="" aria-hidden="true" class="absolute right-6 top-6 w-32 h-auto object-contain opacity-15">
                 <div class="relative z-10">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-oro-500/10 rounded-full blur-2xl"></div>
                     <h3 class="font-serif text-2xl font-bold mb-4 text-oro-400">Identidad Dulce</h3>
                     <blockquote class="text-chocolate-100 italic border-l-2 border-oro-500 pl-4 mb-6 text-sm">
                         "Dulces que renacen en tu paladar"
@@ -192,7 +206,7 @@
                     Explora nuestra oferta y haz tu pedido
                 </h2>
                 <p class="text-chocolate-600 mt-3 text-sm">
-                    Haz clic en "Agregar" para simular un pedido. Podrás calcular el total y enviarlo directo a tu WhatsApp para coordinar la entrega.
+                    Haz clic en "Agregar" para simular un pedido, calcular el total y enviarlo directo a WhatsApp para coordinar la entrega.
                 </p>
             </div>
 
@@ -302,7 +316,7 @@
                             <i class="fa-solid fa-ice-cream text-oro-600" aria-hidden="true"></i> Tetas Cremosas (Helados de Hogar)
                         </h3>
                         <p class="text-xs text-chocolate-500 mb-6 bg-amber-50 p-3 rounded-xl border border-amber-200/50">
-                            <strong>Ficha de producto lácteo:</strong> Fabricadas con base de leche, leche condensada, crema de leche, leche en polvo, azúcar, esencia y bolsa plástica para congelar. Unidad congelada.
+                            <strong>Ficha de producto lácteo:</strong> fabricadas con base de leche, leche condensada, crema de leche, leche en polvo, azúcar y esencia; se empacan en bolsa plástica para congelar y se venden como unidad congelada.
                         </p>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -316,6 +330,13 @@
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Oreo Delicia</h4>
                                         <p class="text-xs text-chocolate-500 mt-1 mb-2">Con galleta Oreo triturada y fondo cremoso de vainilla.</p>
+                                        <details class="text-[11px] text-chocolate-800 mb-3 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> leche, leche condensada, crema de leche, leche en polvo, azúcar, esencia de vainilla y galleta Oreo triturada.</p>
+                                                <p><strong>Presentación:</strong> unidad congelada en bolsa plástica.</p>
+                                            </div>
+                                        </details>
                                     </div>
                                     <button onclick="addToCart('Teta Oreo', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
                                         Agregar
@@ -334,8 +355,15 @@
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Fresa Nutella</h4>
                                         <p class="text-xs text-chocolate-500 mt-1 mb-2">Pulpa real de fresas dulces rellena con veta de Nutella.</p>
+                                        <details class="text-[11px] text-chocolate-800 mb-3 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> leche, leche condensada, crema de leche, leche en polvo, azúcar, fresa, salsa de chocolate y Nutella.</p>
+                                                <p><strong>Presentación:</strong> unidad premium congelada en bolsa plástica.</p>
+                                            </div>
+                                        </details>
                                     </div>
-                                    <button onclick="addToCart('Teta Fresa Nutella', 3200)" class="w-full bg-oro-500 text-chocolate-900 hover:bg-oro-600 font-bold py-1.5 rounded-lg text-xs smooth-hover">
+                                    <button onclick="addToCart('Teta Fresa Nutella', 3200)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
                                         Agregar
                                     </button>
                                 </div>
@@ -351,6 +379,13 @@
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Coco Artesanal</h4>
                                         <p class="text-xs text-chocolate-500 mt-1 mb-2">Con coco natural rallado y un toque de leche de coco.</p>
+                                        <details class="text-[11px] text-chocolate-800 mb-3 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> leche, leche condensada, crema de leche, leche en polvo, azúcar, coco rallado y esencia de coco.</p>
+                                                <p><strong>Presentación:</strong> unidad congelada en bolsa plástica.</p>
+                                            </div>
+                                        </details>
                                     </div>
                                     <button onclick="addToCart('Teta Coco', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
                                         Agregar
@@ -368,6 +403,13 @@
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Galleta María</h4>
                                         <p class="text-xs text-chocolate-500 mt-1 mb-2">Sabor de infancia tradicional con galleta María molida.</p>
+                                        <details class="text-[11px] text-chocolate-800 mb-3 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> leche, leche condensada, crema de leche, leche en polvo, azúcar, vainilla y galleta María molida.</p>
+                                                <p><strong>Presentación:</strong> unidad congelada en bolsa plástica.</p>
+                                            </div>
+                                        </details>
                                     </div>
                                     <button onclick="addToCart('Teta Galleta María', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
                                         Agregar
@@ -385,6 +427,13 @@
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Arequipe Veteado</h4>
                                         <p class="text-xs text-chocolate-500 mt-1 mb-2">Base de dulce de leche con vetas internas de arequipe espeso.</p>
+                                        <details class="text-[11px] text-chocolate-800 mb-3 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> leche, leche condensada, crema de leche, leche en polvo, azúcar, esencia y arequipe.</p>
+                                                <p><strong>Presentación:</strong> unidad congelada en bolsa plástica.</p>
+                                            </div>
+                                        </details>
                                     </div>
                                     <button onclick="addToCart('Teta Arequipe', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
                                         Agregar
@@ -402,6 +451,13 @@
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Mantecado Cremoso</h4>
                                         <p class="text-xs text-chocolate-500 mt-1 mb-2">Esencia de mantecado, vainilla reforzada y leche en polvo.</p>
+                                        <details class="text-[11px] text-chocolate-800 mb-3 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> leche, leche condensada, crema de leche, leche en polvo, azúcar, vainilla y esencia de mantecado.</p>
+                                                <p><strong>Presentación:</strong> unidad congelada en bolsa plástica.</p>
+                                            </div>
+                                        </details>
                                     </div>
                                     <button onclick="addToCart('Teta Mantecado', 2800)" class="w-full bg-chocolate-100 text-chocolate-800 hover:bg-oro-500 hover:text-chocolate-900 font-bold py-1.5 rounded-lg text-xs smooth-hover">
                                         Agregar
@@ -422,13 +478,20 @@
                                 <div class="w-full h-64 bg-chocolate-100 overflow-hidden">
                                     <img src="assets/images/generated/tinto-cafe.png" alt="[Tinto Café]" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
                                 </div>
-                                <div class="p-3 flex-grow flex items-center justify-between gap-3">
+                                <div class="p-3 flex-grow flex flex-col justify-between gap-3">
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Tinto / Café</h4>
                                         <span class="text-xs font-bold text-oro-600 mt-0.5 block">$2.000</span>
                                         <span class="text-[9px] text-chocolate-500 block">Café, agua, azúcar, vaso</span>
+                                        <details class="text-[11px] text-chocolate-800 mt-2 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> café molido o instantáneo, agua potable y azúcar opcional.</p>
+                                                <p><strong>Presentación:</strong> bebida caliente servida en vaso.</p>
+                                            </div>
+                                        </details>
                                     </div>
-                                    <button onclick="addToCart('Tinto / Café', 2000)" class="bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 p-2 rounded-xl smooth-hover">
+                                    <button onclick="addToCart('Tinto / Café', 2000)" class="w-full bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 py-2 rounded-xl smooth-hover flex items-center justify-center">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                                     </button>
                                 </div>
@@ -438,13 +501,20 @@
                                 <div class="w-full h-64 bg-chocolate-100 overflow-hidden">
                                     <img src="assets/images/generated/agua-botella.png" alt="[Agua]" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
                                 </div>
-                                <div class="p-3 flex-grow flex items-center justify-between gap-3">
+                                <div class="p-3 flex-grow flex flex-col justify-between gap-3">
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Agua Botella</h4>
                                         <span class="text-xs font-bold text-oro-600 mt-0.5 block">$1.800</span>
                                         <span class="text-[9px] text-chocolate-500 block">Agua en botella</span>
+                                        <details class="text-[11px] text-chocolate-800 mt-2 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> agua potable embotellada.</p>
+                                                <p><strong>Presentación:</strong> botella individual de 600 ml.</p>
+                                            </div>
+                                        </details>
                                     </div>
-                                    <button onclick="addToCart('Agua en Botella', 1800)" class="bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 p-2 rounded-xl smooth-hover">
+                                    <button onclick="addToCart('Agua en Botella', 1800)" class="w-full bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 py-2 rounded-xl smooth-hover flex items-center justify-center">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                                     </button>
                                 </div>
@@ -454,13 +524,20 @@
                                 <div class="w-full h-64 bg-chocolate-100 overflow-hidden">
                                     <img src="assets/images/generated/gaseosa.webp" alt="[Gaseosa]" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
                                 </div>
-                                <div class="p-3 flex-grow flex items-center justify-between gap-3">
+                                <div class="p-3 flex-grow flex flex-col justify-between gap-3">
                                     <div>
                                         <h4 class="font-bold text-chocolate-900 text-sm">Gaseosa</h4>
                                         <span class="text-xs font-bold text-oro-600 mt-0.5 block">$2.500</span>
                                         <span class="text-[9px] text-chocolate-500 block">Gaseosa en botella</span>
+                                        <details class="text-[11px] text-chocolate-800 mt-2 bg-chocolate-50 p-2.5 rounded-xl border border-chocolate-100/70 cursor-pointer">
+                                            <summary class="font-semibold select-none text-oro-600 hover:text-oro-700">Ver ficha técnica e ingredientes</summary>
+                                            <div class="mt-2 space-y-1">
+                                                <p><strong>Ingredientes:</strong> bebida gaseosa saborizada en botella.</p>
+                                                <p><strong>Presentación:</strong> botella individual para acompañar postres.</p>
+                                            </div>
+                                        </details>
                                     </div>
-                                    <button onclick="addToCart('Gaseosa Sencilla', 2500)" class="bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 p-2 rounded-xl smooth-hover">
+                                    <button onclick="addToCart('Gaseosa Sencilla', 2500)" class="w-full bg-chocolate-800 text-white hover:bg-oro-500 hover:text-chocolate-900 py-2 rounded-xl smooth-hover flex items-center justify-center">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                                     </button>
                                 </div>
@@ -510,7 +587,7 @@
                     </div>
 
                     <p class="text-[10px] text-chocolate-400 text-center mt-4">
-                        * Dulces Fénix no cobra flete por transporte interno propio para optimizar el precio de nuestros clientes. Rappi maneja tarifas externas.
+                        * Dulces Fénix no cobra flete por transporte interno propio, así optimiza el precio para sus clientes; Rappi maneja tarifas externas.
                     </p>
                 </div>
 
@@ -527,7 +604,7 @@
                     Nuestros combos del día
                 </h2>
                 <p class="text-chocolate-600 mt-3 text-sm">
-                    Cada día de la semana tiene una promoción especial con precios directos frente a Rappi. ¡Hemos seleccionado automáticamente el combo de hoy para ti!
+                    Cada día de la semana tiene una promoción especial con precios directos frente a Rappi; seleccionamos automáticamente el combo de hoy para ti.
                 </p>
             </div>
 
@@ -584,7 +661,7 @@
                             <div id="combo-rappi-price" class="font-serif text-3xl font-extrabold text-oro-400 my-1"></div>
                         </div>
                         <div class="text-[10px] text-chocolate-300">
-                            Recomendamos comprar directo para ahorrar costos extras de plataformas y asegurar tu porción.
+                            Recomendamos comprar directo para ahorrar costos extra de plataformas y asegurar tu porción.
                         </div>
                         <button id="add-combo-btn" class="w-full bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider smooth-hover mt-2 shadow-lg shadow-oro-500/10">
                             + Agregar al Pedido
@@ -605,7 +682,7 @@
                     Simulador Financiero Dulces Fénix
                 </h2>
                 <p class="text-chocolate-600 mt-3 text-sm">
-                    Modifica los precios de venta propuestos para ver en tiempo real cómo cambia el porcentaje de margen y la ganancia bruta por producto. Diseñado para sustentar la viabilidad del negocio.
+                    Modifica los precios de venta propuestos para ver, en tiempo real, cómo cambian el margen y la ganancia bruta por producto; está diseñado para sustentar la viabilidad del negocio.
                 </p>
             </div>
 
@@ -1077,8 +1154,8 @@
     </footer>
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/573000000000?text=Hola%20Dulces%20Fénix!%20Me%20gustaría%20saber%20más%20sobre%20sus%20postres%20y%20combos." target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-emerald-600 text-white rounded-full shadow-xl hover:bg-emerald-700 hover:scale-105 active:scale-95 transition-all z-50 flex items-center justify-center border-4 border-white/80">
-        <i class="fa-brands fa-whatsapp text-3xl" aria-hidden="true"></i>
+    <a href="https://wa.me/573000000000?text=Hola%20Dulces%20Fénix!%20Me%20gustaría%20saber%20más%20sobre%20sus%20postres%20y%20combos." target="_blank" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-16 sm:h-16 bg-emerald-600 text-white rounded-full shadow-xl hover:bg-emerald-700 hover:scale-105 active:scale-95 transition-all z-50 flex items-center justify-center border-2 sm:border-4 border-white/80">
+        <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl" aria-hidden="true"></i>
         <span class="sr-only">WhatsApp</span>
     </a>
 

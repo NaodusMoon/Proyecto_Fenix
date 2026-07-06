@@ -12,3 +12,43 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        #menu img[src*="assets/images/generated/"],
+        #combo-image {
+            object-fit: contain !important;
+            background: linear-gradient(135deg, #fffaf3 0%, #f3e8d8 100%);
+        }
+
+        #menu .group:hover img[src*="assets/images/generated/"],
+        #combo-card:hover #combo-image {
+            transform: scale(1.02);
+        }
+
+        .hero-readability-mesh {
+            background:
+                linear-gradient(180deg, rgba(30, 10, 4, 0.82) 0%, rgba(41, 15, 6, 0.58) 42%, rgba(30, 10, 4, 0.86) 100%),
+                repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 18px);
+        }
+
+        .brand-art-panel {
+            background:
+                linear-gradient(135deg, rgba(42, 15, 7, 0.96), rgba(109, 40, 16, 0.92)),
+                repeating-linear-gradient(90deg, rgba(212, 175, 55, 0.08) 0 1px, transparent 1px 34px);
+        }
+
+        @media (max-width: 640px) {
+            #menu .h-56,
+            #menu .h-64,
+            #menu .h-72,
+            #menu .sm\:h-64,
+            #menu .sm\:h-80,
+            #combo-card .h-64 {
+                height: auto !important;
+                aspect-ratio: 3 / 2;
+            }
+
+            #menu .rounded-2xl,
+            #combo-card {
+                border-radius: 1rem;
+            }
+        }
+

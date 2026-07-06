@@ -3,7 +3,7 @@
             'Lunes': {
                 title: "Combo Inicio de Semana",
                 items: "Teta cremosa estándar + Bebida sencilla",
-                desc: "Ideal para iniciar la semana con un toque dulce y refrescante. Combina cualquiera de nuestros sabores estándar de tetas cremosas con tu bebida favorita.",
+                desc: "Ideal para iniciar la semana con un toque dulce y refrescante: combina cualquiera de nuestros sabores estándar de tetas cremosas con tu bebida favorita.",
                 cost: "$2.500 - $3.300",
                 price: "$4.800",
                 profit: "$1.500 - $2.300",
@@ -23,7 +23,7 @@
             'Miércoles': {
                 title: "Combo Mitad de Semana",
                 items: "Bomba de crema pastelera + Bebida sencilla",
-                desc: "Para sobrellevar el miércoles. Bomba extra tierna rellena de crema pastelera casera, acompañada de una bebida refrescante de tu elección.",
+                desc: "Para sobrellevar el miércoles: bomba extra tierna, rellena de crema pastelera casera y acompañada de una bebida refrescante de tu elección.",
                 cost: "$4.100 - $5.000",
                 price: "$7.400",
                 profit: "$2.400 - $3.300",
@@ -43,7 +43,7 @@
             'Viernes': {
                 title: "Combo Dueto Cremoso",
                 items: "2 Tetas cremosas estándar",
-                desc: "¡Viernes de compartir o de doble antojo! Elige dos sabores estándar entre Oreo, Coco, Galleta María, Arequipe o Mantecado.",
+                desc: "Viernes de compartir o de doble antojo: elige dos sabores estándar entre Oreo, Coco, Galleta María, Arequipe o Mantecado.",
                 cost: "$2.600 - $3.400",
                 price: "$5.300",
                 profit: "$1.900 - $2.700",
@@ -53,7 +53,7 @@
             'Sábado': {
                 title: "Trío Fénix del Sábado",
                 items: "Bomba a elección + Teta estándar + Bebida sencilla",
-                desc: "El combo más completo para arrancar el fin de semana. Prueba una de nuestras bombas artesanales, una teta cremosa y un hidratante.",
+                desc: "El combo más completo para arrancar el fin de semana: prueba una de nuestras bombas artesanales, una teta cremosa y un hidratante.",
                 cost: "$5.300 - $6.700",
                 price: "$10.100",
                 profit: "$3.400 - $4.800",
@@ -63,7 +63,7 @@
             'Domingo': {
                 title: "Bandeja Familiar Fénix",
                 items: "2 Bombas + 2 Tetas estándar + 1 Quesillo",
-                desc: "Diseñado para las tardes de domingo en familia. Una recopilación estelar de nuestros mejores postres para compartir y disfrutar en Bogotá.",
+                desc: "Diseñado para las tardes de domingo en familia, reúne nuestros mejores postres para compartir y disfrutar en Bogotá.",
                 cost: "$11.200 - $14.000",
                 price: "$21.900",
                 profit: "$7.900 - $10.700",
@@ -327,6 +327,39 @@
                 toast.classList.remove('translate-y-0', 'opacity-100');
             }, 3000);
         }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-btn');
+            const icon = document.getElementById('mobile-menu-icon');
+
+            if (!menu || !button || !icon) return;
+
+            menu.classList.add('hidden');
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-label', 'Abrir menú');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-btn');
+            const icon = document.getElementById('mobile-menu-icon');
+
+            if (!menu || !button || !icon) return;
+
+            const willOpen = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', !willOpen);
+            button.setAttribute('aria-expanded', String(willOpen));
+            button.setAttribute('aria-label', willOpen ? 'Cerrar menú' : 'Abrir menú');
+            icon.classList.toggle('fa-bars', !willOpen);
+            icon.classList.toggle('fa-xmark', willOpen);
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) closeMobileMenu();
+        });
 
         // --- INICIALIZACIÓN ---
         window.onload = function() {
