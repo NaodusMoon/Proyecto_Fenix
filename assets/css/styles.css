@@ -15,7 +15,42 @@
         #menu img[src*="assets/images/generated/"],
         #combo-image {
             object-fit: contain !important;
-            background: linear-gradient(135deg, #fffaf3 0%, #f3e8d8 100%);
+            background: transparent;
+            display: block;
+        }
+
+        #menu div:has(> img[src*="bomba-arequipe"]),
+        #menu div:has(> img[src*="bomba-crema-pastelera"]),
+        #menu div:has(> img[src*="quesillo"]),
+        #menu div:has(> img[src*="tinto-cafe"]),
+        #menu div:has(> img[src*="agua-botella"]),
+        #menu div:has(> img[src*="gaseosa"]) {
+            height: auto !important;
+            aspect-ratio: 3 / 2;
+        }
+
+        #menu div:has(> img[src*="teta-"]) {
+            height: auto !important;
+            aspect-ratio: 1 / 1;
+        }
+
+        #menu div:has(> img[src*="teta-oreo-real"]) {
+            aspect-ratio: 3 / 4 !important;
+        }
+
+        #menu div:has(> img[src*="teta-fresa-nutella-real"]),
+        #menu div:has(> img[src*="teta-galleta-maria-real"]),
+        #menu div:has(> img[src*="teta-arequipe-real"]),
+        #menu div:has(> img[src*="teta-mantecado-real"]) {
+            aspect-ratio: 4 / 5 !important;
+        }
+
+        #menu div:has(> img[src*="teta-coco-real"]) {
+            aspect-ratio: 1 / 1 !important;
+        }
+
+        #menu div:has(> img[src*="gaseosa"]) {
+            aspect-ratio: 2 / 3 !important;
         }
 
         #menu .group:hover img[src*="assets/images/generated/"],
