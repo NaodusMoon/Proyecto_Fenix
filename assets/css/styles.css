@@ -21,7 +21,18 @@
         #combo-image {
             object-fit: contain !important;
             background: transparent;
+            border: 0 !important;
+            box-shadow: none !important;
+            outline: 0 !important;
             display: block;
+        }
+
+        #combo-image-wrap {
+            background: transparent !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            overflow: visible !important;
         }
 
         #menu div:has(> img[src*="assets/images/generated/"]) {
