@@ -22,6 +22,7 @@
             object-fit: contain !important;
             background: transparent;
             border: 0 !important;
+            border-radius: 1rem !important;
             box-shadow: none !important;
             outline: 0 !important;
             display: block;
