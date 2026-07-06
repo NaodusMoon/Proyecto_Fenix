@@ -16,9 +16,15 @@
 <body class="bg-[#FAF8F5] text-chocolate-900 font-sans selection:bg-oro-500 selection:text-white overflow-x-hidden">
 
     <!-- HEADER / HERO -->
-    <header class="relative bg-gradient-to-b from-chocolate-900 to-chocolate-800 text-white min-h-[95vh] flex flex-col justify-between overflow-hidden">
+    <header class="relative isolate bg-chocolate-900 text-white min-h-[95vh] flex flex-col justify-between overflow-hidden">
+        <!-- Video de Fondo Hero -->
+        <video class="absolute inset-0 z-0 w-full h-full object-cover opacity-80" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/videos/hero-bakery.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 z-[1] bg-gradient-to-b from-chocolate-900/32 via-chocolate-900/18 to-chocolate-800/54"></div>
+        <div class="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08),rgba(62,22,8,0.22)_68%)]"></div>
         <!-- Decoración de Fondo Sutil -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute inset-0 z-[1] opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
         
         <!-- Navbar -->
         <nav class="relative z-10 max-w-7xl mx-auto w-full px-6 py-5 flex justify-between items-center">
@@ -52,13 +58,13 @@
                 <img src="assets/images/logo.png" alt="Dulces Fénix Logo Central" class="relative z-10 w-40 md:w-52 h-auto object-contain drop-shadow-[0_22px_36px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-300">
             </div>
 
-            <span class="inline-block bg-oro-500/15 border border-oro-500/30 text-oro-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <span class="inline-block bg-chocolate-900/45 border border-oro-500/40 text-oro-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-chocolate-900/30">
                 Bogotá, Colombia • Postres 100% propios
             </span>
-            <h1 class="font-serif text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+            <h1 class="font-serif text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_5px_18px_rgba(0,0,0,0.75)]">
                 Dulces que <span class="text-transparent bg-clip-text bg-gradient-to-r from-oro-400 via-orange-400 to-oro-500">renacen</span> en tu paladar
             </h1>
-            <p class="text-chocolate-100 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light">
+            <p class="text-chocolate-100 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-light drop-shadow-[0_3px_12px_rgba(0,0,0,0.85)]">
                 Fabricamos de forma artesanal postres tradicionales y bebidas refrescantes. Sin reventa, con insumos locales de primera y un sabor inigualable.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
