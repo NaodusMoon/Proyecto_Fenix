@@ -7,37 +7,37 @@
                 cost: "$2.500 - $3.300",
                 price: "$4.800",
                 profit: "$1.500 - $2.300",
-                rappi: "$6.500",
+                rappi: "$6.200",
                 image: "assets/images/generated/combo-lunes.png"
             },
             'Martes': {
                 title: "Combo Energía Explosiva",
                 items: "Bomba de arequipe + Bebida sencilla",
-                desc: "Nuestra bomba esponjosa rellena de un arequipe de altísima calidad combinada con agua o gaseosa para contrarrestar el dulce de la mejor manera.",
+                desc: "Bomba esponjosa rellena de arequipe, acompañada con agua o gaseosa para equilibrar el dulce.",
                 cost: "$4.000 - $4.900",
                 price: "$7.200",
                 profit: "$2.300 - $3.200",
-                rappi: "$9.700",
+                rappi: "$9.300",
                 image: "assets/images/generated/combo-martes.png"
             },
             'Miércoles': {
                 title: "Combo Mitad de Semana",
                 items: "Bomba de crema pastelera + Bebida sencilla",
-                desc: "Para sobrellevar el miércoles: bomba extra tierna, rellena de crema pastelera casera y acompañada de una bebida refrescante de tu elección.",
+                desc: "Bomba tierna rellena de crema pastelera casera, acompañada de una bebida sencilla.",
                 cost: "$4.100 - $5.000",
                 price: "$7.400",
                 profit: "$2.400 - $3.300",
-                rappi: "$10.000",
+                rappi: "$9.600",
                 image: "assets/images/generated/combo-miercoles.png"
             },
             'Jueves': {
                 title: "Combo Tradición Premium",
                 items: "Quesillo + Bebida especial",
-                desc: "Sabor del hogar directo a tu mesa. Porción de quesillo condensado con caramelo brillante y tinto caliente para un contraste exquisito.",
+                desc: "Porción de quesillo con caramelo, acompañada de una bebida especial como tinto o café.",
                 cost: "$4.800 - $6.200",
                 price: "$9.800",
                 profit: "$3.600 - $5.000",
-                rappi: "$13.200",
+                rappi: "$12.700",
                 image: "assets/images/generated/combo-jueves.png"
             },
             'Viernes': {
@@ -47,27 +47,27 @@
                 cost: "$2.600 - $3.400",
                 price: "$5.300",
                 profit: "$1.900 - $2.700",
-                rappi: "$7.200",
+                rappi: "$6.900",
                 image: "assets/images/generated/combo-viernes.png"
             },
             'Sábado': {
                 title: "Trío Fénix del Sábado",
                 items: "Bomba a elección + Teta estándar + Bebida sencilla",
-                desc: "El combo más completo para arrancar el fin de semana: prueba una de nuestras bombas artesanales, una teta cremosa y un hidratante.",
+                desc: "Bomba a elección, teta cremosa estándar y bebida sencilla para un combo completo de sábado.",
                 cost: "$5.300 - $6.700",
                 price: "$10.100",
                 profit: "$3.400 - $4.800",
-                rappi: "$13.600",
+                rappi: "$13.100",
                 image: "assets/images/generated/combo-sabado.png"
             },
             'Domingo': {
                 title: "Bandeja Familiar Fénix",
                 items: "2 Bombas + 2 Tetas estándar + 1 Quesillo",
-                desc: "Diseñado para las tardes de domingo en familia, reúne nuestros mejores postres para compartir y disfrutar en Bogotá.",
+                desc: "Combo familiar con dos bombas, dos tetas cremosas estándar y una porción de quesillo.",
                 cost: "$11.200 - $14.000",
                 price: "$21.900",
                 profit: "$7.900 - $10.700",
-                rappi: "$29.600",
+                rappi: "$28.500",
                 image: "assets/images/generated/combo-domingo.png"
             }
         };
