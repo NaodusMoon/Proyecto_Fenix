@@ -7,7 +7,7 @@
                 cost: "$2.500 - $3.300",
                 price: "$4.800",
                 profit: "$1.500 - $2.300",
-                rappi: "$6.200",
+                rappi: "$6.500",
                 image: "assets/images/generated/combo-lunes.webp"
             },
             'Martes': {
@@ -17,7 +17,7 @@
                 cost: "$4.000 - $4.900",
                 price: "$7.200",
                 profit: "$2.300 - $3.200",
-                rappi: "$9.300",
+                rappi: "$9.700",
                 image: "assets/images/generated/combo-martes.webp"
             },
             'Miércoles': {
@@ -27,7 +27,7 @@
                 cost: "$4.100 - $5.000",
                 price: "$7.400",
                 profit: "$2.400 - $3.300",
-                rappi: "$9.600",
+                rappi: "$10.000",
                 image: "assets/images/generated/combo-miercoles.webp"
             },
             'Jueves': {
@@ -37,7 +37,7 @@
                 cost: "$4.800 - $6.200",
                 price: "$9.800",
                 profit: "$3.600 - $5.000",
-                rappi: "$12.700",
+                rappi: "$13.200",
                 image: "assets/images/generated/combo-jueves.webp"
             },
             'Viernes': {
@@ -47,7 +47,7 @@
                 cost: "$2.600 - $3.400",
                 price: "$5.300",
                 profit: "$1.900 - $2.700",
-                rappi: "$6.900",
+                rappi: "$7.200",
                 image: "assets/images/generated/combo-viernes.webp"
             },
             'Sábado': {
@@ -57,7 +57,7 @@
                 cost: "$5.300 - $6.700",
                 price: "$10.100",
                 profit: "$3.400 - $4.800",
-                rappi: "$13.100",
+                rappi: "$13.600",
                 image: "assets/images/generated/combo-sabado.webp"
             },
             'Domingo': {
@@ -67,7 +67,7 @@
                 cost: "$11.200 - $14.000",
                 price: "$21.900",
                 profit: "$7.900 - $10.700",
-                rappi: "$28.500",
+                rappi: "$29.600",
                 image: "assets/images/generated/combo-domingo.webp"
             }
         };
