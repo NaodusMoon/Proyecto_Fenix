@@ -29,11 +29,14 @@
         }
 
         #combo-image-wrap {
+            aspect-ratio: 3 / 2;
             background: transparent !important;
             border: 0 !important;
             border-radius: 0 !important;
             box-shadow: none !important;
+            height: auto !important;
             overflow: visible !important;
+            width: 100%;
         }
 
         #menu div:has(> img[src*="assets/images/generated/"]) {
@@ -77,6 +80,10 @@
             #menu .sm\:h-80,
             #combo-card .h-64 {
                 height: auto !important;
+                aspect-ratio: 3 / 2;
+            }
+
+            #combo-image-wrap {
                 aspect-ratio: 3 / 2;
             }
 
