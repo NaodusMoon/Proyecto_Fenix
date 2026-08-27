@@ -2,8 +2,8 @@
         const COMBOS = {
             'Lunes': {
                 title: "Combo Inicio de Semana",
-                items: "Teta cremosa estándar + Bebida sencilla",
-                desc: "Ideal para iniciar la semana con un toque dulce y refrescante: combina cualquiera de nuestros sabores estándar de tetas cremosas con tu bebida favorita.",
+                items: "Copito cremoso estándar + Bebida sencilla",
+                desc: "Ideal para iniciar la semana con un toque dulce y refrescante: combina cualquiera de nuestros sabores estándar de copitos cremosos con tu bebida favorita.",
                 cost: "$2.500 - $3.300",
                 price: "$4.800",
                 profit: "$1.500 - $2.300",
@@ -42,7 +42,7 @@
             },
             'Viernes': {
                 title: "Combo Dueto Cremoso",
-                items: "2 Tetas cremosas estándar",
+                items: "2 Copitos cremosos estándar",
                 desc: "Viernes de compartir o de doble antojo: elige dos sabores estándar entre Oreo, Coco, Galleta María, Arequipe o Mantecado.",
                 cost: "$2.600 - $3.400",
                 price: "$5.300",
@@ -52,8 +52,8 @@
             },
             'Sábado': {
                 title: "Trío Fénix del Sábado",
-                items: "Bomba a elección + Teta estándar + Bebida sencilla",
-                desc: "Bomba a elección, teta cremosa estándar y bebida sencilla para un combo completo de sábado.",
+                items: "Bomba a elección + Copito estándar + Bebida sencilla",
+                desc: "Bomba a elección, copito cremoso estándar y bebida sencilla para un combo completo de sábado.",
                 cost: "$5.300 - $6.700",
                 price: "$10.100",
                 profit: "$3.400 - $4.800",
@@ -62,8 +62,8 @@
             },
             'Domingo': {
                 title: "Bandeja Familiar Fénix",
-                items: "2 Bombas + 2 Tetas estándar + 1 Quesillo",
-                desc: "Combo familiar con dos bombas, dos tetas cremosas estándar y una porción de quesillo.",
+                items: "2 Bombas + 2 Copitos estándar + 1 Quesillo",
+                desc: "Combo familiar con dos bombas, dos copitos cremosos estándar y una porción de quesillo.",
                 cost: "$11.200 - $14.000",
                 price: "$21.900",
                 profit: "$7.900 - $10.700",
@@ -154,7 +154,7 @@
                 return;
             }
 
-            let text = "¡Hola Dulces Fénix!\nMe gustaría realizar la simulación de pedido de los siguientes postres en Bogotá:\n\n";
+            let text = "¡Hola Dulces Zynareth!\nMe gustaría realizar la simulación de pedido de los siguientes postres en Bogotá:\n\n";
             let total = 0;
             cart.forEach(item => {
                 const totalItem = item.price * item.qty;
@@ -214,10 +214,10 @@
 
         // --- SIMULADOR FINANCIERO DINÁMICO ---
         function recalcSimulator() {
-            // Costos base estables para Dulces Fénix
+            // Costos base estables para Dulces Zynareth
             const costs = {
-                tetaStd: 1500, // Punto medio aproximado de la materia prima teta estándar
-                tetaPrem: 1900, // Materia prima teta Fresa Nutella
+                copitoStd: 1500, // Punto medio aproximado de la materia prima copito estándar
+                copitoPrem: 1900, // Materia prima copito Fresa Nutella
                 bombaAq: 3050, // Costo bomba arequipe
                 bombaCp: 3150, // Costo bomba pastelera
                 quesillo: 3400 // Costo quesillo individual
@@ -225,26 +225,26 @@
 
             // Lectura de los Precios Ingresados por el Usuario
             const prices = {
-                tetaStd: Math.max(costs.tetaStd, parseInt(document.getElementById('input-teta-std').value) || 0),
-                tetaPrem: Math.max(costs.tetaPrem, parseInt(document.getElementById('input-teta-prem').value) || 0),
+                copitoStd: Math.max(costs.copitoStd, parseInt(document.getElementById('input-copito-std').value) || 0),
+                copitoPrem: Math.max(costs.copitoPrem, parseInt(document.getElementById('input-copito-prem').value) || 0),
                 bombaAq: Math.max(costs.bombaAq, parseInt(document.getElementById('input-bomba-aq').value) || 0),
                 bombaCp: Math.max(costs.bombaCp, parseInt(document.getElementById('input-bomba-cp').value) || 0),
                 quesillo: Math.max(costs.quesillo, parseInt(document.getElementById('input-quesillo').value) || 0)
             };
 
-            // Cálculo Teta Estándar
-            const tetaStdProfit = prices.tetaStd - costs.tetaStd;
-            const tetaStdMargin = Math.round((tetaStdProfit / prices.tetaStd) * 100) || 0;
-            document.getElementById('val-teta-std-profit').innerText = `$${tetaStdProfit.toLocaleString()}`;
-            document.getElementById('val-teta-std-margin').innerText = `${tetaStdMargin}%`;
-            setSustainBadge('sim-row-1', tetaStdMargin);
+            // Cálculo Copito Estándar
+            const copitoStdProfit = prices.copitoStd - costs.copitoStd;
+            const copitoStdMargin = Math.round((copitoStdProfit / prices.copitoStd) * 100) || 0;
+            document.getElementById('val-copito-std-profit').innerText = `$${copitoStdProfit.toLocaleString()}`;
+            document.getElementById('val-copito-std-margin').innerText = `${copitoStdMargin}%`;
+            setSustainBadge('sim-row-1', copitoStdMargin);
 
-            // Cálculo Teta Premium
-            const tetaPremProfit = prices.tetaPrem - costs.tetaPrem;
-            const tetaPremMargin = Math.round((tetaPremProfit / prices.tetaPrem) * 100) || 0;
-            document.getElementById('val-teta-prem-profit').innerText = `$${tetaPremProfit.toLocaleString()}`;
-            document.getElementById('val-teta-prem-margin').innerText = `${tetaPremMargin}%`;
-            setSustainBadge('sim-row-2', tetaPremMargin);
+            // Cálculo Copito Premium
+            const copitoPremProfit = prices.copitoPrem - costs.copitoPrem;
+            const copitoPremMargin = Math.round((copitoPremProfit / prices.copitoPrem) * 100) || 0;
+            document.getElementById('val-copito-prem-profit').innerText = `$${copitoPremProfit.toLocaleString()}`;
+            document.getElementById('val-copito-prem-margin').innerText = `${copitoPremMargin}%`;
+            setSustainBadge('sim-row-2', copitoPremMargin);
 
             // Cálculo Bomba Arequipe
             const bombaAqProfit = prices.bombaAq - costs.bombaAq;

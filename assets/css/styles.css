@@ -52,7 +52,7 @@
             aspect-ratio: 3 / 2 !important;
         }
 
-        #menu div:has(> img[src*="teta-"]) {
+        #menu div:has(> img[src*="copito-"]) {
             aspect-ratio: 1 / 1 !important;
         }
 
