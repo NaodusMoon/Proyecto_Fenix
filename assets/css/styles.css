@@ -67,13 +67,7 @@
         }
 
         .brand-art-panel {
-            background-image:
-                linear-gradient(135deg, rgba(43, 12, 5, 0.94) 0%, rgba(103, 31, 12, 0.82) 52%, rgba(34, 10, 5, 0.94) 100%),
-                radial-gradient(circle at 12% 8%, rgba(250, 204, 21, 0.36), transparent 30%),
-                radial-gradient(circle at 88% 92%, rgba(249, 115, 22, 0.35), transparent 34%),
-                url('../images/content/cocina-artesanal.jpg');
-            background-position: center;
-            background-size: cover;
+            background: #4a1f13;
             box-shadow: 0 24px 45px rgba(69, 21, 5, 0.24), inset 0 1px 0 rgba(255, 231, 164, 0.25);
         }
 
