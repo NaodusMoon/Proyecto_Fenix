@@ -35,16 +35,18 @@
                 </div>
                 <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-oro-400">Dulces Zynareth</span>
             </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <div class="hidden md:flex items-center gap-4 xl:gap-5 text-xs xl:text-sm font-medium whitespace-nowrap">
                 <a href="#inicio" class="hover:text-oro-400 smooth-hover">Inicio</a>
                 <a href="#nosotros" class="hover:text-oro-400 smooth-hover">Nosotros</a>
+                <a href="#equipo" class="hover:text-oro-400 smooth-hover">Equipo</a>
                 <a href="#menu" class="hover:text-oro-400 smooth-hover">Menú</a>
                 <a href="#combos" class="hover:text-oro-400 smooth-hover">Combos diarios</a>
-                <a href="#simulador" class="hover:text-oro-400 smooth-hover bg-oro-500/10 text-oro-400 px-3 py-1.5 rounded-lg border border-oro-500/30">Simulador de costos</a>
-                <a href="#requisitos" class="hover:text-oro-400 smooth-hover text-chocolate-100 border-l border-white/20 pl-8">Plan del negocio</a>
+                <a href="#simulador" class="hover:text-oro-400 smooth-hover bg-oro-500/10 text-oro-400 px-2.5 py-1.5 rounded-lg border border-oro-500/30">Simulador de costos</a>
+                <a href="#evidencias" class="hover:text-oro-400 smooth-hover">Viabilidad</a>
+                <a href="#requisitos" class="hover:text-oro-400 smooth-hover text-chocolate-100 border-l border-white/20 pl-4 xl:pl-5">Plan del negocio</a>
             </div>
             <div class="hidden md:block">
-                <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-5 py-2.5 rounded-full text-sm shadow-md shadow-oro-500/20 smooth-hover">
+                <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-4 xl:px-5 py-2.5 rounded-full text-xs xl:text-sm whitespace-nowrap shadow-md shadow-oro-500/20 smooth-hover">
                     Ordenar Ahora
                 </a>
             </div>
@@ -55,9 +57,11 @@
                 <div class="grid gap-2 text-sm font-semibold">
                     <a href="#inicio" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Inicio</a>
                     <a href="#nosotros" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Nosotros</a>
+                    <a href="#equipo" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Equipo</a>
                     <a href="#menu" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Menú</a>
                     <a href="#combos" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Combos diarios</a>
                     <a href="#simulador" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Simulador de costos</a>
+                    <a href="#evidencias" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Viabilidad</a>
                     <a href="#requisitos" onclick="closeMobileMenu()" class="rounded-xl px-4 py-3 text-chocolate-50 hover:bg-white/10">Plan del negocio</a>
                     <a href="#menu" onclick="closeMobileMenu()" class="mt-2 rounded-xl bg-oro-500 px-4 py-3 text-center font-bold text-chocolate-900">Ordenar ahora</a>
                 </div>
@@ -192,7 +196,62 @@
                             Nuestra paleta evoca un ave fénix dorada y naranja resurgiendo al lado de un postre cremoso de chocolate y vainilla.
                         </p>
                     </div>
+                    <div class="mt-4 rounded-2xl bg-oro-500/10 p-4 border border-oro-500/25">
+                        <span class="text-xs text-oro-400 font-semibold block uppercase mb-1">Misión</span>
+                        <p class="text-xs text-chocolate-100 leading-relaxed">Elaborar postres artesanales frescos, accesibles y confiables que acompañen momentos cotidianos en Bogotá.</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO, SOCIEDAD Y ESTRUCTURA -->
+    <section id="equipo" class="py-20 bg-chocolate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-oro-400 font-bold text-sm uppercase tracking-wider">G-01 · Registro de socios</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2">El equipo que impulsa Dulces Zynareth</h2>
+                <p class="text-chocolate-200 mt-3 text-sm">Cuatro socios aportan capital, conocimiento y trabajo para producir, vender y cuidar la calidad de cada pedido.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+                <article class="rounded-3xl bg-white/5 border border-white/10 p-6 md:p-8">
+                    <div class="flex items-center justify-between gap-4 mb-5">
+                        <div><span class="text-xs text-oro-400 font-bold uppercase tracking-wider">Participación societaria</span><h3 class="font-serif text-2xl font-bold mt-1">Capital aportado: $9.958.000</h3></div>
+                        <span class="text-[10px] text-chocolate-300 text-right">Reparto proporcional<br>a cada aporte</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-7">
+                        <div class="w-52 h-52 rounded-full shrink-0" style="background:conic-gradient(#d4af37 0% 40.17%, #fb923c 40.17% 80.34%, #facc15 80.34% 95.40%, #a16207 95.40% 100%);">
+                            <div class="m-7 h-[154px] rounded-full bg-chocolate-900 flex flex-col items-center justify-center text-center"><span class="text-3xl font-extrabold text-oro-400">100%</span><span class="text-[10px] uppercase text-chocolate-300 mt-1">de participación</span></div>
+                        </div>
+                        <div class="grid gap-3 w-full text-xs">
+                            <div class="flex items-center justify-between rounded-xl bg-white/5 px-3 py-2"><span><i class="fa-solid fa-circle text-oro-400 mr-2"></i>Juan Sebastian</span><strong>40,17%</strong></div>
+                            <div class="flex items-center justify-between rounded-xl bg-white/5 px-3 py-2"><span><i class="fa-solid fa-circle text-orange-400 mr-2"></i>Julieth Stefanie</span><strong>40,17%</strong></div>
+                            <div class="flex items-center justify-between rounded-xl bg-white/5 px-3 py-2"><span><i class="fa-solid fa-circle text-yellow-300 mr-2"></i>Estefani Andreina</span><strong>15,06%</strong></div>
+                            <div class="flex items-center justify-between rounded-xl bg-white/5 px-3 py-2"><span><i class="fa-solid fa-circle text-amber-700 mr-2"></i>Jader Jefte</span><strong>4,60%</strong></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="rounded-3xl bg-white/5 border border-white/10 p-6 md:p-8">
+                    <span class="text-xs text-oro-400 font-bold uppercase tracking-wider">Organigrama</span>
+                    <h3 class="font-serif text-2xl font-bold mt-1 mb-6">Cómo se organizan las decisiones</h3>
+                    <div class="text-center"><div class="inline-block rounded-2xl bg-oro-500 text-chocolate-900 px-5 py-3 font-extrabold text-sm shadow-lg">Asamblea de socios</div></div>
+                    <div class="h-7 w-px bg-oro-400 mx-auto"></div>
+                    <div class="text-center"><div class="inline-block rounded-2xl bg-white/10 border border-white/15 px-5 py-3 font-bold text-sm">Juan Sebastian · Gerente</div></div>
+                    <div class="grid grid-cols-3 gap-2 mt-7 relative before:absolute before:top-0 before:left-[16.66%] before:right-[16.66%] before:h-px before:bg-oro-400/70">
+                        <div class="pt-5 text-center border-t-0"><i class="fa-solid fa-scale-balanced text-oro-400"></i><p class="text-xs font-bold mt-2">Jader</p><p class="text-[10px] text-chocolate-300">Representante legal</p></div>
+                        <div class="pt-5 text-center"><i class="fa-solid fa-calculator text-oro-400"></i><p class="text-xs font-bold mt-2">Julieth</p><p class="text-[10px] text-chocolate-300">Contadora</p></div>
+                        <div class="pt-5 text-center"><i class="fa-solid fa-kitchen-set text-oro-400"></i><p class="text-xs font-bold mt-2">Estefani</p><p class="text-[10px] text-chocolate-300">Producción y comercial</p></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+                <article class="rounded-3xl bg-white/5 border border-white/10 p-5"><div class="w-16 h-16 rounded-2xl bg-amber-900/60 border border-oro-500/30 flex items-center justify-center font-serif text-2xl text-oro-300">JM</div><h3 class="font-bold mt-4">Jader Jefte Murillo Martinez</h3><p class="text-oro-400 text-xs mt-1">Representante legal · 4,60%</p><p class="text-chocolate-300 text-xs mt-3">Formaliza decisiones, firma documentos y representa a la empresa.</p><p class="text-[10px] text-chocolate-400 mt-4">Fotografía individual pendiente de incorporar.</p></article>
+                <article class="rounded-3xl bg-white/5 border border-white/10 p-5"><div class="w-16 h-16 rounded-2xl bg-amber-900/60 border border-oro-500/30 flex items-center justify-center font-serif text-2xl text-oro-300">JS</div><h3 class="font-bold mt-4">Juan Sebastian Sanabria Agudelo</h3><p class="text-oro-400 text-xs mt-1">Gerente · 40,17%</p><p class="text-chocolate-300 text-xs mt-3">Coordina compras, metas, precios, canales de venta y atención al cliente.</p><p class="text-[10px] text-chocolate-400 mt-4">Fotografía individual pendiente de incorporar.</p></article>
+                <article class="rounded-3xl bg-white/5 border border-white/10 p-5"><div class="w-16 h-16 rounded-2xl bg-amber-900/60 border border-oro-500/30 flex items-center justify-center font-serif text-2xl text-oro-300">JE</div><h3 class="font-bold mt-4">Julieth Stefanie Eraque Useche</h3><p class="text-oro-400 text-xs mt-1">Contadora · 40,17%</p><p class="text-chocolate-300 text-xs mt-3">Registra costos, inventario, ingresos, gastos y utilidad por producto.</p><p class="text-[10px] text-chocolate-400 mt-4">Fotografía individual pendiente de incorporar.</p></article>
+                <article class="rounded-3xl bg-white/5 border border-white/10 p-5"><div class="w-16 h-16 rounded-2xl bg-amber-900/60 border border-oro-500/30 flex items-center justify-center font-serif text-2xl text-oro-300">EP</div><h3 class="font-bold mt-4">Estefani Andreina Peña Urquiola</h3><p class="text-oro-400 text-xs mt-1">Producción y comercial · 15,06%</p><p class="text-chocolate-300 text-xs mt-3">Cuida recetas, higiene, calidad, fotos, promociones y relación con clientes.</p><p class="text-[10px] text-chocolate-400 mt-4">Fotografía individual pendiente de incorporar.</p></article>
             </div>
         </div>
     </section>
@@ -551,7 +610,7 @@
                 <div class="lg:col-span-3 lg:sticky lg:top-8 bg-white rounded-3xl p-6 border border-chocolate-200 shadow-md">
                     <div class="flex justify-between items-center pb-4 border-b border-chocolate-100 mb-4">
                         <h3 class="font-serif text-lg font-bold text-chocolate-900 flex items-center gap-2">
-                            <i class="fa-solid fa-basket-shopping text-oro-600" aria-hidden="true"></i> Mi pedido Fénix
+                            <i class="fa-solid fa-basket-shopping text-oro-600" aria-hidden="true"></i> Mi pedido Zynareth
                         </h3>
                         <span id="cart-count" class="bg-oro-500 text-chocolate-900 text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
                     </div>
@@ -591,6 +650,40 @@
                     </p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- P-03 · FICHA VISUAL DEL PRODUCTO -->
+    <section id="ficha-producto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-oro-600 font-bold text-sm uppercase tracking-wider">P-03 · Ficha técnica visual</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">Un copito que se entiende antes de probarlo</h2>
+                <p class="text-chocolate-600 mt-3 text-sm">El copito cremoso resume nuestra propuesta: una porción congelada, artesanal y de sabor cercano para disfrutar o compartir.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <article class="rounded-3xl overflow-hidden border border-chocolate-100 bg-[#fffaf2] grid grid-cols-1 sm:grid-cols-2">
+                    <img src="assets/images/content/copito-oreo.jpg" alt="Copito cremoso de Oreo de Dulces Zynareth" class="w-full h-72 sm:h-full object-cover">
+                    <div class="p-7 flex flex-col justify-center"><span class="text-oro-600 text-xs font-bold uppercase tracking-wider">Producto destacado</span><h3 class="font-serif text-3xl font-bold mt-2">Copito cremoso</h3><p class="text-sm text-chocolate-600 mt-3">Base láctea congelada, sabores reconocibles y presentación individual lista para servir.</p><div class="mt-5 inline-flex items-baseline gap-2"><strong class="text-3xl text-chocolate-900">$2.800</strong><span class="text-xs text-chocolate-500">precio directo</span></div></div>
+                </article>
+                <article class="rounded-3xl bg-chocolate-900 text-white p-7 border border-white/10">
+                    <span class="text-oro-400 text-xs font-bold uppercase tracking-wider">Infografía de insumos</span>
+                    <h3 class="font-serif text-2xl font-bold mt-2">De la mezcla al congelador</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6 text-center text-xs">
+                        <div class="rounded-2xl bg-white/5 p-4"><i class="fa-solid fa-glass-water text-oro-400 text-xl"></i><p class="mt-2 font-bold">Leche y crema</p></div>
+                        <div class="rounded-2xl bg-white/5 p-4"><i class="fa-solid fa-cube text-oro-400 text-xl"></i><p class="mt-2 font-bold">Azúcar</p></div>
+                        <div class="rounded-2xl bg-white/5 p-4"><i class="fa-solid fa-jar text-oro-400 text-xl"></i><p class="mt-2 font-bold">Sabores</p></div>
+                        <div class="rounded-2xl bg-white/5 p-4"><i class="fa-solid fa-snowflake text-oro-400 text-xl"></i><p class="mt-2 font-bold">Congelación</p></div>
+                        <div class="rounded-2xl bg-white/5 p-4"><i class="fa-solid fa-bag-shopping text-oro-400 text-xl"></i><p class="mt-2 font-bold">Bolsa individual</p></div>
+                        <div class="rounded-2xl bg-oro-500/15 border border-oro-500/25 p-4"><i class="fa-solid fa-heart text-oro-400 text-xl"></i><p class="mt-2 font-bold">Hecho por el equipo</p></div>
+                    </div>
+                </article>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+                <div class="rounded-2xl border border-chocolate-100 p-5"><i class="fa-solid fa-clock text-oro-600 text-xl"></i><h3 class="font-bold mt-3">Soluciona el antojo rápido</h3><p class="text-xs text-chocolate-600 mt-2">Porción lista para disfrutar, sin preparación adicional.</p></div>
+                <div class="rounded-2xl border border-chocolate-100 p-5"><i class="fa-solid fa-wallet text-oro-600 text-xl"></i><h3 class="font-bold mt-3">Mantiene un precio accesible</h3><p class="text-xs text-chocolate-600 mt-2">$2.800 directo: una opción artesanal pensada para estudiantes y familias.</p></div>
+                <div class="rounded-2xl border border-chocolate-100 p-5"><i class="fa-solid fa-people-group text-oro-600 text-xl"></i><h3 class="font-bold mt-3">Acompaña momentos compartidos</h3><p class="text-xs text-chocolate-600 mt-2">Sabores variados, compra por unidad o en combos para compartir.</p></div>
             </div>
         </div>
     </section>
@@ -785,6 +878,35 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- C-02, P-01, V-01, V-02 Y G-06 · VISUALIZACIONES DE NEGOCIO -->
+    <section id="evidencias" class="py-20 bg-[#fffaf2]">
+        <div class="max-w-7xl mx-auto px-6 space-y-20">
+            <div>
+                <div class="text-center max-w-3xl mx-auto mb-12"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">C-02 · Costos de producción</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">¿Cuánto cuesta producir una bomba de arequipe?</h2><p class="text-chocolate-600 text-sm mt-3">Desglose unitario de referencia que suma el costo usado en el simulador: $3.050 COP.</p></div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
+                    <article class="lg:col-span-7 bg-white rounded-3xl border border-chocolate-100 p-6 md:p-8"><h3 class="font-bold text-chocolate-900">Gráfico de barras · costo por material</h3><div class="space-y-5 mt-7 text-xs"><div><div class="flex justify-between mb-1"><span>Masa, harina y levadura</span><strong>$700 · 23%</strong></div><div class="h-4 rounded-full bg-chocolate-100"><div class="h-4 rounded-full bg-amber-500" style="width:78%"></div></div></div><div><div class="flex justify-between mb-1"><span>Arequipe</span><strong>$900 · 30%</strong></div><div class="h-4 rounded-full bg-chocolate-100"><div class="h-4 rounded-full bg-orange-500" style="width:100%"></div></div></div><div><div class="flex justify-between mb-1"><span>Aceite y gas</span><strong>$500 · 16%</strong></div><div class="h-4 rounded-full bg-chocolate-100"><div class="h-4 rounded-full bg-yellow-500" style="width:56%"></div></div></div><div><div class="flex justify-between mb-1"><span>Empaque y servilleta</span><strong>$250 · 8%</strong></div><div class="h-4 rounded-full bg-chocolate-100"><div class="h-4 rounded-full bg-amber-700" style="width:28%"></div></div></div><div><div class="flex justify-between mb-1"><span>Mano de obra y energía</span><strong>$700 · 23%</strong></div><div class="h-4 rounded-full bg-chocolate-100"><div class="h-4 rounded-full bg-chocolate-700" style="width:78%"></div></div></div></div><p class="text-[10px] text-chocolate-500 mt-6">Estimación didáctica por unidad, coherente con el costo variable ya definido en el simulador.</p></article>
+                    <article class="lg:col-span-5 bg-chocolate-900 text-white rounded-3xl p-7 flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-6"><div class="w-48 h-48 rounded-full shrink-0" style="background:conic-gradient(#f97316 0% 30%, #f59e0b 30% 53%, #eab308 53% 69%, #a16207 69% 77%, #451a03 77% 100%);"><div class="m-7 h-[136px] rounded-full bg-chocolate-900 flex flex-col items-center justify-center"><span class="text-3xl font-extrabold text-oro-400">$3.050</span><span class="text-[10px] text-chocolate-300">costo unitario</span></div></div><div><span class="text-oro-400 font-bold text-xs uppercase">Gráfico circular</span><h3 class="font-serif text-2xl font-bold mt-2">Distribución del costo</h3><p class="text-xs text-chocolate-300 mt-3">El arequipe es el insumo con mayor peso (30%). Los demás rubros garantizan producción, empaque e inocuidad.</p></div></article>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-center max-w-3xl mx-auto mb-12"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">V-01 · Justificación del precio</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">El precio está calculado, no inventado</h2><p class="text-chocolate-600 text-sm mt-3">Ejemplo de la bomba de arequipe: cada $5.200 de venta cubre el costo y deja una ganancia bruta para sostener el negocio.</p></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7"><article class="rounded-3xl bg-white border border-chocolate-100 p-7"><h3 class="font-bold">Costo, ganancia y precio de venta</h3><div class="h-64 mt-8 flex items-end justify-around gap-5 border-b-2 border-chocolate-300 px-3"><div class="flex flex-col items-center gap-2 w-1/3"><span class="text-xs font-bold">$3.050</span><div class="w-full max-w-24 bg-blue-500 rounded-t-2xl" style="height:59%"></div><span class="text-xs text-center">Costo</span></div><div class="flex flex-col items-center gap-2 w-1/3"><span class="text-xs font-bold">$2.150</span><div class="w-full max-w-24 bg-emerald-500 rounded-t-2xl" style="height:41%"></div><span class="text-xs text-center">Ganancia</span></div><div class="flex flex-col items-center gap-2 w-1/3"><span class="text-xs font-bold">$5.200</span><div class="w-full max-w-24 bg-oro-500 rounded-t-2xl" style="height:100%"></div><span class="text-xs text-center">Precio Zynareth</span></div></div></article><article class="rounded-3xl bg-white border border-chocolate-100 p-7"><span class="text-oro-600 font-bold text-xs uppercase">Valor agregado y referencia comercial</span><h3 class="font-serif text-2xl font-bold mt-2">Precio accesible dentro de la oferta local</h3><div class="space-y-4 mt-6 text-sm"><div class="rounded-2xl bg-amber-50 border border-amber-100 p-4 flex justify-between gap-4"><span>Dulces Zynareth · Bomba artesanal</span><strong>$5.200</strong></div><div class="rounded-2xl bg-chocolate-50 border border-chocolate-100 p-4 flex justify-between gap-4"><span>Naturaletopping · Dulce Encanto</span><strong>$5.672</strong></div><div class="rounded-2xl bg-chocolate-50 border border-chocolate-100 p-4 flex justify-between gap-4"><span>La Casa de los Helados · Cono 1 sabor</span><strong>$8.000</strong></div></div><p class="text-xs text-chocolate-600 mt-5">Zynareth compite con producción propia, pedido directo, porción individual y sabores artesanales. Las referencias externas son precios públicos de Rappi consultados el 30 de agosto de 2026; los productos no son idénticos, por lo que sirven como contexto de mercado.</p></article></div>
+            </div>
+
+            <div>
+                <div class="text-center max-w-3xl mx-auto mb-12"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">V-02 · Mercado objetivo</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">No vendemos a “todo el mundo”</h2><p class="text-chocolate-600 text-sm mt-3">Priorizamos estudiantes, jóvenes y familias de Bogotá que buscan un antojo accesible, cercano y fácil de pedir.</p></div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-7"><article class="rounded-3xl bg-chocolate-900 text-white p-7"><div class="w-16 h-16 rounded-full bg-oro-500 text-chocolate-900 flex items-center justify-center text-2xl"><i class="fa-solid fa-user-graduate"></i></div><h3 class="font-serif text-2xl font-bold mt-5">Buyer persona: Valentina</h3><p class="text-oro-400 text-xs mt-1">19 años · Estudiante · Bogotá</p><ul class="space-y-3 text-xs text-chocolate-200 mt-6"><li><strong class="text-white">Busca:</strong> un postre frío y económico para compartir después de clase.</li><li><strong class="text-white">Decide por:</strong> precio claro, fotos reales, sabores y pedido por WhatsApp.</li><li><strong class="text-white">Presupuesto:</strong> $5.000 a $12.000 por compra.</li></ul></article><article class="rounded-3xl bg-white border border-chocolate-100 p-7"><h3 class="font-bold">Edades de clientes potenciales</h3><div class="mt-8 space-y-5 text-xs"><div><div class="flex justify-between"><span>12–17 · Estudiantes</span><strong>30%</strong></div><div class="h-3 bg-chocolate-100 rounded-full mt-2"><div class="h-3 bg-oro-500 rounded-full" style="width:30%"></div></div></div><div><div class="flex justify-between"><span>18–25 · Jóvenes</span><strong>40%</strong></div><div class="h-3 bg-chocolate-100 rounded-full mt-2"><div class="h-3 bg-orange-500 rounded-full" style="width:40%"></div></div></div><div><div class="flex justify-between"><span>26–35 · Familias jóvenes</span><strong>20%</strong></div><div class="h-3 bg-chocolate-100 rounded-full mt-2"><div class="h-3 bg-amber-700 rounded-full" style="width:20%"></div></div></div><div><div class="flex justify-between"><span>36–45 · Familias</span><strong>10%</strong></div><div class="h-3 bg-chocolate-100 rounded-full mt-2"><div class="h-3 bg-chocolate-700 rounded-full" style="width:10%"></div></div></div></div><p class="text-[10px] text-chocolate-500 mt-6">Proyección inicial de segmentación para el proyecto escolar; debe validarse con ventas reales.</p></article><article class="rounded-3xl bg-white border border-chocolate-100 p-7"><h3 class="font-bold">Matriz de tres competidores</h3><div class="mt-5 space-y-3 text-xs"><div class="grid grid-cols-3 gap-2 font-bold text-chocolate-500 border-b pb-2"><span>Marca</span><span>Referencia</span><span>Ventaja Zynareth</span></div><div class="grid grid-cols-3 gap-2"><span>La Casa de los Helados</span><span>Cono $8.000</span><span>Precio directo menor</span></div><div class="grid grid-cols-3 gap-2"><span>Naturaletopping</span><span>Postre $5.672</span><span>Compra ágil y sabores propios</span></div><div class="grid grid-cols-3 gap-2"><span>Suit Heladería Artesanal</span><span>Helado $12.000</span><span>Opción cotidiana accesible</span></div></div><p class="text-[10px] text-chocolate-500 mt-6">Matriz comparativa con precios públicos de Rappi, consultados el 30 de agosto de 2026.</p></article></div>
+            </div>
+
+            <div>
+                <div class="text-center max-w-3xl mx-auto mb-12"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">G-06 · Rentabilidad</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">¿Vale la pena? Sí, con una meta de ventas clara</h2><p class="text-chocolate-600 text-sm mt-3">Panel calculado con una contribución promedio de $2.000 por unidad y costos fijos mensuales estimados de $2.910.000.</p></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5"><article class="rounded-3xl bg-white border border-chocolate-100 p-6"><i class="fa-solid fa-wallet text-emerald-600 text-xl"></i><p class="text-xs text-chocolate-500 mt-4">Ganancia bruta promedio</p><strong class="text-3xl text-emerald-600 block mt-1">$2.000</strong><span class="text-xs text-chocolate-500">por unidad</span></article><article class="rounded-3xl bg-white border border-chocolate-100 p-6"><i class="fa-solid fa-bullseye text-blue-600 text-xl"></i><p class="text-xs text-chocolate-500 mt-4">Punto de equilibrio</p><strong class="text-3xl text-blue-600 block mt-1">1.455</strong><span class="text-xs text-chocolate-500">unidades/mes · 49 al día</span></article><article class="rounded-3xl bg-white border border-chocolate-100 p-6"><i class="fa-solid fa-rotate text-orange-600 text-xl"></i><p class="text-xs text-chocolate-500 mt-4">Inversión recuperada</p><strong class="text-3xl text-orange-600 block mt-1">~7 meses</strong><span class="text-xs text-chocolate-500">sobre inversión operativa de $4.870.000</span></article><article class="rounded-3xl bg-white border border-chocolate-100 p-6"><i class="fa-solid fa-chart-line text-purple-600 text-xl"></i><p class="text-xs text-chocolate-500 mt-4">Margen bruto promedio</p><strong class="text-3xl text-purple-600 block mt-1">43%</strong><span class="text-xs text-chocolate-500">antes de costos fijos</span></article></div>
+                <div class="rounded-3xl bg-chocolate-900 text-chocolate-100 p-6 mt-7 text-xs leading-relaxed"><strong class="text-oro-400">Cómo se calcula:</strong> a una meta de 1.800 unidades al mes (60 diarias), la contribución estimada es $3.600.000; al restar $2.910.000 de costos fijos mensuales queda una utilidad operacional aproximada de $690.000. Con esa utilidad se recupera la inversión operativa inicial de $4.870.000 en cerca de 7 meses. El capital aportado por los socios ($9.958.000) deja una reserva de $5.088.000 después de financiar esa inversión inicial.</div>
             </div>
         </div>
     </section>
@@ -1145,14 +1267,14 @@
                             <div class="p-3 rounded-xl bg-white/5 border border-white/5"><div class="flex justify-between font-bold text-xs"><span>Transporte propio</span><span class="text-oro-400">$0</span></div><p class="text-[10px] text-chocolate-300 mt-1">No se paga a terceros, por eso no se suma al costo inicial</p></div>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden text-xs">
-                            <div class="grid grid-cols-5 bg-white/10 text-oro-400 font-bold text-[10px] uppercase"><div class="p-2 col-span-2">Socio</div><div class="p-2">Capital</div><div class="p-2">Aporte</div><div class="p-2">Liquidez</div></div>
-                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Jader Jefte Murillo Martinez</div><div class="p-2">$600.000</div><div class="p-2 text-oro-300">$200.000</div><div class="p-2">$400.000</div></div>
-                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Juan Sebastian Sanabria Agudelo</div><div class="p-2">$6.000.000</div><div class="p-2 text-oro-300">$2.400.000</div><div class="p-2">$3.600.000</div></div>
-                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Julieth Stefanie Eraque Useche</div><div class="p-2">$8.185.000</div><div class="p-2 text-oro-300">$3.100.000</div><div class="p-2">$5.085.000</div></div>
-                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Estefani Andreina Peña Urquiola</div><div class="p-2">$1.516.000</div><div class="p-2 text-oro-300">$600.000</div><div class="p-2">$916.000</div></div>
-                            <div class="grid grid-cols-5 border-t border-white/10 bg-white/5 font-bold"><div class="p-2 col-span-2">Total</div><div class="p-2">$16.301.000</div><div class="p-2 text-oro-300">$6.300.000</div><div class="p-2">$10.001.000</div></div>
+                            <div class="grid grid-cols-5 bg-white/10 text-oro-400 font-bold text-[10px] uppercase"><div class="p-2 col-span-2">Socio</div><div class="p-2">Aporte</div><div class="p-2">Participación</div><div class="p-2">Cargo</div></div>
+                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Jader Jefte Murillo Martinez</div><div class="p-2 text-oro-300">$458.000</div><div class="p-2">4,60%</div><div class="p-2">Representante legal</div></div>
+                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Juan Sebastian Sanabria Agudelo</div><div class="p-2 text-oro-300">$4.000.000</div><div class="p-2">40,17%</div><div class="p-2">Gerente</div></div>
+                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Julieth Stefanie Eraque Useche</div><div class="p-2 text-oro-300">$4.000.000</div><div class="p-2">40,17%</div><div class="p-2">Contadora</div></div>
+                            <div class="grid grid-cols-5 border-t border-white/10"><div class="p-2 col-span-2">Estefani Andreina Peña Urquiola</div><div class="p-2 text-oro-300">$1.500.000</div><div class="p-2">15,06%</div><div class="p-2">Producción y comercial</div></div>
+                            <div class="grid grid-cols-5 border-t border-white/10 bg-white/5 font-bold"><div class="p-2 col-span-2">Total</div><div class="p-2 text-oro-300">$9.958.000</div><div class="p-2">100%</div><div class="p-2">4 socios</div></div>
                         </div>
-                        <div class="bg-oro-500/10 p-3 rounded-xl border border-oro-500/30 text-xs text-oro-300"><strong>Nota:</strong> los aportes suman $6.300.000 COP; después de cubrir la inversión de $4.870.000 COP, queda una reserva de caja de $1.430.000 COP para imprevistos, insumos adicionales, cambios de precios o primeras comisiones de Rappi</div>
+                        <div class="bg-oro-500/10 p-3 rounded-xl border border-oro-500/30 text-xs text-oro-300"><strong>Nota:</strong> los aportes suman $9.958.000 COP; después de cubrir la inversión operativa de $4.870.000 COP, queda una reserva de caja de $5.088.000 COP para imprevistos, insumos adicionales, cambios de precios o primeras comisiones de Rappi</div>
                     </div>
 
                     <!-- PESTAÑA: Estatutos -->
@@ -1162,7 +1284,7 @@
                             <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><span class="text-[10px] text-oro-400 font-extrabold uppercase">Nombre legal propuesto</span><h4 class="font-bold text-base mt-1 text-white">Dulces Zynareth S.A.S.</h4><p class="text-xs text-chocolate-300 mt-1">Propuesta para el trabajo escolar bajo una figura empresarial común en Colombia</p></div>
                             <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><span class="text-[10px] text-oro-400 font-extrabold uppercase">Objeto social</span><h4 class="font-bold text-base mt-1 text-white">Fabricación, promoción y venta directa</h4><p class="text-xs text-chocolate-300 mt-1">Postres artesanales y bebidas en Bogotá: bombas de arequipe, bombas de crema pastelera, quesillo, copitos cremosos, agua, gaseosa y tinto/café</p></div>
                             <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><span class="text-[10px] text-oro-400 font-extrabold uppercase">Socios reales</span><h4 class="font-bold text-base mt-1 text-white">4 integrantes</h4><ul class="text-xs text-chocolate-300 mt-2 space-y-1 list-disc list-inside"><li>Jader Jefte Murillo Martinez</li><li>Juan Sebastian Sanabria Agudelo</li><li>Julieth Stefanie Eraque Useche</li><li>Estefani Andreina Peña Urquiola</li></ul></div>
-                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><span class="text-[10px] text-oro-400 font-extrabold uppercase">Capital inicial</span><h4 class="font-bold text-base mt-1 text-white">$4.870.000 COP</h4><p class="text-xs text-chocolate-300 mt-1">Aportes propuestos: Jader $200.000, Juan Sebastian $2.400.000, Julieth $3.100.000 y Estefani $600.000; total aportado: $6.300.000, con reserva de caja de $1.430.000</p></div>
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><span class="text-[10px] text-oro-400 font-extrabold uppercase">Capital aportado por socios</span><h4 class="font-bold text-base mt-1 text-white">$9.958.000 COP</h4><p class="text-xs text-chocolate-300 mt-1">Aportes: Jader $458.000, Juan Sebastian $4.000.000, Julieth $4.000.000 y Estefani $1.500.000. La inversión operativa inicial es $4.870.000 y deja una reserva de caja de $5.088.000.</p></div>
                             <div class="p-4 rounded-2xl bg-white/5 border border-white/10 md:col-span-2"><span class="text-[10px] text-oro-400 font-extrabold uppercase">Reparto de ganancias</span><h4 class="font-bold text-base mt-1 text-white">30% reinversión y 70% para socios</h4><p class="text-xs text-chocolate-300 mt-1">Después de descontar costos, pagos iniciales y reinversión, se recomienda reservar 30% de la utilidad para el negocio; el 70% restante puede repartirse 50% según aporte de capital y 50% según trabajo o cargo</p></div>
                         </div>
                     </div>
