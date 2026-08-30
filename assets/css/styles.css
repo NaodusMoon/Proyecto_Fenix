@@ -67,9 +67,41 @@
         }
 
         .brand-art-panel {
-            background:
-                linear-gradient(135deg, rgba(42, 15, 7, 0.96), rgba(109, 40, 16, 0.92)),
-                repeating-linear-gradient(90deg, rgba(212, 175, 55, 0.08) 0 1px, transparent 1px 34px);
+            background-image:
+                linear-gradient(135deg, rgba(43, 12, 5, 0.94) 0%, rgba(103, 31, 12, 0.82) 52%, rgba(34, 10, 5, 0.94) 100%),
+                radial-gradient(circle at 12% 8%, rgba(250, 204, 21, 0.36), transparent 30%),
+                radial-gradient(circle at 88% 92%, rgba(249, 115, 22, 0.35), transparent 34%),
+                url('../images/content/cocina-artesanal.jpg');
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 24px 45px rgba(69, 21, 5, 0.24), inset 0 1px 0 rgba(255, 231, 164, 0.25);
+        }
+
+        .brand-detail-row {
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.75rem;
+            border-radius: 0.85rem;
+            background: rgba(25, 7, 3, 0.42);
+            border: 1px solid rgba(255, 230, 158, 0.14);
+        }
+
+        .brand-detail-row span:first-child {
+            color: #fde68a;
+            font-weight: 700;
+        }
+
+        .brand-inspiration {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .brand-mission {
+            color: #2a0f07;
+            background: linear-gradient(115deg, #facc15, #f59e0b 48%, #fb923c);
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            box-shadow: 0 12px 24px rgba(19, 5, 2, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.55);
         }
 
         @media (max-width: 640px) {
