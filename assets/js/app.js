@@ -415,11 +415,11 @@
             const panCaseroUrl = 'https://www.rappi.com.co/restaurantes/900284778-pan-casero-cafe';
             const comparisons = [
                 {
-                    ownName: 'Bomba de arequipe', ownPrice: '$5.200', ownImage: 'assets/images/content/bomba-arequipe.jpg', ownDetail: 'Masa frita y relleno de arequipe.',
+                    ownName: 'Bomba de arequipe', ownPrice: '$5.200', ownImage: 'assets/images/generated/bomba-arequipe.webp', ownDetail: 'Masa frita y relleno de arequipe.',
                     brand: 'Caibo Bakery', product: 'Bomba rellena de chocoarequipe', price: '$8.700', image: 'https://images.rappi.com/products/f7571f72-8bd5-4e0f-ba62-75fd6cc33e68.png?d=800x800&e=webp&q=80', detail: 'Oferta de bombas con chocoarequipe o crema pastelera.', source: caiboUrl, saving: '$3.500 menos'
                 },
                 {
-                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/content/quesillo.jpg', ownDetail: 'Textura suave y caramelo artesanal.',
+                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/generated/quesillo.webp', ownDetail: 'Textura suave y caramelo artesanal.',
                     brand: 'Caibo Bakery', product: 'Quesillo venezolano', price: '$9.500', image: 'https://images.rappi.com/products/f9dbf264-b538-4587-9221-d78763a619e7.png?d=800x800&e=webp&q=80', detail: 'Textura suave y cubierta de caramelo.', source: caiboUrl, saving: '$2.500 menos'
                 },
                 {
@@ -428,7 +428,8 @@
                 }
             ];
 
-            const comparisonMarkup = comparisons.map((item) => `
+            const comparisonMarkup = comparisons.map((item, index) => `
+                <div class="comparison-slide w-full shrink-0 px-1" role="group" aria-roledescription="diapositiva" aria-label="Comparación ${index + 1} de ${comparisons.length}">
                 <article class="rounded-2xl border border-chocolate-100 bg-chocolate-50/70 p-3">
                     <div class="grid grid-cols-[1fr_auto_1fr] gap-2 items-stretch text-center">
                         <div class="rounded-xl overflow-hidden border border-oro-400 bg-white">
@@ -442,9 +443,42 @@
                         </a>
                     </div>
                     <p class="text-[10px] text-chocolate-700 mt-2"><strong>Lectura:</strong> Zynareth ofrece una alternativa de ${item.saving} frente a esta referencia.</p>
-                </article>`).join('');
+                </article></div>`).join('');
 
-            comparisonCard.innerHTML = `<span class="text-oro-600 font-bold text-xs uppercase">Comparación visual · referencias comerciales reales</span><h3 class="font-serif text-2xl font-bold mt-2">Tres productos Zynareth frente a referencias de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Productos equivalentes, cada uno con su imagen y acceso directo a la ficha comercial.</p><div class="mt-5 space-y-3">${comparisonMarkup}</div><p class="text-[10px] text-chocolate-500 mt-4">Precios, descripciones y fotografías públicas consultados el 31 de agosto de 2026. Las tarjetas de la competencia abren su fuente en Rappi.</p>`;
+            comparisonCard.innerHTML = `<span class="text-oro-600 font-bold text-xs uppercase">Comparación visual · referencias comerciales reales</span><h3 class="font-serif text-2xl font-bold mt-2">Tres productos Zynareth frente a referencias de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Productos equivalentes, cada uno con su imagen y acceso directo a la ficha comercial.</p><div class="comparison-carousel relative mt-5" aria-roledescription="carrusel" aria-label="Comparaciones de productos"><div class="overflow-hidden"><div class="comparison-carousel-track flex transition-transform duration-500 ease-out">${comparisonMarkup}</div></div><button type="button" data-comparison-prev class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/95 border border-chocolate-200 text-chocolate-800 shadow-md hover:bg-oro-400 focus:outline-none focus:ring-2 focus:ring-oro-500" aria-label="Ver comparación anterior"><i class="fa-solid fa-chevron-left"></i></button><button type="button" data-comparison-next class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/95 border border-chocolate-200 text-chocolate-800 shadow-md hover:bg-oro-400 focus:outline-none focus:ring-2 focus:ring-oro-500" aria-label="Ver comparación siguiente"><i class="fa-solid fa-chevron-right"></i></button><div class="flex justify-center gap-2 mt-3">${comparisons.map((item, index) => `<button type="button" data-comparison-dot="${index}" class="h-2.5 rounded-full transition-all ${index === 0 ? 'w-7 bg-oro-500' : 'w-2.5 bg-chocolate-200'}" aria-label="Ver comparación ${index + 1}: ${item.ownName}" aria-current="${index === 0 ? 'true' : 'false'}"></button>`).join('')}</div></div><p class="text-[10px] text-chocolate-500 mt-4">El carrusel avanza automáticamente cada pocos segundos; usa las flechas o los indicadores para navegar. Precios, descripciones y fotografías públicas consultados el 31 de agosto de 2026.</p>`;
+
+            const carousel = comparisonCard.querySelector('.comparison-carousel');
+            const track = carousel?.querySelector('.comparison-carousel-track');
+            const dots = Array.from(carousel?.querySelectorAll('[data-comparison-dot]') || []);
+            const previous = carousel?.querySelector('[data-comparison-prev]');
+            const next = carousel?.querySelector('[data-comparison-next]');
+            if (!carousel || !track || !previous || !next) return;
+
+            let activeComparison = 0;
+            let autoplay;
+            const showComparison = (index) => {
+                activeComparison = (index + comparisons.length) % comparisons.length;
+                track.style.transform = `translateX(-${activeComparison * 100}%)`;
+                dots.forEach((dot, dotIndex) => {
+                    const selected = dotIndex === activeComparison;
+                    dot.className = `h-2.5 rounded-full transition-all ${selected ? 'w-7 bg-oro-500' : 'w-2.5 bg-chocolate-200 hover:bg-oro-300'}`;
+                    dot.setAttribute('aria-current', String(selected));
+                });
+            };
+            const stopAutoplay = () => { if (autoplay) window.clearInterval(autoplay); };
+            const startAutoplay = () => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                stopAutoplay();
+                autoplay = window.setInterval(() => showComparison(activeComparison + 1), 6500);
+            };
+            previous.addEventListener('click', () => { showComparison(activeComparison - 1); startAutoplay(); });
+            next.addEventListener('click', () => { showComparison(activeComparison + 1); startAutoplay(); });
+            dots.forEach((dot, index) => dot.addEventListener('click', () => { showComparison(index); startAutoplay(); }));
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('focusin', stopAutoplay);
+            carousel.addEventListener('focusout', (event) => { if (!carousel.contains(event.relatedTarget)) startAutoplay(); });
+            startAutoplay();
         }
 
         // --- DATOS VERIFICADOS DE LAS HOJAS P-02 / P-03 ---
