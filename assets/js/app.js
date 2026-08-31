@@ -361,6 +361,50 @@
             if (window.innerWidth >= 768) closeMobileMenu();
         });
 
+        // --- GRÁFICO INTERACTIVO DE PARTICIPACIÓN SOCIETARIA ---
+        function initializeTeamPie() {
+            const chart = document.querySelector('.team-pie-chart');
+            const detail = document.getElementById('team-pie-detail');
+            if (!chart || !detail) return;
+
+            const members = {
+                juan: { name: 'Juan Sebastian', capital: '$4.000.000 COP', percentage: '40,17%' },
+                julieth: { name: 'Julieth Stefanie', capital: '$4.000.000 COP', percentage: '40,17%' },
+                estefani: { name: 'Estefani Andreina', capital: '$1.500.000 COP', percentage: '15,06%' },
+                jader: { name: 'Jader Jefte', capital: '$458.000 COP', percentage: '4,60%' }
+            };
+
+            const selectMember = (memberId) => {
+                const member = members[memberId];
+                if (!member) return;
+
+                document.querySelectorAll('[data-pie-member]').forEach((element) => {
+                    const isSelected = element.dataset.pieMember === memberId;
+                    element.classList.toggle('is-active', isSelected);
+                    if (element.classList.contains('team-pie-hit')) {
+                        element.setAttribute('aria-pressed', String(isSelected));
+                    }
+                });
+
+                chart.setAttribute('aria-label', `${member.name}: aporte de ${member.capital}, ${member.percentage} del capital social`);
+                detail.innerHTML = `<i class="fa-solid fa-hand-pointer"></i><span><strong>${member.name}</strong> aportó ${member.capital}; representa el ${member.percentage} del capital</span>`;
+            };
+
+            document.querySelectorAll('[data-pie-member]').forEach((element) => {
+                element.addEventListener('mouseenter', () => selectMember(element.dataset.pieMember));
+                element.addEventListener('focus', () => selectMember(element.dataset.pieMember));
+                element.addEventListener('click', () => selectMember(element.dataset.pieMember));
+                element.addEventListener('keydown', (event) => {
+                    if ((event.key === 'Enter' || event.key === ' ') && element.classList.contains('team-pie-hit')) {
+                        event.preventDefault();
+                        selectMember(element.dataset.pieMember);
+                    }
+                });
+            });
+
+            selectMember('juan');
+        }
+
         // --- INICIALIZACIÓN ---
         window.onload = function() {
             // Auto-seleccionar combo del día actual de la semana en Colombia
@@ -377,5 +421,6 @@
 
             // Inicializar cálculos del simulador escolar
             recalcSimulator();
+            initializeTeamPie();
         }
 

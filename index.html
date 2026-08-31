@@ -184,15 +184,15 @@
                         <svg class="team-pie-chart shrink-0" viewBox="0 0 340 270" role="img" aria-label="Gráfico circular de participación de los socios">
                             <title>Participación societaria: Juan 40,17%, Julieth 40,17%, Estefani 15,06% y Jader 4,60%</title>
                             <g class="team-pie-sides">
-                                <path class="team-pie-side team-pie-blue-side" d="M170 125 L170 63 A110 62 0 0 1 233.7 175.6 L233.7 193.6 A110 62 0 0 0 170 81 Z" transform="translate(7 -2)"/>
-                                <path class="team-pie-side team-pie-violet-side" d="M170 125 L233.7 175.6 A110 62 0 0 1 65.9 105.1 L65.9 123.1 A110 62 0 0 0 233.7 193.6 Z" transform="translate(-2 8)"/>
-                                <path class="team-pie-side team-pie-green-side" d="M170 125 L65.9 105.1 A110 62 0 0 1 138.7 65.6 L138.7 83.6 A110 62 0 0 0 65.9 123.1 Z" transform="translate(-7 -2)"/>
+                                <path data-pie-member="juan" class="team-pie-side team-pie-blue-side" d="M170 125 L170 63 A110 62 0 0 1 233.7 175.6 L233.7 193.6 A110 62 0 0 0 170 81 Z" transform="translate(7 -2)"/>
+                                <path data-pie-member="julieth" class="team-pie-side team-pie-violet-side" d="M170 125 L233.7 175.6 A110 62 0 0 1 65.9 105.1 L65.9 123.1 A110 62 0 0 0 233.7 193.6 Z" transform="translate(-2 8)"/>
+                                <path data-pie-member="estefani" class="team-pie-side team-pie-green-side" d="M170 125 L65.9 105.1 A110 62 0 0 1 138.7 65.6 L138.7 83.6 A110 62 0 0 0 65.9 123.1 Z" transform="translate(-7 -2)"/>
                             </g>
                             <g class="team-pie-tops">
-                                <path class="team-pie-blue" d="M170 125 L170 63 A110 62 0 0 1 233.7 175.6 Z" transform="translate(7 -2)"/>
-                                <path class="team-pie-violet" d="M170 125 L233.7 175.6 A110 62 0 0 1 65.9 105.1 Z" transform="translate(-2 8)"/>
-                                <path class="team-pie-green" d="M170 125 L65.9 105.1 A110 62 0 0 1 138.7 65.6 Z" transform="translate(-7 -2)"/>
-                                <path class="team-pie-red" d="M170 125 L138.7 65.6 A110 62 0 0 1 170 63 Z" transform="translate(1 -8)"/>
+                                <path data-pie-member="juan" class="team-pie-blue team-pie-hit" d="M170 125 L170 63 A110 62 0 0 1 233.7 175.6 Z" transform="translate(7 -2)" tabindex="0" role="button" aria-label="Ver aporte de Juan Sebastian, 40,17 por ciento" aria-pressed="true"/>
+                                <path data-pie-member="julieth" class="team-pie-violet team-pie-hit" d="M170 125 L233.7 175.6 A110 62 0 0 1 65.9 105.1 Z" transform="translate(-2 8)" tabindex="0" role="button" aria-label="Ver aporte de Julieth Stefanie, 40,17 por ciento" aria-pressed="false"/>
+                                <path data-pie-member="estefani" class="team-pie-green team-pie-hit" d="M170 125 L65.9 105.1 A110 62 0 0 1 138.7 65.6 Z" transform="translate(-7 -2)" tabindex="0" role="button" aria-label="Ver aporte de Estefani Andreina, 15,06 por ciento" aria-pressed="false"/>
+                                <path data-pie-member="jader" class="team-pie-red team-pie-hit" d="M170 125 L138.7 65.6 A110 62 0 0 1 170 63 Z" transform="translate(1 -8)" tabindex="0" role="button" aria-label="Ver aporte de Jader Jefte, 4,60 por ciento" aria-pressed="false"/>
                             </g>
                             <g class="team-pie-callout team-pie-callout-blue"><path d="M255 118 L291 99 L291 76"/><rect x="263" y="43" width="62" height="32" rx="7"/><text x="294" y="64" text-anchor="middle">40,17%</text></g>
                             <g class="team-pie-callout team-pie-callout-violet"><path d="M128 191 L110 220 L78 220"/><rect x="27" y="205" width="62" height="32" rx="7"/><text x="58" y="226" text-anchor="middle">40,17%</text></g>
@@ -200,12 +200,13 @@
                             <g class="team-pie-callout team-pie-callout-red"><path d="M166 54 L181 31 L210 31"/><rect x="211" y="15" width="56" height="32" rx="7"/><text x="239" y="36" text-anchor="middle">4,60%</text></g>
                         </svg>
                         <div class="grid gap-3 w-full text-xs">
-                            <div class="team-share team-share-blue"><span><i class="fa-solid fa-circle mr-2"></i>Juan Sebastian</span><strong>40,17%</strong></div>
-                            <div class="team-share team-share-violet"><span><i class="fa-solid fa-circle mr-2"></i>Julieth Stefanie</span><strong>40,17%</strong></div>
-                            <div class="team-share team-share-green"><span><i class="fa-solid fa-circle mr-2"></i>Estefani Andreina</span><strong>15,06%</strong></div>
-                            <div class="team-share team-share-red"><span><i class="fa-solid fa-circle mr-2"></i>Jader Jefte</span><strong>4,60%</strong></div>
+                            <button type="button" data-pie-member="juan" class="team-share team-share-blue is-active"><span><i class="fa-solid fa-circle mr-2"></i>Juan Sebastian</span><strong>40,17%</strong></button>
+                            <button type="button" data-pie-member="julieth" class="team-share team-share-violet"><span><i class="fa-solid fa-circle mr-2"></i>Julieth Stefanie</span><strong>40,17%</strong></button>
+                            <button type="button" data-pie-member="estefani" class="team-share team-share-green"><span><i class="fa-solid fa-circle mr-2"></i>Estefani Andreina</span><strong>15,06%</strong></button>
+                            <button type="button" data-pie-member="jader" class="team-share team-share-red"><span><i class="fa-solid fa-circle mr-2"></i>Jader Jefte</span><strong>4,60%</strong></button>
                         </div>
                     </div>
+                    <div id="team-pie-detail" class="team-pie-detail" aria-live="polite"><i class="fa-solid fa-hand-pointer"></i><span><strong>Juan Sebastian</strong> aportó $4.000.000 COP; representa el 40,17% del capital</span></div>
                 </article>
 
                 <article class="team-panel rounded-3xl p-6 md:p-8">

@@ -240,6 +240,20 @@
             border-radius: 0.8rem;
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.07);
+            width: 100%;
+            color: inherit;
+            text-align: left;
+            cursor: pointer;
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        }
+
+        .team-share:hover,
+        .team-share:focus-visible,
+        .team-share.is-active {
+            transform: translateX(0.25rem);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.45);
+            outline: none;
         }
 
         .team-share-blue i, .team-juan .team-role { color: #60a5fa; }
@@ -275,6 +289,24 @@
         .team-pie-green-side { fill: #166534; }
         .team-pie-red { fill: #dc2626; }
 
+        .team-pie-hit {
+            cursor: pointer;
+            transition: filter 180ms ease, stroke 180ms ease, stroke-width 180ms ease;
+        }
+
+        .team-pie-hit:hover,
+        .team-pie-hit:focus-visible,
+        .team-pie-hit.is-active {
+            filter: brightness(1.22) saturate(1.14);
+            stroke: #fff7df;
+            stroke-width: 6;
+            outline: none;
+        }
+
+        .team-pie-side.is-active {
+            filter: brightness(1.24) saturate(1.12);
+        }
+
         .team-pie-callout path {
             fill: none;
             stroke-width: 3;
@@ -302,6 +334,22 @@
         .team-pie-callout-green rect { stroke: #16a34a; }
         .team-pie-callout-red path,
         .team-pie-callout-red rect { stroke: #dc2626; }
+
+        .team-pie-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-top: 1.25rem;
+            padding: 0.75rem 0.9rem;
+            border-radius: 0.8rem;
+            color: #fff7df;
+            font-size: 0.78rem;
+            line-height: 1.45;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.34);
+        }
+
+        .team-pie-detail i { color: #facc15; }
 
         .team-card {
             position: relative;
