@@ -597,9 +597,9 @@
 
             if (matrixCard) {
                 const marketGrid = matrixCard.parentElement;
-                marketGrid?.classList.remove('lg:grid-cols-2');
-                marketGrid?.classList.add('lg:grid-cols-3');
-                matrixCard.innerHTML = `<span class="text-oro-600 text-xs font-bold uppercase">Referencia competitiva</span><h3 class="font-serif text-2xl font-bold mt-2">Tres productos de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Una referencia por cada línea de Dulces Zynareth: bomba, copito y quesillo.</p><div class="mt-5 space-y-3 text-xs"><a href="https://www.rappi.com.co/restaurantes/900388509-rose-restaurant-pastry-and-tea" target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 hover:border-oro-400"><strong>Rose Restaurant · Bomba</strong><span class="block text-chocolate-600 mt-1">Bomba de arequipe · $18.590</span><em class="block text-oro-700 mt-1 not-italic">Zynareth: Bomba de arequipe · $5.200</em></a><a href="https://www.rappi.com.co/restaurantes/900005269-randys" target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 hover:border-oro-400"><strong>Randys · Copito</strong><span class="block text-chocolate-600 mt-1">Helado Oreo vasito · $4.500</span><em class="block text-oro-700 mt-1 not-italic">Zynareth: Copito Oreo · $4.000</em></a><a href="https://www.rappi.com.co/restaurantes/900480218-dulcetentacion" target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 hover:border-oro-400"><strong>Dulcetentación · Quesillo</strong><span class="block text-chocolate-600 mt-1">Torta quesillo · $12.000</span><em class="block text-oro-700 mt-1 not-italic">Zynareth: Quesillo individual · $7.000</em></a></div><p class="text-[10px] text-chocolate-500 mt-4">Precios públicos consultados el 30 de agosto de 2026; cada nombre abre su fuente comercial.</p>`;
+                marketGrid?.classList.remove('lg:grid-cols-3');
+                marketGrid?.classList.add('lg:grid-cols-2');
+                matrixCard.remove();
             }
         }
 
