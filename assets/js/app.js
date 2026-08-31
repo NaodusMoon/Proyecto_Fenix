@@ -419,12 +419,12 @@
                     brand: 'Caibo Bakery', product: 'Bomba rellena de chocoarequipe', price: '$8.700', image: 'https://images.rappi.com/products/f7571f72-8bd5-4e0f-ba62-75fd6cc33e68.png?d=800x800&e=webp&q=80', detail: 'Oferta de bombas con chocoarequipe o crema pastelera.', source: caiboUrl, saving: '$3.500 menos'
                 },
                 {
-                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/generated/quesillo.webp', ownDetail: 'Textura suave y caramelo artesanal.', ownFit: 'object-contain bg-[#fffaf2] p-1',
-                    brand: 'Caibo Bakery', product: 'Quesillo venezolano', price: '$9.500', image: 'https://images.rappi.com/products/f9dbf264-b538-4587-9221-d78763a619e7.png?d=800x800&e=webp&q=80', detail: 'Textura suave y cubierta de caramelo.', source: caiboUrl, saving: '$2.500 menos', competitorFit: 'object-contain bg-[#fffaf2] p-1'
+                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/generated/quesillo.webp', ownDetail: 'Textura suave y caramelo artesanal.',
+                    brand: 'Caibo Bakery', product: 'Quesillo venezolano', price: '$9.500', image: 'assets/images/competitors/caibo-quesillo-enhanced.png', detail: 'Textura suave y cubierta de caramelo.', source: caiboUrl, saving: '$2.500 menos'
                 },
                 {
-                    ownName: 'Bomba de crema pastelera', ownPrice: '$5.500', ownImage: 'assets/images/generated/bomba-crema-pastelera.webp', ownDetail: 'Masa suave y crema pastelera.', ownFit: 'object-contain bg-[#fffaf2] p-1',
-                    brand: 'Pan Casero Café', product: 'Bomba de crema pastelera', price: '$13.800', image: 'https://images.rappi.com/products/2095330505-1677241361420.jpg?d=800x800&e=webp&q=80', detail: 'Masa brioche rellena de crema pastelera.', source: panCaseroUrl, saving: '$8.300 menos', competitorFit: 'object-contain bg-[#fffaf2] p-1'
+                    ownName: 'Bomba de crema pastelera', ownPrice: '$5.500', ownImage: 'assets/images/generated/bomba-crema-pastelera.webp', ownDetail: 'Masa suave y crema pastelera.',
+                    brand: 'Pan Casero Café', product: 'Bomba de crema pastelera', price: '$13.800', image: 'assets/images/competitors/pan-casero-bomba-crema-enhanced.png', detail: 'Masa brioche rellena de crema pastelera.', source: panCaseroUrl, saving: '$8.300 menos'
                 }
             ];
 
