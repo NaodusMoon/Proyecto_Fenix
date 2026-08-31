@@ -433,12 +433,12 @@
                 <article class="rounded-2xl border border-chocolate-100 bg-chocolate-50/70 p-3">
                     <div class="grid grid-cols-[1fr_auto_1fr] gap-2 items-stretch text-center">
                         <div class="rounded-xl overflow-hidden border border-oro-400 bg-white">
-                            <img src="${item.ownImage}" alt="${item.ownName} de Dulces Zynareth" class="w-full h-20 object-cover">
+                            <img src="${item.ownImage}" alt="${item.ownName} de Dulces Zynareth" class="w-full h-32 object-cover">
                             <div class="p-2"><span class="text-[9px] uppercase font-bold text-oro-700">Zynareth</span><p class="font-bold text-xs mt-0.5 leading-tight">${item.ownName}</p><strong class="block text-base text-chocolate-900 mt-1">${item.ownPrice}</strong><p class="text-[9px] text-chocolate-600 mt-1 leading-tight">${item.ownDetail}</p></div>
                         </div>
                         <div class="flex items-center font-serif font-bold text-oro-600 text-sm">VS</div>
                         <a href="${item.source}" target="_blank" rel="noopener noreferrer" class="rounded-xl overflow-hidden border border-chocolate-200 bg-white hover:border-oro-400 transition-colors" aria-label="Abrir referencia de ${item.product} en ${item.brand}">
-                            <img src="${item.image}" alt="${item.product} de ${item.brand}" class="w-full h-20 object-cover">
+                            <img src="${item.image}" alt="${item.product} de ${item.brand}" class="w-full h-32 object-cover">
                             <div class="p-2"><span class="text-[9px] uppercase font-bold text-chocolate-600 underline underline-offset-2">${item.brand} <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></span><p class="font-bold text-xs mt-0.5 leading-tight">${item.product}</p><strong class="block text-base text-chocolate-900 mt-1">${item.price}</strong><p class="text-[9px] text-chocolate-600 mt-1 leading-tight">${item.detail}</p></div>
                         </a>
                     </div>
