@@ -407,32 +407,44 @@
 
         // --- REFERENCIA VISUAL DEL PRODUCTO COMPETIDOR ---
         function enhanceCompetitorComparison() {
-            const sourceUrl = 'https://www.rappi.com.co/restaurantes/900400030-rose-restaurant-pastry-and-tea';
-            const sourceImage = 'https://images.rappi.com/products/aa267edc-3bb3-4d43-96dd-317f662a2ce1-1750800650792.png?d=600x600&e=webp&q=80';
-            const brand = Array.from(document.querySelectorAll('span')).find((element) => element.textContent.trim() === 'Aury Postres');
-            if (!brand) return;
-
-            const competitorCard = brand.closest('.rounded-2xl');
-            const visual = competitorCard?.querySelector(':scope > div:first-child');
-            if (!competitorCard || !visual) return;
-
-            visual.innerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ficha de Rose Restaurant Pastry and Tea" style="display:block;width:100%;height:100%;overflow:hidden;background:#3b160b"><img src="${sourceImage}" alt="Bomba de arequipe de Rose Restaurant Pastry and Tea" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 45%;transform:scale(1.22);transition:transform 250ms ease" onmouseenter="this.style.transform='scale(1.3)'" onmouseleave="this.style.transform='scale(1.22)'"></a>`;
-            brand.outerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold text-chocolate-600 underline underline-offset-2" aria-label="Abrir ficha de Rose Restaurant Pastry and Tea">Rose Restaurant <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>`;
-
-            const productName = Array.from(competitorCard.querySelectorAll('p')).find((element) => element.textContent.trim() === 'Repolla de arequipe');
-            const productPrice = competitorCard.querySelector('strong');
-            const productDescription = Array.from(competitorCard.querySelectorAll('p')).find((element) => element.textContent.includes('Bizcocho relleno'));
-            if (productName) productName.textContent = 'Bomba de arequipe';
-            if (productPrice) productPrice.textContent = '$18.590';
-            if (productDescription) productDescription.textContent = 'Mousse de queso crema, centro de arequipe, chocolate caramelizado y nueces';
-
             const comparisonTitle = Array.from(document.querySelectorAll('h3')).find((element) => element.textContent.trim() === 'Bomba Zynareth frente a un producto comparable');
-            const comparisonReading = Array.from(document.querySelectorAll('div')).find((element) => element.textContent.startsWith('Lectura: Zynareth cuesta $1.200 más'));
-            if (comparisonTitle) comparisonTitle.textContent = 'Bomba de arequipe frente a una referencia de Bogotá';
-            if (comparisonReading) comparisonReading.innerHTML = '<strong>Lectura:</strong> ambas referencias son bombas de arequipe; Zynareth ofrece una alternativa de $13.390 menos, con masa frita y producción directa';
+            const comparisonCard = comparisonTitle?.closest('article');
+            if (!comparisonCard) return;
 
-            const sourceNote = Array.from(document.querySelectorAll('p')).find((element) => element.textContent.includes('Referencia comparable, no idéntica'));
-            if (sourceNote) sourceNote.innerHTML = `Referencia real de Bogotá. Precio, descripción y fotografía consultados el 30 de agosto de 2026 en <a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="underline font-semibold text-oro-700">la ficha pública de Rose Restaurant Pastry &amp; Tea en Rappi</a>`;
+            const caiboUrl = 'https://www.rappi.com.co/restaurantes/900076441-caibo-bakery';
+            const panCaseroUrl = 'https://www.rappi.com.co/restaurantes/900284778-pan-casero-cafe';
+            const comparisons = [
+                {
+                    ownName: 'Bomba de arequipe', ownPrice: '$5.200', ownImage: 'assets/images/content/bomba-arequipe.jpg', ownDetail: 'Masa frita y relleno de arequipe.',
+                    brand: 'Caibo Bakery', product: 'Bomba rellena de chocoarequipe', price: '$8.700', image: 'https://images.rappi.com/products/f7571f72-8bd5-4e0f-ba62-75fd6cc33e68.png?d=800x800&e=webp&q=80', detail: 'Oferta de bombas con chocoarequipe o crema pastelera.', source: caiboUrl, saving: '$3.500 menos'
+                },
+                {
+                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/content/quesillo.jpg', ownDetail: 'Textura suave y caramelo artesanal.',
+                    brand: 'Caibo Bakery', product: 'Quesillo venezolano', price: '$9.500', image: 'https://images.rappi.com/products/f9dbf264-b538-4587-9221-d78763a619e7.png?d=800x800&e=webp&q=80', detail: 'Textura suave y cubierta de caramelo.', source: caiboUrl, saving: '$2.500 menos'
+                },
+                {
+                    ownName: 'Bomba de crema pastelera', ownPrice: '$5.500', ownImage: 'assets/images/generated/bomba-crema-pastelera.webp', ownDetail: 'Masa suave y crema pastelera.',
+                    brand: 'Pan Casero Café', product: 'Bomba de crema pastelera', price: '$13.800', image: 'https://images.rappi.com/products/2095330505-1677241361420.jpg?d=800x800&e=webp&q=80', detail: 'Masa brioche rellena de crema pastelera.', source: panCaseroUrl, saving: '$8.300 menos'
+                }
+            ];
+
+            const comparisonMarkup = comparisons.map((item) => `
+                <article class="rounded-2xl border border-chocolate-100 bg-chocolate-50/70 p-3">
+                    <div class="grid grid-cols-[1fr_auto_1fr] gap-2 items-stretch text-center">
+                        <div class="rounded-xl overflow-hidden border border-oro-400 bg-white">
+                            <img src="${item.ownImage}" alt="${item.ownName} de Dulces Zynareth" class="w-full h-20 object-cover">
+                            <div class="p-2"><span class="text-[9px] uppercase font-bold text-oro-700">Zynareth</span><p class="font-bold text-xs mt-0.5 leading-tight">${item.ownName}</p><strong class="block text-base text-chocolate-900 mt-1">${item.ownPrice}</strong><p class="text-[9px] text-chocolate-600 mt-1 leading-tight">${item.ownDetail}</p></div>
+                        </div>
+                        <div class="flex items-center font-serif font-bold text-oro-600 text-sm">VS</div>
+                        <a href="${item.source}" target="_blank" rel="noopener noreferrer" class="rounded-xl overflow-hidden border border-chocolate-200 bg-white hover:border-oro-400 transition-colors" aria-label="Abrir referencia de ${item.product} en ${item.brand}">
+                            <img src="${item.image}" alt="${item.product} de ${item.brand}" class="w-full h-20 object-cover">
+                            <div class="p-2"><span class="text-[9px] uppercase font-bold text-chocolate-600 underline underline-offset-2">${item.brand} <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></span><p class="font-bold text-xs mt-0.5 leading-tight">${item.product}</p><strong class="block text-base text-chocolate-900 mt-1">${item.price}</strong><p class="text-[9px] text-chocolate-600 mt-1 leading-tight">${item.detail}</p></div>
+                        </a>
+                    </div>
+                    <p class="text-[10px] text-chocolate-700 mt-2"><strong>Lectura:</strong> Zynareth ofrece una alternativa de ${item.saving} frente a esta referencia.</p>
+                </article>`).join('');
+
+            comparisonCard.innerHTML = `<span class="text-oro-600 font-bold text-xs uppercase">Comparación visual · referencias comerciales reales</span><h3 class="font-serif text-2xl font-bold mt-2">Tres productos Zynareth frente a referencias de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Productos equivalentes, cada uno con su imagen y acceso directo a la ficha comercial.</p><div class="mt-5 space-y-3">${comparisonMarkup}</div><p class="text-[10px] text-chocolate-500 mt-4">Precios, descripciones y fotografías públicas consultados el 31 de agosto de 2026. Las tarjetas de la competencia abren su fuente en Rappi.</p>`;
         }
 
         // --- DATOS VERIFICADOS DE LAS HOJAS P-02 / P-03 ---
