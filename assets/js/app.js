@@ -420,6 +420,25 @@
             brand.outerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold text-chocolate-600 underline underline-offset-2" aria-label="Abrir menú de Aury Postres">Aury Postres <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>`;
         }
 
+        // --- MERCADO OBJETIVO: DECISIONES ÚTILES PARA VENTAS ---
+        function refineTargetMarket() {
+            const profileTitle = Array.from(document.querySelectorAll('h3')).find((element) => element.textContent.trim() === 'Buyer persona: Valentina');
+            const matrixTitle = Array.from(document.querySelectorAll('h3')).find((element) => element.textContent.trim() === 'Matriz de tres competidores');
+            const profileCard = profileTitle?.closest('article');
+            const matrixCard = matrixTitle?.closest('article');
+
+            if (profileCard) {
+                profileCard.innerHTML = `<div class="w-16 h-16 rounded-full bg-oro-500 text-chocolate-900 flex items-center justify-center text-2xl"><i class="fa-solid fa-bullseye"></i></div><h3 class="font-serif text-2xl font-bold mt-5">Cliente prioritario: Valentina</h3><p class="text-oro-400 text-xs mt-1">19 años · estudiante · compra en Bogotá</p><p class="text-xs text-chocolate-200 mt-5">Este perfil sirve para tomar decisiones de venta, no para describir a una persona real</p><div class="mt-5 space-y-3 text-xs"><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Producto:</strong> copito o bomba individual para el antojo después de clase</div><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Precio:</strong> rango claro de $5.000 a $12.000 por compra</div><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Canal:</strong> fotos reales y pedido rápido por WhatsApp</div></div>`;
+            }
+
+            if (matrixCard) {
+                const marketGrid = matrixCard.parentElement;
+                matrixCard.remove();
+                marketGrid?.classList.remove('lg:grid-cols-3');
+                marketGrid?.classList.add('lg:grid-cols-2');
+            }
+        }
+
         // --- INICIALIZACIÓN ---
         window.onload = function() {
             // Auto-seleccionar combo del día actual de la semana en Colombia
@@ -438,5 +457,6 @@
             recalcSimulator();
             initializeTeamPie();
             enhanceCompetitorComparison();
+            refineTargetMarket();
         }
 
