@@ -407,8 +407,8 @@
 
         // --- REFERENCIA VISUAL DEL PRODUCTO COMPETIDOR ---
         function enhanceCompetitorComparison() {
-            const sourceUrl = 'https://www.aurypostres.com/picadas?menu=pasteleria';
-            const sourceImage = 'https://static.wixstatic.com/media/9162b4_a9d6d36e460344b0b055442e8673cfae~mv2.jpg';
+            const sourceUrl = 'https://www.rappi.com.co/restaurantes/900400030-rose-restaurant-pastry-and-tea';
+            const sourceImage = 'https://images.rappi.com/products/aa267edc-3bb3-4d43-96dd-317f662a2ce1-1750800650792.png?d=600x600&e=webp&q=80';
             const brand = Array.from(document.querySelectorAll('span')).find((element) => element.textContent.trim() === 'Aury Postres');
             if (!brand) return;
 
@@ -416,8 +416,23 @@
             const visual = competitorCard?.querySelector(':scope > div:first-child');
             if (!competitorCard || !visual) return;
 
-            visual.innerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir menú de Aury Postres" style="display:block;width:100%;height:100%;overflow:hidden"><img src="${sourceImage}" alt="Fotografía de pastelería publicada por Aury Postres" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform 250ms ease" onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'"></a>`;
-            brand.outerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold text-chocolate-600 underline underline-offset-2" aria-label="Abrir menú de Aury Postres">Aury Postres <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>`;
+            visual.innerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ficha de Rose Restaurant Pastry and Tea" style="display:block;width:100%;height:100%;overflow:hidden"><img src="${sourceImage}" alt="Bomba de arequipe de Rose Restaurant Pastry and Tea" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform 250ms ease" onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'"></a>`;
+            brand.outerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold text-chocolate-600 underline underline-offset-2" aria-label="Abrir ficha de Rose Restaurant Pastry and Tea">Rose Restaurant <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>`;
+
+            const productName = Array.from(competitorCard.querySelectorAll('p')).find((element) => element.textContent.trim() === 'Repolla de arequipe');
+            const productPrice = competitorCard.querySelector('strong');
+            const productDescription = Array.from(competitorCard.querySelectorAll('p')).find((element) => element.textContent.includes('Bizcocho relleno'));
+            if (productName) productName.textContent = 'Bomba de arequipe';
+            if (productPrice) productPrice.textContent = '$18.590';
+            if (productDescription) productDescription.textContent = 'Mousse de queso crema, centro de arequipe, chocolate caramelizado y nueces';
+
+            const comparisonTitle = Array.from(document.querySelectorAll('h3')).find((element) => element.textContent.trim() === 'Bomba Zynareth frente a un producto comparable');
+            const comparisonReading = Array.from(document.querySelectorAll('div')).find((element) => element.textContent.startsWith('Lectura: Zynareth cuesta $1.200 más'));
+            if (comparisonTitle) comparisonTitle.textContent = 'Bomba de arequipe frente a una referencia de Bogotá';
+            if (comparisonReading) comparisonReading.innerHTML = '<strong>Lectura:</strong> ambas referencias son bombas de arequipe; Zynareth ofrece una alternativa de $13.390 menos, con masa frita y producción directa';
+
+            const sourceNote = Array.from(document.querySelectorAll('p')).find((element) => element.textContent.includes('Referencia comparable, no idéntica'));
+            if (sourceNote) sourceNote.innerHTML = `Referencia real de Bogotá. Precio, descripción y fotografía consultados el 30 de agosto de 2026 en <a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="underline font-semibold text-oro-700">la ficha pública de Rose Restaurant Pastry &amp; Tea en Rappi</a>`;
         }
 
         // --- MERCADO OBJETIVO: DECISIONES ÚTILES PARA VENTAS ---
