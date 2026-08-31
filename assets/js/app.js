@@ -405,6 +405,21 @@
             selectMember('juan');
         }
 
+        // --- REFERENCIA VISUAL DEL PRODUCTO COMPETIDOR ---
+        function enhanceCompetitorComparison() {
+            const sourceUrl = 'https://www.aurypostres.com/picadas?menu=pasteleria';
+            const sourceImage = 'https://static.wixstatic.com/media/9162b4_a9d6d36e460344b0b055442e8673cfae~mv2.jpg';
+            const brand = Array.from(document.querySelectorAll('span')).find((element) => element.textContent.trim() === 'Aury Postres');
+            if (!brand) return;
+
+            const competitorCard = brand.closest('.rounded-2xl');
+            const visual = competitorCard?.querySelector(':scope > div:first-child');
+            if (!competitorCard || !visual) return;
+
+            visual.innerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" aria-label="Abrir menú de Aury Postres" style="display:block;width:100%;height:100%;overflow:hidden"><img src="${sourceImage}" alt="Fotografía de pastelería publicada por Aury Postres" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform 250ms ease" onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'"></a>`;
+            brand.outerHTML = `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase font-bold text-chocolate-600 underline underline-offset-2" aria-label="Abrir menú de Aury Postres">Aury Postres <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>`;
+        }
+
         // --- INICIALIZACIÓN ---
         window.onload = function() {
             // Auto-seleccionar combo del día actual de la semana en Colombia
@@ -422,5 +437,6 @@
             // Inicializar cálculos del simulador escolar
             recalcSimulator();
             initializeTeamPie();
+            enhanceCompetitorComparison();
         }
 
