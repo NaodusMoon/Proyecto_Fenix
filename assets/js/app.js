@@ -419,12 +419,12 @@
                     brand: 'Caibo Bakery', product: 'Bomba rellena de chocoarequipe', price: '$8.700', image: 'https://images.rappi.com/products/f7571f72-8bd5-4e0f-ba62-75fd6cc33e68.png?d=800x800&e=webp&q=80', detail: 'Oferta de bombas con chocoarequipe o crema pastelera.', source: caiboUrl, saving: '$3.500 menos'
                 },
                 {
-                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/generated/quesillo.webp', ownDetail: 'Textura suave y caramelo artesanal.',
-                    brand: 'Caibo Bakery', product: 'Quesillo venezolano', price: '$9.500', image: 'https://images.rappi.com/products/f9dbf264-b538-4587-9221-d78763a619e7.png?d=800x800&e=webp&q=80', detail: 'Textura suave y cubierta de caramelo.', source: caiboUrl, saving: '$2.500 menos'
+                    ownName: 'Quesillo', ownPrice: '$7.000', ownImage: 'assets/images/generated/quesillo.webp', ownDetail: 'Textura suave y caramelo artesanal.', ownFit: 'object-contain bg-[#fffaf2] p-1',
+                    brand: 'Caibo Bakery', product: 'Quesillo venezolano', price: '$9.500', image: 'https://images.rappi.com/products/f9dbf264-b538-4587-9221-d78763a619e7.png?d=800x800&e=webp&q=80', detail: 'Textura suave y cubierta de caramelo.', source: caiboUrl, saving: '$2.500 menos', competitorFit: 'object-contain bg-[#fffaf2] p-1'
                 },
                 {
-                    ownName: 'Bomba de crema pastelera', ownPrice: '$5.500', ownImage: 'assets/images/generated/bomba-crema-pastelera.webp', ownDetail: 'Masa suave y crema pastelera.',
-                    brand: 'Pan Casero Café', product: 'Bomba de crema pastelera', price: '$13.800', image: 'https://images.rappi.com/products/2095330505-1677241361420.jpg?d=800x800&e=webp&q=80', detail: 'Masa brioche rellena de crema pastelera.', source: panCaseroUrl, saving: '$8.300 menos'
+                    ownName: 'Bomba de crema pastelera', ownPrice: '$5.500', ownImage: 'assets/images/generated/bomba-crema-pastelera.webp', ownDetail: 'Masa suave y crema pastelera.', ownFit: 'object-contain bg-[#fffaf2] p-1',
+                    brand: 'Pan Casero Café', product: 'Bomba de crema pastelera', price: '$13.800', image: 'https://images.rappi.com/products/2095330505-1677241361420.jpg?d=800x800&e=webp&q=80', detail: 'Masa brioche rellena de crema pastelera.', source: panCaseroUrl, saving: '$8.300 menos', competitorFit: 'object-contain bg-[#fffaf2] p-1'
                 }
             ];
 
@@ -433,12 +433,12 @@
                 <article class="rounded-2xl border border-chocolate-100 bg-chocolate-50/70 p-3">
                     <div class="grid grid-cols-[1fr_auto_1fr] gap-2 items-stretch text-center">
                         <div class="rounded-xl overflow-hidden border border-oro-400 bg-white">
-                            <img src="${item.ownImage}" alt="${item.ownName} de Dulces Zynareth" class="w-full h-32 object-cover">
+                            <img src="${item.ownImage}" alt="${item.ownName} de Dulces Zynareth" class="w-full h-32 ${item.ownFit || 'object-cover'}">
                             <div class="p-2"><span class="text-[9px] uppercase font-bold text-oro-700">Zynareth</span><p class="font-bold text-xs mt-0.5 leading-tight">${item.ownName}</p><strong class="block text-base text-chocolate-900 mt-1">${item.ownPrice}</strong><p class="text-[9px] text-chocolate-600 mt-1 leading-tight">${item.ownDetail}</p></div>
                         </div>
                         <div class="flex items-center font-serif font-bold text-oro-600 text-sm">VS</div>
                         <a href="${item.source}" target="_blank" rel="noopener noreferrer" class="rounded-xl overflow-hidden border border-chocolate-200 bg-white hover:border-oro-400 transition-colors" aria-label="Abrir referencia de ${item.product} en ${item.brand}">
-                            <img src="${item.image}" alt="${item.product} de ${item.brand}" class="w-full h-32 object-cover">
+                            <img src="${item.image}" alt="${item.product} de ${item.brand}" class="w-full h-32 ${item.competitorFit || 'object-cover'}">
                             <div class="p-2"><span class="text-[9px] uppercase font-bold text-chocolate-600 underline underline-offset-2">${item.brand} <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></span><p class="font-bold text-xs mt-0.5 leading-tight">${item.product}</p><strong class="block text-base text-chocolate-900 mt-1">${item.price}</strong><p class="text-[9px] text-chocolate-600 mt-1 leading-tight">${item.detail}</p></div>
                         </a>
                     </div>
