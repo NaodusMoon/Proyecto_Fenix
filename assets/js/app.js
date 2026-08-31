@@ -435,6 +435,109 @@
             if (sourceNote) sourceNote.innerHTML = `Referencia real de Bogotá. Precio, descripción y fotografía consultados el 30 de agosto de 2026 en <a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="underline font-semibold text-oro-700">la ficha pública de Rose Restaurant Pastry &amp; Tea en Rappi</a>`;
         }
 
+        // --- DATOS VERIFICADOS DE LAS HOJAS P-02 / P-03 ---
+        function applySchoolBusinessData() {
+            const menuData = [
+                { name: 'Copito Oreo', price: 4000 },
+                { name: 'Copito Coco', price: 4000 },
+                { name: 'Copito Galleta María', price: 4000 },
+                { name: 'Copito Arequipe', price: 4000 },
+                { name: 'Copito Mantecado', price: 4000 },
+                { name: 'Copito Fresa Nutella', price: 4500 },
+                { name: 'Bomba de Crema Pastelera', price: 5500 },
+                { name: 'Quesillo', price: 7000 }
+            ];
+
+            menuData.forEach(({ name, price }) => {
+                const button = Array.from(document.querySelectorAll('button[onclick*="addToCart"]'))
+                    .find((element) => element.getAttribute('onclick')?.includes(`'${name}'`));
+                if (!button) return;
+                button.setAttribute('onclick', `addToCart('${name}', ${price})`);
+                const card = button.closest('.bg-white');
+                const priceTag = card?.querySelector('.absolute.rounded-full, .absolute.rounded-lg');
+                if (priceTag && priceTag.textContent.includes('$')) priceTag.textContent = `$${price.toLocaleString('es-CO')}`;
+            });
+
+            const simulatorNote = document.querySelector('#simulador .text-chocolate-600');
+            if (simulatorNote) {
+                simulatorNote.textContent = 'Los costos y precios iniciales corresponden a las hojas P-02 y P-03 entregadas por el equipo. Al ajustar un precio se recalculan la ganancia bruta y el margen.';
+            }
+
+            const simulatorBox = document.querySelector('#simulador .bg-white.rounded-3xl');
+            if (simulatorBox && !document.getElementById('academic-19-note')) {
+                const note = document.createElement('p');
+                note.id = 'academic-19-note';
+                note.className = 'mt-5 rounded-2xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs text-chocolate-700';
+                note.innerHTML = '<strong>Lectura de la hoja P-03:</strong> las cifras “ganancia por unidad” anotadas por el equipo aplican un ajuste académico del 19% sobre la ganancia bruta: Copitos $2.025, Copito Nutella $2.106, Bomba de arequipe $1.741, Bomba pastelera $1.904 y Quesillo $2.916. El simulador muestra ganancia bruta; este ajuste no sustituye una liquidación tributaria.';
+                simulatorBox.append(note);
+            }
+        }
+
+        // --- FICHAS TÉCNICAS VISUALES P-03 / P-04 ---
+        function addTechnicalProductSection() {
+            if (document.getElementById('producto-tecnico')) return;
+            const simulator = document.getElementById('simulador');
+            if (!simulator) return;
+
+            const section = document.createElement('section');
+            section.id = 'producto-tecnico';
+            section.className = 'py-20 bg-[#fffdf9]';
+            section.innerHTML = `
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-oro-600 font-bold text-sm uppercase tracking-wider">P-03 y P-04 · Fichas técnicas visuales</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">Productos hechos para disfrutarse y volver a pedir</h2>
+                        <p class="text-chocolate-600 text-sm mt-3">Cada ficha muestra el producto antes de describirlo, sus insumos clave, la necesidad que atiende, su formato y el valor que aporta.</p>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <article class="overflow-hidden rounded-3xl bg-white border border-chocolate-100 shadow-sm">
+                            <img src="assets/images/generated/copito-oreo-real.webp" alt="Copito cremoso de Dulces Zynareth" class="w-full h-52 object-cover">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between gap-3"><h3 class="font-serif text-2xl font-bold text-chocolate-900">Copitos</h3><strong class="text-oro-700">$4.000</strong></div>
+                                <p class="text-sm text-chocolate-600 mt-3">Dulce artesanal cremoso, caracterizado por su forma de pico y sabores como Oreo, coco, Galleta María, arequipe y mantecado.</p>
+                                <div class="grid grid-cols-2 gap-3 text-xs mt-5">
+                                    <div class="rounded-2xl bg-amber-50 p-3"><i class="fa-solid fa-box-open text-oro-600"></i><strong class="block mt-1">Insumos</strong><span>Leche, azúcar, sabor, bolsa y empaque.</span></div>
+                                    <div class="rounded-2xl bg-emerald-50 p-3"><i class="fa-solid fa-face-smile text-emerald-600"></i><strong class="block mt-1">Necesidad</strong><span>Antojo frío, cremoso y diferente.</span></div>
+                                    <div class="rounded-2xl bg-blue-50 p-3"><i class="fa-solid fa-snowflake text-blue-600"></i><strong class="block mt-1">Formato</strong><span>Unidad individual congelada.</span></div>
+                                    <div class="rounded-2xl bg-rose-50 p-3"><i class="fa-solid fa-star text-rose-500"></i><strong class="block mt-1">Valor</strong><span>Sabores variados, hechos artesanalmente.</span></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="overflow-hidden rounded-3xl bg-white border border-chocolate-100 shadow-sm">
+                            <img src="assets/images/generated/bomba-arequipe.png" alt="Bomba de arequipe de Dulces Zynareth" class="w-full h-52 object-cover">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between gap-3"><h3 class="font-serif text-2xl font-bold text-chocolate-900">Bombas</h3><strong class="text-oro-700">$5.200–$5.500</strong></div>
+                                <p class="text-sm text-chocolate-600 mt-3">Preparación dulce redonda de masa suave, con relleno de arequipe o crema pastelera, elaborada por tandas.</p>
+                                <div class="grid grid-cols-2 gap-3 text-xs mt-5">
+                                    <div class="rounded-2xl bg-amber-50 p-3"><i class="fa-solid fa-wheat-awn text-oro-600"></i><strong class="block mt-1">Insumos</strong><span>Harina, levadura, huevo, relleno y aceite.</span></div>
+                                    <div class="rounded-2xl bg-emerald-50 p-3"><i class="fa-solid fa-heart text-emerald-600"></i><strong class="block mt-1">Necesidad</strong><span>Dulce relleno, suave y reconfortante.</span></div>
+                                    <div class="rounded-2xl bg-blue-50 p-3"><i class="fa-solid fa-bag-shopping text-blue-600"></i><strong class="block mt-1">Formato</strong><span>Unidad física, venta directa o en combo.</span></div>
+                                    <div class="rounded-2xl bg-rose-50 p-3"><i class="fa-solid fa-sparkles text-rose-500"></i><strong class="block mt-1">Valor</strong><span>Elección de relleno y producción fresca.</span></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="overflow-hidden rounded-3xl bg-white border border-chocolate-100 shadow-sm">
+                            <img src="assets/images/generated/quesillo.png" alt="Quesillo de Dulces Zynareth" class="w-full h-52 object-cover" onerror="this.src='assets/images/content/quesillo.jpg'">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between gap-3"><h3 class="font-serif text-2xl font-bold text-chocolate-900">Quesillo</h3><strong class="text-oro-700">$7.000</strong></div>
+                                <p class="text-sm text-chocolate-600 mt-3">Dulce de textura suave y cremosa, cubierto con caramelo artesanal, pensado para cerrar una comida con un sabor agradable.</p>
+                                <div class="grid grid-cols-2 gap-3 text-xs mt-5">
+                                    <div class="rounded-2xl bg-amber-50 p-3"><i class="fa-solid fa-egg text-oro-600"></i><strong class="block mt-1">Insumos</strong><span>Leche, huevos, azúcar y caramelo.</span></div>
+                                    <div class="rounded-2xl bg-emerald-50 p-3"><i class="fa-solid fa-spoon text-emerald-600"></i><strong class="block mt-1">Necesidad</strong><span>Postre cremoso y de sabor suave.</span></div>
+                                    <div class="rounded-2xl bg-blue-50 p-3"><i class="fa-solid fa-utensils text-blue-600"></i><strong class="block mt-1">Formato</strong><span>Porción individual lista para servir.</span></div>
+                                    <div class="rounded-2xl bg-rose-50 p-3"><i class="fa-solid fa-gem text-rose-500"></i><strong class="block mt-1">Valor</strong><span>Caramelo artesanal y porción fresca.</span></div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="mt-7 rounded-3xl border border-oro-200 bg-amber-50 p-5 text-xs text-chocolate-700">
+                        <strong class="text-chocolate-900"><i class="fa-solid fa-shield-heart text-oro-600 mr-2"></i>Inocuidad y rotulado</strong>
+                        <p class="mt-2">La elaboración y comercialización debe aplicar los requisitos sanitarios de la Resolución 2674 de 2013. Si se vende empacado o envasado con etiqueta, aplica el reglamento de etiquetado nutricional y frontal de la Resolución 810 de 2021, modificada por la Resolución 2492 de 2022. La verificación final depende de la forma real de venta y de la autoridad sanitaria.</p>
+                    </aside>
+                </div>`;
+            simulator.before(section);
+        }
+
         // --- MERCADO OBJETIVO: DECISIONES ÚTILES PARA VENTAS ---
         function refineTargetMarket() {
             const profileTitle = Array.from(document.querySelectorAll('h3')).find((element) => element.textContent.trim() === 'Buyer persona: Valentina');
@@ -443,15 +546,38 @@
             const matrixCard = matrixTitle?.closest('article');
 
             if (profileCard) {
-                profileCard.innerHTML = `<div class="w-16 h-16 rounded-full bg-oro-500 text-chocolate-900 flex items-center justify-center text-2xl"><i class="fa-solid fa-bullseye"></i></div><h3 class="font-serif text-2xl font-bold mt-5">Cliente prioritario: Valentina</h3><p class="text-oro-400 text-xs mt-1">19 años · estudiante · compra en Bogotá</p><p class="text-xs text-chocolate-200 mt-5">Este perfil sirve para tomar decisiones de venta, no para describir a una persona real</p><div class="mt-5 space-y-3 text-xs"><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Producto:</strong> copito o bomba individual para el antojo después de clase</div><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Precio:</strong> rango claro de $5.000 a $12.000 por compra</div><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Canal:</strong> fotos reales y pedido rápido por WhatsApp</div></div>`;
+                profileCard.innerHTML = `<div class="flex gap-4 items-center"><img src="assets/images/generated/buyer-persona-valentina.png" alt="Ilustración ficticia de Valentina, buyer persona" class="w-20 h-20 rounded-2xl object-cover border border-oro-400/40"><div><h3 class="font-serif text-2xl font-bold">Buyer persona: Valentina</h3><p class="text-oro-400 text-xs mt-1">19 años · estudiante · Bogotá</p></div></div><p class="text-xs text-chocolate-200 mt-5">Perfil ficticio usado para decidir oferta, precio y canal, no representa a una persona real.</p><div class="mt-5 space-y-3 text-xs"><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Busca:</strong> un postre individual, rico y accesible después de clase.</div><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Decide por:</strong> fotos del producto, sabores claros, precio visible y pedido rápido.</div><div class="rounded-xl bg-white/10 p-3"><strong class="text-oro-300">Canal:</strong> WhatsApp y punto físico; presupuesto de $5.000 a $12.000 por compra.</div></div>`;
             }
 
             if (matrixCard) {
                 const marketGrid = matrixCard.parentElement;
-                matrixCard.remove();
-                marketGrid?.classList.remove('lg:grid-cols-3');
-                marketGrid?.classList.add('lg:grid-cols-2');
+                marketGrid?.classList.remove('lg:grid-cols-2');
+                marketGrid?.classList.add('lg:grid-cols-3');
+                matrixCard.innerHTML = `<span class="text-oro-600 text-xs font-bold uppercase">Referencia competitiva</span><h3 class="font-serif text-2xl font-bold mt-2">Tres ofertas de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Matriz visual para ubicar la propuesta de valor sin leer una tabla durante la exposición.</p><div class="mt-5 space-y-3 text-xs"><a href="https://www.rappi.com.co/restaurantes/900400030-rose-restaurant-pastry-and-tea" target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 hover:border-oro-400"><strong>Rose Restaurant</strong><span class="block text-chocolate-600 mt-1">Bomba de arequipe · $18.590</span><em class="block text-oro-700 mt-1 not-italic">Zynareth: alternativa artesanal de $5.200</em></a><a href="https://www.rappi.com.co/restaurantes/900068023-pan-sugar" target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 hover:border-oro-400"><strong>Pan Sugar</strong><span class="block text-chocolate-600 mt-1">Bomba de arequipe · $7.535</span><em class="block text-oro-700 mt-1 not-italic">Zynareth: venta directa y precio menor</em></a><a href="https://www.aurypostres.com/picadas?menu=pasteleria" target="_blank" rel="noopener noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 hover:border-oro-400"><strong>Aury Postres</strong><span class="block text-chocolate-600 mt-1">Repolla de arequipe · $4.000</span><em class="block text-oro-700 mt-1 not-italic">Zynareth: bomba frita con relleno y producción por tandas</em></a></div><p class="text-[10px] text-chocolate-500 mt-4">Precios públicos consultados el 30 de agosto de 2026; cada nombre abre su fuente comercial.</p>`;
             }
+        }
+
+        function refreshProfitabilityPanel() {
+            const sectionTitle = Array.from(document.querySelectorAll('span')).find((element) => element.textContent.includes('G-06 · Rentabilidad'));
+            const container = sectionTitle?.closest('div')?.parentElement;
+            if (!container) return;
+            const subtitle = container.querySelector('p.text-chocolate-600');
+            const cards = container.querySelectorAll(':scope > div:nth-of-type(2) article');
+            if (subtitle) subtitle.textContent = 'Indicadores recalculados con los cinco costos y precios de las hojas P-02 y P-03; costos fijos y meta de ventas se muestran como escenario académico.';
+            const values = [
+                ['$2.640', 'por unidad · promedio de ganancia bruta'],
+                ['1.103', 'unidades/mes · 37 al día en 30 días'],
+                ['~5 meses', 'escenario: 1.800 unidades/mes'],
+                ['50,4%', 'margen bruto promedio sobre ventas']
+            ];
+            cards.forEach((card, index) => {
+                const strong = card.querySelector('strong');
+                const small = card.querySelector('span');
+                if (strong) strong.textContent = values[index][0];
+                if (small) small.textContent = values[index][1];
+            });
+            const method = container.querySelector(':scope > div:nth-of-type(3)');
+            if (method) method.innerHTML = '<strong class="text-oro-400">Cómo se calcula:</strong> costos totales de $13.000 y ventas de $26.200 para una unidad de cada producto: la ganancia bruta promedio es $2.640 y el margen bruto promedio 50,4%. Para el escenario académico se conservan costos fijos mensuales estimados de $2.910.000; por eso el punto de equilibrio es 1.103 unidades. Si se venden 1.800 unidades al mes, la utilidad operacional estimada es $1.842.000 y la inversión operativa de $4.870.000 se recuperaría en aproximadamente 3 meses; el indicador de ~5 meses usa el capital social total de $9.958.000. Son proyecciones, no resultados de ventas reales.';
         }
 
         // --- INICIALIZACIÓN ---
@@ -470,8 +596,11 @@
 
             // Inicializar cálculos del simulador escolar
             recalcSimulator();
+            applySchoolBusinessData();
+            addTechnicalProductSection();
             initializeTeamPie();
             enhanceCompetitorComparison();
             refineTargetMarket();
+            refreshProfitabilityPanel();
         }
 
