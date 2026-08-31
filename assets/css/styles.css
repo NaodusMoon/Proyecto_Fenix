@@ -247,6 +247,62 @@
         .team-share-green i, .team-estefani .team-role { color: #4ade80; }
         .team-share-red i, .team-jader .team-role { color: #f87171; }
 
+        .team-pie-chart {
+            width: 100%;
+            max-width: 20rem;
+            height: auto;
+            overflow: visible;
+            filter: drop-shadow(0 14px 11px rgba(0, 0, 0, 0.25));
+        }
+
+        .team-pie-tops path {
+            stroke: #2a0f07;
+            stroke-width: 4;
+            stroke-linejoin: round;
+        }
+
+        .team-pie-side {
+            stroke: #2a0f07;
+            stroke-width: 3;
+            stroke-linejoin: round;
+        }
+
+        .team-pie-blue { fill: #2563eb; }
+        .team-pie-blue-side { fill: #1e40af; }
+        .team-pie-violet { fill: #7c3aed; }
+        .team-pie-violet-side { fill: #5b21b6; }
+        .team-pie-green { fill: #16a34a; }
+        .team-pie-green-side { fill: #166534; }
+        .team-pie-red { fill: #dc2626; }
+
+        .team-pie-callout path {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .team-pie-callout rect {
+            fill: #fffdf9;
+            stroke-width: 3;
+        }
+
+        .team-pie-callout text {
+            fill: #24100a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .team-pie-callout-blue path,
+        .team-pie-callout-blue rect { stroke: #2563eb; }
+        .team-pie-callout-violet path,
+        .team-pie-callout-violet rect { stroke: #7c3aed; }
+        .team-pie-callout-green path,
+        .team-pie-callout-green rect { stroke: #16a34a; }
+        .team-pie-callout-red path,
+        .team-pie-callout-red rect { stroke: #dc2626; }
+
         .team-card {
             position: relative;
             min-height: 19rem;
