@@ -168,50 +168,6 @@
         }
 
 
-        // --- MANEJO DE SECCIÓN COMBOS SEMANALES CON IMAGENES DINÁMICAS ---
-        function selectDay(dayName) {
-            // Activar botones visualmente
-            document.querySelectorAll('.day-btn').forEach(btn => {
-                btn.classList.remove('bg-oro-500', 'text-chocolate-900', 'border-oro-400');
-                btn.classList.add('bg-[#FAF8F5]', 'text-chocolate-700', 'border-chocolate-100');
-            });
-
-            const activeBtn = document.getElementById(`btn-${dayName}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-[#FAF8F5]', 'text-chocolate-700', 'border-chocolate-100');
-                activeBtn.classList.add('bg-oro-500', 'text-chocolate-900', 'border-oro-400');
-            }
-
-            // Actualizar datos de la tarjeta
-            const data = COMBOS[dayName];
-            
-            // Animación suave de transición de imagen
-            const comboImg = document.getElementById('combo-image');
-            comboImg.style.opacity = '0';
-            
-            setTimeout(() => {
-                comboImg.src = data.image;
-                comboImg.style.opacity = '1';
-            }, 150);
-
-            document.getElementById('combo-day-badge').innerText = dayName;
-            document.getElementById('combo-title').innerText = data.title;
-            document.getElementById('combo-desc').innerText = data.desc;
-            document.getElementById('combo-cost').innerText = data.cost;
-            document.getElementById('combo-price').innerText = data.price;
-            document.getElementById('combo-profit').innerText = data.profit;
-            document.getElementById('combo-rappi-price').innerText = data.rappi;
-
-            // Configurar botón para agregar combo al pedido
-            const addComboBtn = document.getElementById('add-combo-btn');
-            // Limpiar listener anterior para evitar duplicación
-            addComboBtn.onclick = null;
-            addComboBtn.onclick = function() {
-                const rawPrice = parseInt(data.price.replace(/[^0-9]/g, ''));
-                addToCart(`Combo del ${dayName} (${data.title})`, rawPrice);
-            };
-        }
-
         // --- SIMULADOR FINANCIERO DINÁMICO ---
         function recalcSimulator() {
             // Costos base estables para Dulces Zynareth
@@ -597,10 +553,20 @@
 
             if (matrixCard) {
                 const marketGrid = matrixCard.parentElement;
-                marketGrid?.classList.remove('lg:grid-cols-3');
-                marketGrid?.classList.add('lg:grid-cols-2');
-                matrixCard.remove();
+                marketGrid?.classList.remove('lg:grid-cols-2');
+                marketGrid?.classList.add('lg:grid-cols-3');
+                matrixCard.innerHTML = `<span class="text-oro-600 text-xs font-extrabold uppercase tracking-wider">Matriz comparativa</span><h3 class="font-serif text-2xl font-bold mt-2 text-chocolate-900">Tres competidores de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Una referencia equivalente por cada línea de producto.</p><div class="mt-5 space-y-3 text-xs"><a href="https://www.rappi.com.co/restaurantes/900388509-rose-restaurant-pastry-and-tea" target="_blank" rel="noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 transition hover:border-oro-400"><strong class="block text-chocolate-900">Rose Restaurant · Bomba</strong><span class="block mt-1 text-chocolate-600">Referencia: $18.590</span><span class="text-oro-700">Zynareth: $5.200</span></a><a href="https://www.rappi.com.co/restaurantes/900005269-randys" target="_blank" rel="noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 transition hover:border-oro-400"><strong class="block text-chocolate-900">Randys · Copito</strong><span class="block mt-1 text-chocolate-600">Helado Oreo vasito: $4.500</span><span class="text-oro-700">Zynareth: $4.000</span></a><a href="https://www.rappi.com.co/restaurantes/900480218-dulcetentacion" target="_blank" rel="noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 transition hover:border-oro-400"><strong class="block text-chocolate-900">Dulcetentación · Quesillo</strong><span class="block mt-1 text-chocolate-600">Torta quesillo: $12.000</span><span class="text-oro-700">Zynareth: $7.000</span></a></div><p class="mt-4 text-[10px] leading-relaxed text-chocolate-500">Precios públicos de referencia; verifique disponibilidad y precios antes de exponer.</p>`;
             }
+        }
+
+        function organizeRequiredSequence() {
+            const productSheet = document.getElementById('ficha-producto');
+            const menu = document.getElementById('menu');
+            const evidence = document.getElementById('evidencias');
+            const simulator = document.getElementById('simulador');
+
+            if (productSheet && menu) menu.before(productSheet);
+            if (evidence && simulator) simulator.before(evidence);
         }
 
         function refreshProfitabilityPanel() {
@@ -628,19 +594,8 @@
 
         // --- INICIALIZACIÓN ---
         window.onload = function() {
-            // Auto-seleccionar combo del día actual de la semana en Colombia
-            const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-            const todayIndex = new Date().getDay();
-            const todayName = days[todayIndex];
-            selectDay(todayName);
-
-            // Ajustar un indicador especial al combo seleccionado
-            const todayBtn = document.getElementById(`btn-${todayName}`);
-            if (todayBtn) {
-                todayBtn.innerHTML += ` <span class="bg-oro-900 text-oro-400 text-[8px] px-1 rounded ml-1 font-black">Hoy</span>`;
-            }
-
             // Inicializar cálculos del simulador escolar
+            organizeRequiredSequence();
             recalcSimulator();
             applySchoolBusinessData();
             addTechnicalProductSection();
