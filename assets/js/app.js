@@ -476,6 +476,49 @@
             }
         }
 
+        function initializePriceCarousel() {
+            const evidence = document.getElementById('evidencias');
+            const priceLabel = Array.from(evidence?.querySelectorAll('span') || []).find((element) => element.textContent.includes('V-01 · Justificación del precio'));
+            const priceBlock = priceLabel?.parentElement?.parentElement;
+            const pricingGrid = priceBlock?.querySelector(':scope > div:nth-of-type(2)');
+            const chartCard = pricingGrid?.querySelector('article');
+            if (!priceBlock || !chartCard || document.getElementById('price-carousel')) return;
+
+            const products = [
+                { name: 'Copitos estándar', cost: 1500, profit: 2500, price: 4000, detail: 'Oreo, coco, Galleta María, arequipe y mantecado.' },
+                { name: 'Copito Nutella', cost: 1900, profit: 2600, price: 4500, detail: 'Fresa y Nutella en presentación premium.' },
+                { name: 'Bomba de arequipe', cost: 3050, profit: 2150, price: 5200, detail: 'Masa frita, relleno de arequipe y venta directa.' },
+                { name: 'Bomba crema pastelera', cost: 3150, profit: 2350, price: 5500, detail: 'Masa suave, crema pastelera, vainilla y mantequilla.' },
+                { name: 'Quesillo porción', cost: 3400, profit: 3600, price: 7000, detail: 'Textura cremosa y caramelo artesanal.' }
+            ];
+            const money = (value) => `$${value.toLocaleString('es-CO')}`;
+            const slides = products.map((product, index) => {
+                const height = (value) => Math.max(10, Math.round((value / product.price) * 100));
+                return `<div class="price-carousel-slide w-full shrink-0" role="group" aria-roledescription="diapositiva" aria-label="${index + 1} de ${products.length}: ${product.name}"><div class="rounded-2xl bg-chocolate-50 px-5 pt-4 pb-3"><div class="flex items-start justify-between gap-3"><div><span class="text-[10px] uppercase font-bold tracking-wider text-oro-700">Producto ${index + 1} de ${products.length}</span><h4 class="font-serif text-xl font-bold text-chocolate-900">${product.name}</h4></div><strong class="text-oro-700 text-lg">${money(product.price)}</strong></div><p class="text-xs text-chocolate-600 mt-1">${product.detail}</p></div><div class="h-52 mt-4 flex items-end justify-around gap-4 border-b-2 border-chocolate-300 px-4"><div class="h-full flex flex-col items-center justify-end gap-2 w-1/3"><span class="text-xs font-bold">${money(product.cost)}</span><div class="w-full max-w-24 bg-blue-500 rounded-t-2xl" style="height:${height(product.cost)}%"></div><span class="text-xs text-center">Costo</span></div><div class="h-full flex flex-col items-center justify-end gap-2 w-1/3"><span class="text-xs font-bold">${money(product.profit)}</span><div class="w-full max-w-24 bg-emerald-500 rounded-t-2xl" style="height:${height(product.profit)}%"></div><span class="text-xs text-center">Ganancia</span></div><div class="h-full flex flex-col items-center justify-end gap-2 w-1/3"><span class="text-xs font-bold">${money(product.price)}</span><div class="w-full max-w-24 bg-oro-500 rounded-t-2xl" style="height:100%"></div><span class="text-xs text-center">Precio</span></div></div><p class="text-[11px] text-chocolate-600 mt-4"><strong>Lectura:</strong> el precio cubre ${money(product.cost)} de costo y deja ${money(product.profit)} de ganancia bruta por unidad.</p></div>`;
+            }).join('');
+            chartCard.innerHTML = `<div id="price-carousel" class="relative" aria-roledescription="carrusel" aria-label="Costo, ganancia y precio por producto"><div class="flex items-center justify-between gap-3"><h3 class="font-bold">Costo, ganancia y precio por producto</h3><button id="price-carousel-toggle" type="button" aria-pressed="false" class="rounded-full border border-chocolate-200 px-3 py-1.5 text-xs font-bold text-chocolate-800 hover:bg-chocolate-50"><i class="fa-solid fa-pause mr-1"></i>Pausar</button></div><p class="text-xs text-chocolate-600 mt-2">Cada producto tiene su propio costo, ganancia bruta y precio de venta según P-02 y P-03.</p><div class="relative mt-4"><div class="overflow-hidden"><div id="price-carousel-track" class="flex transition-transform duration-500 ease-out">${slides}</div></div><button id="price-carousel-prev" type="button" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-9 h-9 rounded-full bg-white border border-chocolate-200 shadow-md" aria-label="Producto anterior"><i class="fa-solid fa-chevron-left"></i></button><button id="price-carousel-next" type="button" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-9 h-9 rounded-full bg-white border border-chocolate-200 shadow-md" aria-label="Producto siguiente"><i class="fa-solid fa-chevron-right"></i></button></div><div class="flex justify-center gap-2 mt-4">${products.map((product, index) => `<button type="button" data-price-dot="${index}" class="h-2.5 rounded-full ${index === 0 ? 'w-7 bg-oro-500' : 'w-2.5 bg-chocolate-200'}" aria-label="Ver ${product.name}"></button>`).join('')}</div></div>`;
+            const track = document.getElementById('price-carousel-track');
+            const previous = document.getElementById('price-carousel-prev');
+            const next = document.getElementById('price-carousel-next');
+            const toggle = document.getElementById('price-carousel-toggle');
+            const dots = Array.from(chartCard.querySelectorAll('[data-price-dot]'));
+            let active = 0;
+            let paused = false;
+            let timer;
+            const show = (index) => {
+                active = (index + products.length) % products.length;
+                track.style.transform = `translateX(-${active * 100}%)`;
+                dots.forEach((dot, dotIndex) => { dot.className = `h-2.5 rounded-full ${dotIndex === active ? 'w-7 bg-oro-500' : 'w-2.5 bg-chocolate-200'}`; });
+            };
+            const restart = () => { window.clearInterval(timer); if (!paused) timer = window.setInterval(() => show(active + 1), 6500); };
+            previous.addEventListener('click', () => { show(active - 1); restart(); });
+            next.addEventListener('click', () => { show(active + 1); restart(); });
+            dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); restart(); }));
+            toggle.addEventListener('click', () => { paused = !paused; toggle.setAttribute('aria-pressed', String(paused)); toggle.innerHTML = paused ? '<i class="fa-solid fa-play mr-1"></i>Reanudar' : '<i class="fa-solid fa-pause mr-1"></i>Pausar'; restart(); });
+            show(0);
+            restart();
+        }
+
         function getProductionMaterialGroups() {
             return [
                 ['Bases y sabores', [['Oreo', '2 paquetes · 432 g', '$14.240'], ['Coco', '2 paquetes · 300 g', '$7.400'], ['Galleta María', '3 paquetes · 600 g', '$14.880'], ['Fresa', '1 bandeja · 500 g', '$12.300'], ['Vainilla', '1 frasco · 60 ml', '$4.000'], ['Nutella', '2 tarros · 1 kg', '$30.700'], ['Arequipe Alpina', '8 bolsas · 8 L', '$30.750'], ['Esencia de mantecado', '1 frasco', '$8.000'], ['Cacao / chocolate', 'paquete', '$25.000']]],
@@ -689,6 +732,7 @@
             organizeRequiredSequence();
             recalcSimulator();
             applySchoolBusinessData();
+            initializePriceCarousel();
             addProductionMaterialsSection();
             renderCompleteMaterialCostChart();
             addTechnicalProductSection();
