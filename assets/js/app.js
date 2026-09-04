@@ -498,7 +498,7 @@
             const section = document.createElement('div');
             section.id = 'materiales-produccion';
             section.innerHTML = `<div class="text-center max-w-3xl mx-auto mb-9"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">P-01 · Materiales de producción</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">Insumos registrados y valor de compra</h2><p class="text-chocolate-600 text-sm mt-3">Relación completa tomada del registro interno más reciente. Cada costo unitario del simulador se calcula a partir de estos recursos y del consumo por producto.</p></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-5">${cards}</div><div class="mt-8"><h3 class="font-serif text-2xl font-bold text-chocolate-900 text-center">Costos y precios unitarios aprobados</h3><p class="mt-2 text-center text-xs text-chocolate-600">La última columna replica el ajuste académico del 19% anotado en P-03.</p><div class="mt-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3">${priceCards}</div></div><p class="mt-5 rounded-2xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs text-chocolate-700"><strong>Lectura de costos:</strong> los valores mostrados son precios de paquete o presentación de compra. Aceite se considera dentro del costo unitario de las bombas; en el registro fotografiado no se aprecia un valor de paquete independiente.</p>`;
-            evidence.insertBefore(section, priceBlock);
+            priceBlock.parentElement?.insertBefore(section, priceBlock);
         }
 
         function renderCompleteMaterialCostChart() {
