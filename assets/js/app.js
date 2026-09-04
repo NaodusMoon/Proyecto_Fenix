@@ -553,9 +553,9 @@
 
             if (matrixCard) {
                 const marketGrid = matrixCard.parentElement;
-                marketGrid?.classList.remove('lg:grid-cols-2');
-                marketGrid?.classList.add('lg:grid-cols-3');
-                matrixCard.innerHTML = `<span class="text-oro-600 text-xs font-extrabold uppercase tracking-wider">Matriz comparativa</span><h3 class="font-serif text-2xl font-bold mt-2 text-chocolate-900">Tres competidores de Bogotá</h3><p class="text-xs text-chocolate-600 mt-2">Una referencia equivalente por cada línea de producto.</p><div class="mt-5 space-y-3 text-xs"><a href="https://www.rappi.com.co/restaurantes/900388509-rose-restaurant-pastry-and-tea" target="_blank" rel="noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 transition hover:border-oro-400"><strong class="block text-chocolate-900">Rose Restaurant · Bomba</strong><span class="block mt-1 text-chocolate-600">Referencia: $18.590</span><span class="text-oro-700">Zynareth: $5.200</span></a><a href="https://www.rappi.com.co/restaurantes/900005269-randys" target="_blank" rel="noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 transition hover:border-oro-400"><strong class="block text-chocolate-900">Randys · Copito</strong><span class="block mt-1 text-chocolate-600">Helado Oreo vasito: $4.500</span><span class="text-oro-700">Zynareth: $4.000</span></a><a href="https://www.rappi.com.co/restaurantes/900480218-dulcetentacion" target="_blank" rel="noreferrer" class="block rounded-2xl border border-chocolate-100 p-3 transition hover:border-oro-400"><strong class="block text-chocolate-900">Dulcetentación · Quesillo</strong><span class="block mt-1 text-chocolate-600">Torta quesillo: $12.000</span><span class="text-oro-700">Zynareth: $7.000</span></a></div><p class="mt-4 text-[10px] leading-relaxed text-chocolate-500">Precios públicos de referencia; verifique disponibilidad y precios antes de exponer.</p>`;
+                marketGrid?.classList.remove('lg:grid-cols-3');
+                marketGrid?.classList.add('lg:grid-cols-2');
+                matrixCard.remove();
             }
         }
 
