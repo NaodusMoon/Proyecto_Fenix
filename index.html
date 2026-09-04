@@ -86,9 +86,9 @@
             <p class="text-chocolate-100 text-lg md:text-xl max-w-2xl mb-6 leading-relaxed font-light drop-shadow-[0_3px_12px_rgba(0,0,0,0.85)]">
                 Fabricamos de forma artesanal postres tradicionales y bebidas refrescantes, sin reventa, con insumos locales y sabores pensados para compartir.
             </p>
-            <article class="mb-7 flex max-w-2xl items-center gap-4 rounded-2xl border border-oro-400/35 bg-chocolate-950/55 p-3 text-left shadow-xl backdrop-blur-sm">
-                <img src="assets/images/team/equipo-zynareth.jpg" alt="Equipo directivo de Dulces Zynareth" class="h-20 w-24 shrink-0 rounded-xl object-cover">
-                <div><span class="text-[10px] font-extrabold uppercase tracking-widest text-oro-400">Identidad corporativa</span><p class="mt-1 text-sm leading-relaxed text-chocolate-100"><strong class="text-white">Misión:</strong> crear postres artesanales memorables, frescos y accesibles para compartir en Bogotá.</p></div>
+            <article class="mb-7 grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-3xl border border-oro-400/35 bg-chocolate-950/60 text-left shadow-xl backdrop-blur-sm sm:grid-cols-[minmax(220px,0.8fr)_1fr]">
+                <img src="assets/images/team/equipo-zynareth.jpg" alt="Equipo directivo de Dulces Zynareth" class="h-52 w-full object-cover sm:h-full">
+                <div class="flex flex-col justify-center p-6"><span class="text-[10px] font-extrabold uppercase tracking-widest text-oro-400">Identidad corporativa</span><p class="mt-2 text-base leading-relaxed text-chocolate-100"><strong class="text-white">Misión:</strong> crear postres artesanales memorables, frescos y accesibles para compartir en Bogotá.</p><span class="mt-4 text-xs font-semibold text-oro-300"><i class="fa-solid fa-users mr-2"></i>Equipo directivo Dulces Zynareth</span></div>
             </article>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#menu" class="bg-oro-500 hover:bg-oro-600 text-chocolate-900 font-bold px-8 py-4 rounded-full shadow-lg shadow-oro-500/30 smooth-hover transform hover:-translate-y-0.5">
@@ -507,8 +507,8 @@
                         </div>
                     </div>
 
-                    <!-- Categoría: Bebidas -->
-                    <div>
+                    <!-- Categoría retirada: bebidas -->
+                    <div class="hidden" aria-hidden="true">
                         <h3 class="font-serif text-2xl font-bold text-chocolate-800 mb-6 pb-2 border-b border-chocolate-200 flex items-center gap-2">
                             <i class="fa-solid fa-mug-hot text-oro-600" aria-hidden="true"></i> Bebidas para Acompañar
                         </h3>
@@ -645,20 +645,21 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                 <article class="rounded-3xl overflow-hidden border border-chocolate-100 bg-[#fffaf2] grid grid-cols-1 sm:grid-cols-2">
-                    <img src="assets/images/generated/copito-oreo-real.webp" alt="Copito cremoso de Oreo de Dulces Zynareth" class="w-full h-72 sm:h-full object-cover object-center">
+                    <img src="assets/images/generated/copito-cremoso-producto-v2.png" alt="Copito cremoso de galleta y crema de Dulces Zynareth" class="w-full h-72 sm:h-full object-cover object-center">
                     <div class="p-7 flex flex-col justify-center"><span class="text-oro-600 text-xs font-bold uppercase tracking-wider">Producto destacado</span><h3 class="font-serif text-3xl font-bold mt-2">Copito cremoso</h3><p class="text-sm text-chocolate-600 mt-3">Base láctea congelada, sabores reconocibles y presentación individual lista para servir.</p><div class="mt-5 inline-flex items-baseline gap-2"><strong class="text-3xl text-chocolate-900">$4.000</strong><span class="text-xs text-chocolate-500">precio directo</span></div></div>
                 </article>
                 <article class="rounded-3xl bg-chocolate-900 text-white p-7 border border-white/10">
                     <span class="text-oro-400 text-xs font-bold uppercase tracking-wider">Infografía de insumos</span>
                     <h3 class="font-serif text-2xl font-bold mt-2">De la mezcla al congelador</h3>
-                    <img src="assets/images/generated/infografia-insumos-copitos.png" alt="Infografía ilustrada de insumos y proceso de copitos: lácteos, azúcar, sabores, empaque y congelación" class="w-full mt-6 rounded-2xl object-cover aspect-[16/9]">
-                    <p class="text-xs text-chocolate-200 mt-4">Base láctea, azúcar y sabores se mezclan, empacan por unidad y pasan al congelador para conservar la textura cremosa.</p>
+                    <img src="assets/images/generated/infografia-insumos-copitos-v2.png" alt="Infografía de cinco etapas: lácteos, sabores, mezcla, empaque individual y congelación de copitos" class="w-full mt-6 rounded-2xl object-cover aspect-[16/9]">
+                    <p class="text-xs text-chocolate-200 mt-4"><strong class="text-oro-300">Proceso:</strong> base láctea y crema → azúcar y sabores → mezcla cremosa → empaque individual → congelación. Producción por tandas, higiene y porción lista para servir.</p>
                 </article>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-                <div class="rounded-2xl border border-chocolate-100 p-5"><i class="fa-solid fa-clock text-oro-600 text-xl"></i><h3 class="font-bold mt-3">Soluciona el antojo rápido</h3><p class="text-xs text-chocolate-600 mt-2">Porción lista para disfrutar, sin preparación adicional.</p></div>
-                <div class="rounded-2xl border border-chocolate-100 p-5"><i class="fa-solid fa-wallet text-oro-600 text-xl"></i><h3 class="font-bold mt-3">Mantiene un precio accesible</h3><p class="text-xs text-chocolate-600 mt-2">$4.000 directo: una opción artesanal pensada para estudiantes y familias.</p></div>
-                <div class="rounded-2xl border border-chocolate-100 p-5"><i class="fa-solid fa-people-group text-oro-600 text-xl"></i><h3 class="font-bold mt-3">Acompaña momentos compartidos</h3><p class="text-xs text-chocolate-600 mt-2">Sabores variados, compra por unidad o en combos para compartir.</p></div>
+            <div class="mt-8"><div class="mb-4 flex items-center gap-3"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-oro-100 text-oro-700"><i class="fa-solid fa-heart-circle-check"></i></span><div><h3 class="font-serif text-2xl font-bold text-chocolate-900">Necesidades que resuelve</h3><p class="text-xs text-chocolate-600">Iconos que explican el valor práctico del copito para el cliente.</p></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="rounded-2xl border border-chocolate-100 bg-amber-50/40 p-5"><i class="fa-solid fa-clock text-oro-600 text-xl"></i><h4 class="font-bold mt-3">Antojo inmediato</h4><p class="text-xs text-chocolate-600 mt-2">Porción individual congelada, lista para disfrutar sin esperar preparación.</p></div>
+                <div class="rounded-2xl border border-chocolate-100 bg-emerald-50/40 p-5"><i class="fa-solid fa-wallet text-emerald-600 text-xl"></i><h4 class="font-bold mt-3">Dulce accesible</h4><p class="text-xs text-chocolate-600 mt-2">Precio directo de $4.000 para estudiantes y familias que buscan una opción artesanal.</p></div>
+                <div class="rounded-2xl border border-chocolate-100 bg-rose-50/40 p-5"><i class="fa-solid fa-face-smile text-rose-500 text-xl"></i><h4 class="font-bold mt-3">Sabor fácil de elegir</h4><p class="text-xs text-chocolate-600 mt-2">Sabores conocidos que reducen la duda y hacen más simple elegir un postre para compartir.</p></div>
+            </div></div>
             </div>
         </div>
     </section>
