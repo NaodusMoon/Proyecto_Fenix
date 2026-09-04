@@ -476,6 +476,14 @@
             }
         }
 
+        function getProductionMaterialGroups() {
+            return [
+                ['Bases y sabores', [['Oreo', '2 paquetes · 432 g', '$14.240'], ['Coco', '2 paquetes · 300 g', '$7.400'], ['Galleta María', '3 paquetes · 600 g', '$14.880'], ['Fresa', '1 bandeja · 500 g', '$12.300'], ['Vainilla', '1 frasco · 60 ml', '$4.000'], ['Nutella', '2 tarros · 1 kg', '$30.700'], ['Arequipe Alpina', '8 bolsas · 8 L', '$30.750'], ['Esencia de mantecado', '1 frasco', '$8.000'], ['Cacao / chocolate', 'paquete', '$25.000']]],
+                ['Lácteos y secos', [['Leche', '2 paquetes · 2 kg', '$36.000'], ['Azúcar', '2 paquetes · 2 kg', '$3.600'], ['Leche en polvo', '3 unidades', '$19.870'], ['Harina', '2 paquetes', '$19.890'], ['Huevos AA', '1 cubeta · 30 und.', '$23.000'], ['Canela', '1 paquete', '$250'], ['Sal', '1 paquete', '$2.600']]],
+                ['Empaque y apoyo', [['Vasos', '1 paquete · 100 und.', '$10.000'], ['Servilletas', '2 paquetes', '$8.500'], ['Cucharas', '100 unidades', '$10.440'], ['Bolsas', '100 unidades', '$23.000'], ['Café', '1 paquete', '$12.000'], ['Agua', '1 garrafa', '$5.000'], ['Aceite para freír', 'consumo de bombas', 'incluido en costo unitario']]]
+            ];
+        }
+
         function addProductionMaterialsSection() {
             if (document.getElementById('materiales-produccion')) return;
             const evidence = document.getElementById('evidencias');
@@ -483,11 +491,7 @@
             const priceBlock = priceTitle?.parentElement?.parentElement;
             if (!evidence || !priceBlock) return;
 
-            const groups = [
-                ['Bases y sabores', [['Oreo', '2 paquetes · 432 g', '$14.240'], ['Coco', '2 paquetes · 300 g', '$7.400'], ['Galleta María', '3 paquetes · 600 g', '$14.880'], ['Fresa', '1 bandeja · 500 g', '$12.300'], ['Vainilla', '1 frasco · 60 ml', '$4.000'], ['Nutella', '2 tarros · 1 kg', '$30.700'], ['Arequipe Alpina', '8 bolsas · 8 L', '$30.750'], ['Esencia de mantecado', '1 frasco', '$8.000'], ['Cacao / chocolate', 'paquete', '$25.000']]],
-                ['Lácteos y secos', [['Leche', '2 paquetes · 2 kg', '$36.000'], ['Azúcar', '2 paquetes · 2 kg', '$3.600'], ['Leche en polvo', '3 unidades', '$19.870'], ['Harina', '2 paquetes', '$19.890'], ['Huevos AA', '1 cubeta · 30 und.', '$23.000'], ['Canela', '1 paquete', '$250'], ['Sal', '1 paquete', '$2.600']]],
-                ['Empaque y apoyo', [['Vasos', '1 paquete · 100 und.', '$10.000'], ['Servilletas', '2 paquetes', '$8.500'], ['Cucharas', '100 unidades', '$10.440'], ['Bolsas', '100 unidades', '$23.000'], ['Café', '1 paquete', '$12.000'], ['Agua', '1 garrafa', '$5.000'], ['Aceite para freír', 'consumo de bombas', 'incluido en costo unitario']]]
-            ];
+            const groups = getProductionMaterialGroups();
             const cards = groups.map(([title, items]) => `<article class="rounded-3xl border border-chocolate-100 bg-white p-5"><h3 class="font-serif text-xl font-bold text-chocolate-900">${title}</h3><div class="mt-4 space-y-2">${items.map(([name, quantity, value]) => `<div class="flex items-start justify-between gap-3 rounded-xl bg-chocolate-50 px-3 py-2 text-xs"><div><strong class="block text-chocolate-800">${name}</strong><span class="text-chocolate-500">${quantity}</span></div><strong class="shrink-0 text-oro-700">${value}</strong></div>`).join('')}</div></article>`).join('');
             const unitPrices = [['Copitos estándar', '$1.500', '$4.000', '$2.500', '$2.025'], ['Copito Nutella', '$1.900', '$4.500', '$2.600', '$2.106'], ['Bomba de arequipe', '$3.050', '$5.200', '$2.150', '$1.741'], ['Bomba crema pastelera', '$3.150', '$5.500', '$2.350', '$1.904'], ['Quesillo porción', '$3.400', '$7.000', '$3.600', '$2.916']];
             const priceCards = unitPrices.map(([product, cost, price, gross, net]) => `<article class="rounded-2xl bg-chocolate-900 p-4 text-white"><span class="text-[10px] font-bold uppercase tracking-wider text-oro-400">${product}</span><div class="mt-3 grid grid-cols-2 gap-2 text-xs"><span class="text-chocolate-200">Costo<br><strong class="text-white">${cost}</strong></span><span class="text-chocolate-200">Venta<br><strong class="text-oro-300">${price}</strong></span><span class="text-chocolate-200">Bruta<br><strong class="text-white">${gross}</strong></span><span class="text-chocolate-200">Después 19%<br><strong class="text-emerald-300">${net}</strong></span></div></article>`).join('');
@@ -495,6 +499,32 @@
             section.id = 'materiales-produccion';
             section.innerHTML = `<div class="text-center max-w-3xl mx-auto mb-9"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">P-01 · Materiales de producción</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">Insumos registrados y valor de compra</h2><p class="text-chocolate-600 text-sm mt-3">Relación completa tomada del registro interno más reciente. Cada costo unitario del simulador se calcula a partir de estos recursos y del consumo por producto.</p></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-5">${cards}</div><div class="mt-8"><h3 class="font-serif text-2xl font-bold text-chocolate-900 text-center">Costos y precios unitarios aprobados</h3><p class="mt-2 text-center text-xs text-chocolate-600">La última columna replica el ajuste académico del 19% anotado en P-03.</p><div class="mt-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3">${priceCards}</div></div><p class="mt-5 rounded-2xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs text-chocolate-700"><strong>Lectura de costos:</strong> los valores mostrados son precios de paquete o presentación de compra. Aceite se considera dentro del costo unitario de las bombas; en el registro fotografiado no se aprecia un valor de paquete independiente.</p>`;
             evidence.insertBefore(section, priceBlock);
+        }
+
+        function renderCompleteMaterialCostChart() {
+            const evidence = document.getElementById('evidencias');
+            const costLabel = Array.from(evidence?.querySelectorAll('span') || []).find((element) => element.textContent.includes('C-02 · Costos de producción'));
+            const costBlock = costLabel?.parentElement?.parentElement;
+            const chartGrid = costBlock?.children[1];
+            if (!costBlock || !chartGrid) return;
+
+            const groups = getProductionMaterialGroups();
+            const colors = ['bg-violet-500', 'bg-blue-500', 'bg-emerald-500'];
+            const knownGroups = groups.map(([title, items], index) => ({
+                title,
+                color: colors[index],
+                total: items.reduce((sum, [, , value]) => sum + Number(value.replace(/[^0-9]/g, '') || 0), 0),
+                items: items.filter(([, , value]) => value.startsWith('$'))
+            }));
+            const total = knownGroups.reduce((sum, group) => sum + group.total, 0);
+            const max = Math.max(...knownGroups.flatMap((group) => group.items.map(([, , value]) => Number(value.replace(/[^0-9]/g, '')))));
+            const materialCards = knownGroups.map((group) => `<article class="rounded-2xl border border-chocolate-100 bg-chocolate-50 p-4"><div class="flex items-center justify-between gap-3"><h4 class="font-bold text-chocolate-900">${group.title}</h4><strong class="text-oro-700 text-xs">$${group.total.toLocaleString('es-CO')}</strong></div><div class="mt-4 space-y-3">${group.items.map(([name, quantity, value]) => { const amount = Number(value.replace(/[^0-9]/g, '')); return `<div><div class="flex justify-between gap-2 text-[11px]"><span class="font-semibold text-chocolate-800">${name}</span><strong>${value}</strong></div><div class="h-2 rounded-full bg-white mt-1 overflow-hidden"><div class="h-full rounded-full ${group.color}" style="width:${Math.max(2, (amount / max) * 100)}%"></div></div><span class="block text-[10px] text-chocolate-500 mt-1">${quantity}</span></div>`; }).join('')}</div></article>`).join('');
+            const shares = knownGroups.map((group) => Math.round((group.total / total) * 100));
+            const first = shares[0];
+            const second = first + shares[1];
+            costBlock.children[0].innerHTML = '<span class="text-oro-600 font-bold text-sm uppercase tracking-wider">C-02 · Costos de producción</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">Materiales que se toman en cuenta para producir</h2><p class="text-chocolate-600 text-sm mt-3">Registro P-01 completo: valores de compra por paquete o presentación. Los costos por unidad y precios de venta se muestran por separado para cada producto.</p>';
+            chartGrid.className = 'grid grid-cols-1 lg:grid-cols-3 gap-5';
+            chartGrid.innerHTML = `${materialCards}<article class="lg:col-span-3 rounded-3xl bg-chocolate-900 text-white p-6 grid grid-cols-1 md:grid-cols-[auto_1fr] items-center gap-6"><div class="mx-auto w-40 h-40 rounded-full p-6" style="background:conic-gradient(#8b5cf6 0 ${first}%, #3b82f6 ${first}% ${second}%, #10b981 ${second}% 100%)"><div class="w-full h-full rounded-full bg-chocolate-900 flex flex-col items-center justify-center text-center"><strong class="text-2xl text-oro-400">$${total.toLocaleString('es-CO')}</strong><span class="text-[10px] text-chocolate-300">total registrado</span></div></div><div><span class="text-oro-400 font-bold text-xs uppercase">Distribución del inventario</span><h3 class="font-serif text-2xl font-bold mt-2">Compra de materiales del registro P-01</h3><div class="grid sm:grid-cols-3 gap-3 mt-4 text-xs text-chocolate-200">${knownGroups.map((group, index) => `<div><span class="font-bold text-white">${group.title}</span><br>$${group.total.toLocaleString('es-CO')} · ${shares[index]}%</div>`).join('')}</div><p class="mt-4 text-xs text-chocolate-300">Incluye todos los materiales con valor visible en P-01. Aceite para freír se mantiene como consumo incluido en el costo de las bombas porque el registro no muestra un valor de compra independiente.</p></div></article>`;
         }
 
         // --- FICHAS TÉCNICAS VISUALES P-03 / P-04 ---
@@ -660,6 +690,7 @@
             recalcSimulator();
             applySchoolBusinessData();
             addProductionMaterialsSection();
+            renderCompleteMaterialCostChart();
             addTechnicalProductSection();
             initializeTeamPie();
             enhanceCompetitorComparison();
