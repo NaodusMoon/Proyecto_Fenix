@@ -446,6 +446,7 @@
                 { name: 'Copito Arequipe', price: 4000 },
                 { name: 'Copito Mantecado', price: 4000 },
                 { name: 'Copito Fresa Nutella', price: 4500 },
+                { name: 'Bomba de Arequipe', price: 5200 },
                 { name: 'Bomba de Crema Pastelera', price: 5500 },
                 { name: 'Quesillo', price: 7000 }
             ];
@@ -473,6 +474,27 @@
                 note.innerHTML = '<strong>Lectura de la hoja P-03:</strong> las cifras “ganancia por unidad” anotadas por el equipo aplican un ajuste académico del 19% sobre la ganancia bruta: Copitos $2.025, Copito Nutella $2.106, Bomba de arequipe $1.741, Bomba pastelera $1.904 y Quesillo $2.916. El simulador muestra ganancia bruta; este ajuste no sustituye una liquidación tributaria.';
                 simulatorBox.append(note);
             }
+        }
+
+        function addProductionMaterialsSection() {
+            if (document.getElementById('materiales-produccion')) return;
+            const evidence = document.getElementById('evidencias');
+            const priceTitle = Array.from(evidence?.querySelectorAll('span') || []).find((element) => element.textContent.includes('V-01 · Justificación del precio'));
+            const priceBlock = priceTitle?.parentElement?.parentElement;
+            if (!evidence || !priceBlock) return;
+
+            const groups = [
+                ['Bases y sabores', [['Oreo', '2 paquetes · 432 g', '$14.240'], ['Coco', '2 paquetes · 300 g', '$7.400'], ['Galleta María', '3 paquetes · 600 g', '$14.880'], ['Fresa', '1 bandeja · 500 g', '$12.300'], ['Vainilla', '1 frasco · 60 ml', '$4.000'], ['Nutella', '2 tarros · 1 kg', '$30.700'], ['Arequipe Alpina', '8 bolsas · 8 L', '$30.750'], ['Esencia de mantecado', '1 frasco', '$8.000'], ['Cacao / chocolate', 'paquete', '$25.000']]],
+                ['Lácteos y secos', [['Leche', '2 paquetes · 2 kg', '$36.000'], ['Azúcar', '2 paquetes · 2 kg', '$3.600'], ['Leche en polvo', '3 unidades', '$19.870'], ['Harina', '2 paquetes', '$19.890'], ['Huevos AA', '1 cubeta · 30 und.', '$23.000'], ['Canela', '1 paquete', '$250'], ['Sal', '1 paquete', '$2.600']]],
+                ['Empaque y apoyo', [['Vasos', '1 paquete · 100 und.', '$10.000'], ['Servilletas', '2 paquetes', '$8.500'], ['Cucharas', '100 unidades', '$10.440'], ['Bolsas', '100 unidades', '$23.000'], ['Café', '1 paquete', '$12.000'], ['Agua', '1 garrafa', '$5.000'], ['Aceite para freír', 'consumo de bombas', 'incluido en costo unitario']]]
+            ];
+            const cards = groups.map(([title, items]) => `<article class="rounded-3xl border border-chocolate-100 bg-white p-5"><h3 class="font-serif text-xl font-bold text-chocolate-900">${title}</h3><div class="mt-4 space-y-2">${items.map(([name, quantity, value]) => `<div class="flex items-start justify-between gap-3 rounded-xl bg-chocolate-50 px-3 py-2 text-xs"><div><strong class="block text-chocolate-800">${name}</strong><span class="text-chocolate-500">${quantity}</span></div><strong class="shrink-0 text-oro-700">${value}</strong></div>`).join('')}</div></article>`).join('');
+            const unitPrices = [['Copitos estándar', '$1.500', '$4.000', '$2.500', '$2.025'], ['Copito Nutella', '$1.900', '$4.500', '$2.600', '$2.106'], ['Bomba de arequipe', '$3.050', '$5.200', '$2.150', '$1.741'], ['Bomba crema pastelera', '$3.150', '$5.500', '$2.350', '$1.904'], ['Quesillo porción', '$3.400', '$7.000', '$3.600', '$2.916']];
+            const priceCards = unitPrices.map(([product, cost, price, gross, net]) => `<article class="rounded-2xl bg-chocolate-900 p-4 text-white"><span class="text-[10px] font-bold uppercase tracking-wider text-oro-400">${product}</span><div class="mt-3 grid grid-cols-2 gap-2 text-xs"><span class="text-chocolate-200">Costo<br><strong class="text-white">${cost}</strong></span><span class="text-chocolate-200">Venta<br><strong class="text-oro-300">${price}</strong></span><span class="text-chocolate-200">Bruta<br><strong class="text-white">${gross}</strong></span><span class="text-chocolate-200">Después 19%<br><strong class="text-emerald-300">${net}</strong></span></div></article>`).join('');
+            const section = document.createElement('div');
+            section.id = 'materiales-produccion';
+            section.innerHTML = `<div class="text-center max-w-3xl mx-auto mb-9"><span class="text-oro-600 font-bold text-sm uppercase tracking-wider">P-01 · Materiales de producción</span><h2 class="font-serif text-3xl md:text-4xl font-extrabold mt-2 text-chocolate-900">Insumos registrados y valor de compra</h2><p class="text-chocolate-600 text-sm mt-3">Relación completa tomada del registro interno más reciente. Cada costo unitario del simulador se calcula a partir de estos recursos y del consumo por producto.</p></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-5">${cards}</div><div class="mt-8"><h3 class="font-serif text-2xl font-bold text-chocolate-900 text-center">Costos y precios unitarios aprobados</h3><p class="mt-2 text-center text-xs text-chocolate-600">La última columna replica el ajuste académico del 19% anotado en P-03.</p><div class="mt-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3">${priceCards}</div></div><p class="mt-5 rounded-2xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs text-chocolate-700"><strong>Lectura de costos:</strong> los valores mostrados son precios de paquete o presentación de compra. Aceite se considera dentro del costo unitario de las bombas; en el registro fotografiado no se aprecia un valor de paquete independiente.</p>`;
+            evidence.insertBefore(section, priceBlock);
         }
 
         // --- FICHAS TÉCNICAS VISUALES P-03 / P-04 ---
@@ -637,6 +659,7 @@
             organizeRequiredSequence();
             recalcSimulator();
             applySchoolBusinessData();
+            addProductionMaterialsSection();
             addTechnicalProductSection();
             initializeTeamPie();
             enhanceCompetitorComparison();
