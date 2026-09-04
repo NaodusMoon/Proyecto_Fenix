@@ -592,6 +592,45 @@
             if (method) method.innerHTML = '<strong class="text-oro-400">Cómo se calcula:</strong> costos totales de $13.000 y ventas de $26.200 para una unidad de cada producto: la ganancia bruta promedio es $2.640 y el margen bruto promedio 50,4%. Para el escenario académico se conservan costos fijos mensuales estimados de $2.910.000; por eso el punto de equilibrio es 1.103 unidades. Si se venden 1.800 unidades al mes, la utilidad operacional estimada es $1.842.000 y la inversión operativa de $4.870.000 se recuperaría en aproximadamente 3 meses; el indicador de ~5 meses usa el capital social total de $9.958.000. Son proyecciones, no resultados de ventas reales.';
         }
 
+        function initializeProductCarousel() {
+            const track = document.getElementById('product-carousel-track');
+            const slides = Array.from(document.querySelectorAll('.product-carousel-slide'));
+            const previous = document.getElementById('product-carousel-prev');
+            const next = document.getElementById('product-carousel-next');
+            const toggle = document.getElementById('product-carousel-toggle');
+            const dots = Array.from(document.querySelectorAll('.product-carousel-dot'));
+            if (!track || !slides.length || !previous || !next || !toggle) return;
+
+            let activeIndex = 0;
+            let paused = false;
+            let timer;
+            const show = (index) => {
+                activeIndex = (index + slides.length) % slides.length;
+                track.style.transform = `translateX(-${activeIndex * 100}%)`;
+                dots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle('w-7', dotIndex === activeIndex);
+                    dot.classList.toggle('bg-oro-500', dotIndex === activeIndex);
+                    dot.classList.toggle('w-2.5', dotIndex !== activeIndex);
+                    dot.classList.toggle('bg-chocolate-200', dotIndex !== activeIndex);
+                });
+            };
+            const restart = () => {
+                clearInterval(timer);
+                if (!paused) timer = setInterval(() => show(activeIndex + 1), 6500);
+            };
+            previous.addEventListener('click', () => { show(activeIndex - 1); restart(); });
+            next.addEventListener('click', () => { show(activeIndex + 1); restart(); });
+            dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); restart(); }));
+            toggle.addEventListener('click', () => {
+                paused = !paused;
+                toggle.setAttribute('aria-pressed', String(paused));
+                toggle.innerHTML = paused ? '<i class="fa-solid fa-play mr-2"></i>Reanudar carrusel' : '<i class="fa-solid fa-pause mr-2"></i>Pausar carrusel';
+                restart();
+            });
+            show(0);
+            restart();
+        }
+
         // --- INICIALIZACIÓN ---
         window.onload = function() {
             // Inicializar cálculos del simulador escolar
@@ -603,5 +642,6 @@
             enhanceCompetitorComparison();
             refineTargetMarket();
             refreshProfitabilityPanel();
+            initializeProductCarousel();
         }
 
