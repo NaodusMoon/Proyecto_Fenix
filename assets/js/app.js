@@ -521,9 +521,9 @@
 
         function getProductionMaterialGroups() {
             return [
-                ['Bases y sabores', [['Oreo', '2 paquetes · 432 g', '$14.240'], ['Coco', '2 paquetes · 300 g', '$7.400'], ['Galleta María', '3 paquetes · 600 g', '$14.880'], ['Fresa', '1 bandeja · 500 g', '$12.300'], ['Vainilla', '1 frasco · 60 ml', '$4.000'], ['Nutella', '2 tarros · 1 kg', '$30.700'], ['Arequipe Alpina', '8 bolsas · 8 L', '$30.750'], ['Esencia de mantecado', '1 frasco', '$8.000'], ['Cacao / chocolate', 'paquete', '$25.000']]],
+                ['Bases y sabores', [['Oreo', '2 paquetes · 432 g', '$14.240'], ['Coco', '2 paquetes · 300 g', '$7.400'], ['Galleta María', '3 paquetes · 600 g', '$14.880'], ['Fresa', '1 bandeja · 500 g', '$12.300'], ['Vainilla', '1 frasco · 60 ml', '$4.000'], ['Nutella', '2 tarros · 1 kg', '$30.700'], ['Arequipe Alquería', '8 bolsas · 8 L', '$30.750'], ['Esencia de mantecado', '1 frasco', '$8.000'], ['Cacao / chocolate', 'paquete', '$25.000']]],
                 ['Lácteos y secos', [['Leche', '2 paquetes · 2 kg', '$36.000'], ['Azúcar', '2 paquetes · 2 kg', '$3.600'], ['Leche en polvo', '3 unidades', '$19.870'], ['Harina', '2 paquetes', '$19.890'], ['Huevos AA', '1 cubeta · 30 und.', '$23.000'], ['Canela', '1 paquete', '$250'], ['Sal', '1 paquete', '$2.600']]],
-                ['Empaque y apoyo', [['Vasos', '1 paquete · 100 und.', '$10.000'], ['Servilletas', '2 paquetes', '$8.500'], ['Cucharas', '100 unidades', '$10.440'], ['Bolsas', '100 unidades', '$23.000'], ['Café', '1 paquete', '$12.000'], ['Agua', '1 garrafa', '$5.000'], ['Aceite para freír', 'consumo de bombas', 'incluido en costo unitario']]]
+                ['Empaque y apoyo', [['Vasos', '1 paquete · 100 und.', '$10.000'], ['Servilletas', '2 paquetes', '$8.500'], ['Cucharas', '100 unidades', '$10.440'], ['Bolsas', '100 unidades', '$23.000'], ['Aceite para freír', 'consumo de bombas', 'incluido en costo unitario']]]
             ];
         }
 
