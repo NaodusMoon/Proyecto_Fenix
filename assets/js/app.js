@@ -734,6 +734,41 @@
             restart();
         }
 
+        function initializeVideoCarousel() {
+            const video = document.getElementById('strategy-video');
+            if (!video) return;
+            const videos = [
+                { src: 'assets/videos/estrategia-producto.mp4', title: 'VIDEO DE ESTRATEGIA DEL PRODUCTO', description: 'Conoce nuestra estrategia y la propuesta que da vida a Dulces Zynareth.', width: 720, height: 1298, maxWidth: 448 },
+                { src: 'assets/videos/video-comercial.mp4', title: 'VIDEO COMERCIAL', description: 'Descubre Dulces Zynareth en nuestro video comercial.', width: 632, height: 358, maxWidth: 800 }
+            ];
+            let activeIndex = 0;
+            const fit = () => {
+                const item = videos[activeIndex];
+                const ratio = video.videoWidth && video.videoHeight ? video.videoWidth / video.videoHeight : item.width / item.height;
+                document.getElementById('video-card').style.width = `min(100%, calc(min(${item.maxWidth}px, ${window.innerHeight * 0.8 * ratio}px) + 32px))`;
+            };
+            const show = (index) => {
+                activeIndex = (index + videos.length) % videos.length;
+                const item = videos[activeIndex];
+                video.pause();
+                video.width = item.width;
+                video.height = item.height;
+                video.src = item.src;
+                video.setAttribute('aria-label', item.title);
+                document.getElementById('estrategia-producto-title').textContent = item.title;
+                document.getElementById('video-description').textContent = item.description;
+                document.getElementById('video-position').textContent = `${activeIndex + 1} / ${videos.length}`;
+                document.getElementById('video-card').style.width = `min(100%, calc(min(${item.maxWidth}px, ${window.innerHeight * 0.8 * item.width / item.height}px) + 32px))`;
+                video.load();
+            };
+            document.getElementById('video-prev').addEventListener('click', () => show(activeIndex - 1));
+            document.getElementById('video-next').addEventListener('click', () => show(activeIndex + 1));
+            video.addEventListener('loadedmetadata', fit);
+            window.addEventListener('resize', fit);
+            fit();
+        }
+        document.addEventListener('DOMContentLoaded', initializeVideoCarousel);
+
         // --- INICIALIZACIÓN ---
         window.onload = function() {
             // Inicializar cálculos del simulador escolar
